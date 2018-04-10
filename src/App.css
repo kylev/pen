@@ -19,3 +19,8 @@
 .Body-wrapper {
   margin: 10px;
 }
+
+.Body-paper {
+  border: 10px solid black;
+  background-color: lightgreen;
+}

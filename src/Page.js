@@ -9,7 +9,7 @@ const Page = ({ store }) => {
   return (
     <svg width={width} height={height}>
       <circle cx={40} cy={40} r={20} fill={store.fill} />
-      <ThreeLine x={0} y={0} width={width} />
+      <ThreeLine x={10} y={10} width={width} />
     </svg>
   );
 };
