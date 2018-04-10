@@ -21,6 +21,24 @@
 }
 
 .Body-paper {
-  border: 10px solid black;
+  width: 100%;
+  margin: 0px auto;
   background-color: lightgreen;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .Body-paper * {
+    visibility: visible;
+  }
+
+  .Body-paper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: white;
+  }
 }
