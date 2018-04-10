@@ -1,7 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 
-import ThreeLine from "./ThreeLine";
+import LineSet from "./LineSet";
 
 const PracticePage = ({ store }) => {
   const { width, height, margin } = store.dimensions;
@@ -14,7 +14,7 @@ const PracticePage = ({ store }) => {
       style={{ backgroundColor: "white" }}
     >
       <circle cx={40} cy={40} r={20} fill={"lightblue"} />
-      <ThreeLine x={margin} y={margin} width={width - 2 * margin} />
+      <LineSet lineSet={store.lineSet} />
     </svg>
   );
 };

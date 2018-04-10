@@ -4,6 +4,17 @@ const pageSizes = {
   letter: { width: 203, height: 271, margin: 10 }
 };
 
+const offsetLine = (width, offset) => {
+  return {
+    x1: 0,
+    y1: offset,
+    x2: width,
+    y2: offset,
+    stroke: "black",
+    strokeWidth: 0.2
+  };
+};
+
 class PenStore {
   pageSize = "letter";
   orientation = "landscape";
@@ -15,12 +26,32 @@ class PenStore {
       return { ...dims, width: dims.height, height: dims.width };
     else return dims;
   }
+
+  get lineSet() {
+    const dims = this.dimensions;
+    return [
+      {
+        key: "headline",
+        ...offsetLine(dims.width, 1)
+      },
+      {
+        key: "midline",
+        ...offsetLine(dims.width, 8.5),
+        strokeDasharray: [1, 1]
+      },
+      {
+        key: "baseline",
+        ...offsetLine(dims.width, 16)
+      }
+    ];
+  }
 }
 
 decorate(PenStore, {
   pageSize: observable,
   orientation: observable,
-  dimensions: computed
+  dimensions: computed,
+  lineSet: computed
 });
 
 const store = new PenStore();
