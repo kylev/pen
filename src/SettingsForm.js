@@ -5,8 +5,12 @@ const SettingsForm = ({ store }) => {
   return (
     <div>
       <form>
-        <select>
+        <select
+          onChange={e => (store.pageSize = e.target.value)}
+          value={store.pageSize}
+        >
           <option value="letter">Letter</option>
+          <option value="a4">A4</option>
         </select>
         <select
           onChange={e => (store.orientation = e.target.value)}

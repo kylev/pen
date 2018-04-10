@@ -1,7 +1,8 @@
 import { computed, decorate, observable } from "mobx";
 
 const pageSizes = {
-  letter: { width: 203, height: 271, margin: 10 }
+  a4: { width: 200, height: 287 },
+  letter: { width: 203, height: 271 }
 };
 
 const offsetLine = (width, offset) => {
