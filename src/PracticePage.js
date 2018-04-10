@@ -11,7 +11,10 @@ const shiftedLineSet = (lineSet, offset) =>
   }));
 
 const PracticePage = ({ store }) => {
-  const { width, height } = store.dimensions;
+  const { gap, lineSet, dimensions: { width, height } } = store;
+
+  const setHeight = gap + lineSet[lineSet.length - 1].y1;
+  const count = Math.round(height / setHeight);
 
   return (
     <svg
@@ -21,8 +24,8 @@ const PracticePage = ({ store }) => {
       style={{ backgroundColor: "white" }}
     >
       <circle cx={40} cy={40} r={20} fill={"lightblue"} />
-      {[1, 39, 77, 115, 153].map(o => (
-        <LineSet lineSet={shiftedLineSet(store.lineSet, o)} key={o} />
+      {Array.from(Array(count)).map((_, i) => (
+        <LineSet lineSet={shiftedLineSet(lineSet, 1 + setHeight * i)} key={i} />
       ))}
     </svg>
   );

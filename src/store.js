@@ -18,6 +18,7 @@ const offsetLine = (width, offset) => {
 class PenStore {
   pageSize = "letter";
   orientation = "landscape";
+  gap = 10;
 
   get dimensions() {
     const dims = pageSizes[this.pageSize];
@@ -50,6 +51,8 @@ class PenStore {
 decorate(PenStore, {
   pageSize: observable,
   orientation: observable,
+  gap: observable,
+
   dimensions: computed,
   lineSet: computed
 });
