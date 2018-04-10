@@ -3,8 +3,15 @@ import { observer } from "mobx-react";
 
 import LineSet from "./LineSet";
 
+const shiftedLineSet = (lineSet, offset) =>
+  lineSet.map(l => ({
+    ...l,
+    y1: l.y1 + offset,
+    y2: l.y2 + offset
+  }));
+
 const PracticePage = ({ store }) => {
-  const { width, height, margin } = store.dimensions;
+  const { width, height } = store.dimensions;
 
   return (
     <svg
@@ -14,7 +21,9 @@ const PracticePage = ({ store }) => {
       style={{ backgroundColor: "white" }}
     >
       <circle cx={40} cy={40} r={20} fill={"lightblue"} />
-      <LineSet lineSet={store.lineSet} />
+      {[1, 39, 77, 115, 153].map(o => (
+        <LineSet lineSet={shiftedLineSet(store.lineSet, o)} key={o} />
+      ))}
     </svg>
   );
 };

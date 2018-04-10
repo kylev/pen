@@ -32,16 +32,16 @@ class PenStore {
     return [
       {
         key: "headline",
-        ...offsetLine(dims.width, 1)
+        ...offsetLine(dims.width, 0)
       },
       {
         key: "midline",
-        ...offsetLine(dims.width, 8.5),
+        ...offsetLine(dims.width, 7.5),
         strokeDasharray: [1, 1]
       },
       {
         key: "baseline",
-        ...offsetLine(dims.width, 16)
+        ...offsetLine(dims.width, 15)
       }
     ];
   }
