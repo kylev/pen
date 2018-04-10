@@ -15,3 +15,7 @@
 .App-intro {
   font-size: large;
 }
+
+.Body-wrapper {
+  margin: 10px;
+}

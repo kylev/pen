@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-import Page from "./Page"
-import SettingsForm from "./SettingsForm"
+import Page from "./Page";
+import SettingsForm from "./SettingsForm";
+
+import store from "./store";
 
 class App extends Component {
   render() {
@@ -11,8 +13,10 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Pen Page</h1>
         </header>
-        <SettingsForm/>
-        <Page/>
+        <div className="Body-wrapper">
+          <SettingsForm />
+          <Page store={store} />
+        </div>
       </div>
     );
   }
