@@ -14,7 +14,7 @@ class App extends Component {
           <h1 className="App-title">Pen Page</h1>
         </header>
         <div className="Body-wrapper">
-          <SettingsForm />
+          <SettingsForm store={store} />
           <div className="Body-paper">
             <Page store={store} />
           </div>

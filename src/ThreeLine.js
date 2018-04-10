@@ -1,17 +1,16 @@
 import React from "react";
 
 const ThreeLine = ({ x, y, width }) => {
-  const ascenderHeight = 20,
-    xHeight = 20;
+  const ascenderHeight = 7,
+    xHeight = 7;
 
   const midlineY = y + ascenderHeight,
     baselineY = midlineY + xHeight;
 
-  const lineStyle = { stroke: "black", strokeWidth: 2 };
+  const lineStyle = { stroke: "black", strokeWidth: 0.2 };
   const midlineStyle = {
-    stroke: "black",
-    strokeWidth: 1,
-    strokeDasharray: [10, 5]
+    ...lineStyle,
+    strokeDasharray: [1, 1]
   };
 
   return (

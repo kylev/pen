@@ -4,12 +4,17 @@ import { observer } from "mobx-react";
 import ThreeLine from "./ThreeLine";
 
 const Page = ({ store }) => {
-  const { width, height } = store.dimensions;
+  const { width, height, margin } = store.dimensions;
 
   return (
-    <svg width={width} height={height}>
-      <circle cx={40} cy={40} r={20} fill={store.fill} />
-      <ThreeLine x={10} y={10} width={width} />
+    <svg
+      width={`${width}mm`}
+      height={`${height}mm`}
+      viewBox={`0 0 ${width} ${height}`}
+      style={{ backgroundColor: "white" }}
+    >
+      <circle cx={40} cy={40} r={20} fill={"lightblue"} />
+      <ThreeLine x={margin} y={margin} width={width - 2 * margin} />
     </svg>
   );
 };

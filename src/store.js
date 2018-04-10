@@ -1,17 +1,25 @@
 import { computed, decorate, observable } from "mobx";
 
+const pageSizes = {
+  letter: { width: 203, height: 271, margin: 10 }
+};
+
 class PenStore {
   pageSize = "letter";
-  fill = "green";
+  orientation = "landscape";
 
   get dimensions() {
-    return { width: 100, height: 100 };
+    const dims = pageSizes[this.pageSize];
+
+    if (this.orientation === "landscape")
+      return { ...dims, width: dims.height, height: dims.width };
+    else return dims;
   }
 }
 
 decorate(PenStore, {
   pageSize: observable,
-  fill: observable,
+  orientation: observable,
   dimensions: computed
 });
 
