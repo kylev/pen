@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import Page from "./Page";
+import PracticePage from "./PracticePage";
 import SettingsForm from "./SettingsForm";
 
 import store from "./store";
@@ -16,7 +16,7 @@ class App extends Component {
         <div className="Body-wrapper">
           <SettingsForm store={store} />
           <div className="Body-paper">
-            <Page store={store} />
+            <PracticePage store={store} />
           </div>
         </div>
       </div>

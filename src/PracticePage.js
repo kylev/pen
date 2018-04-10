@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 
 import ThreeLine from "./ThreeLine";
 
-const Page = ({ store }) => {
+const PracticePage = ({ store }) => {
   const { width, height, margin } = store.dimensions;
 
   return (
@@ -19,4 +19,4 @@ const Page = ({ store }) => {
   );
 };
 
-export default observer(Page);
+export default observer(PracticePage);
