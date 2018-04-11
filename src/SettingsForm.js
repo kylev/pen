@@ -1,5 +1,4 @@
 import React from "react";
-import { observer } from "mobx-react";
 
 import PaperSettings from "./PaperSettings";
 
@@ -11,4 +10,5 @@ const SettingsForm = ({ store }) => {
   );
 };
 
-export default observer(SettingsForm);
+//export default observer(SettingsForm);
+export default SettingsForm;
