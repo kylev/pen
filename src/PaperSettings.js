@@ -2,6 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 
 import DropDown from "./DropDown";
+import NumberInput from "./NumberInput";
 
 const PaperSettings = ({ store }) => {
   return (
@@ -16,8 +17,7 @@ const PaperSettings = ({ store }) => {
         value={store.orientation}
         choices={store.orientations}
       />
-
-      <input
+      <NumberInput
         type="number"
         value={store.margin}
         onChange={e => (store.margin = e.target.value)}
