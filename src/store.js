@@ -14,7 +14,7 @@ const offsetLine = (x, y, width) => {
 class PenStore {
   pageSize = "letter";
   orientation = "landscape";
-  margin = 15;
+  margin = 0;
   gap = 10;
 
   // Read-only
