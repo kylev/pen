@@ -15,8 +15,10 @@ class App extends Component {
         </header>
         <div className="Body-wrapper">
           <SettingsForm store={store} />
-          <div className="Body-paper">
-            <PracticePage store={store} />
+          <div className="Body-fakepage">
+            <div className="Body-printable">
+              <PracticePage store={store} />
+            </div>
           </div>
         </div>
       </div>

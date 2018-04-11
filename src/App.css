@@ -17,12 +17,16 @@
 }
 
 .Body-wrapper {
-  margin: 10px;
 }
 
-.Body-paper {
-  width: 100%;
-  margin: 0px auto;
+.Body-fakepage {
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 8px 8px 5px grey;
+  background-color: cyan;
+}
+
+.Body-printable {
   background-color: lightgreen;
 }
 
@@ -31,11 +35,11 @@
     visibility: hidden;
   }
 
-  .Body-paper * {
+  .Body-printable * {
     visibility: visible;
   }
 
-  .Body-paper {
+  .Body-printable {
     position: absolute;
     left: 0;
     top: 0;
