@@ -22,6 +22,10 @@ class PenStore {
     { key: "a4", name: "A4", width: 200, height: 287 },
     { key: "letter", name: "Letter", width: 203, height: 271 }
   ];
+  orientations = [
+    { key: "landscape", name: "Landcape" },
+    { key: "portrait", name: "Portrait" }
+  ];
 
   get dimensions() {
     const dims = this.pageSizes.find(s => s.key === this.pageSize);
