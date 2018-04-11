@@ -1,10 +1,5 @@
 import { computed, decorate, observable } from "mobx";
 
-const pageSizes = {
-  a4: { width: 200, height: 287 },
-  letter: { width: 203, height: 271 }
-};
-
 const offsetLine = (width, offset) => {
   return {
     x1: 0,
@@ -21,8 +16,13 @@ class PenStore {
   orientation = "landscape";
   gap = 10;
 
+  pageSizes = [
+    { key: "a4", name: "A4", width: 200, height: 287 },
+    { key: "letter", name: "Letter", width: 203, height: 271 }
+  ];
+
   get dimensions() {
-    const dims = pageSizes[this.pageSize];
+    const dims = this.pageSizes.find(s => s.key === this.pageSize);
 
     if (this.orientation === "landscape")
       return { ...dims, width: dims.height, height: dims.width };

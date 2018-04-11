@@ -9,7 +9,11 @@ const SettingsForm = ({ store }) => {
           onChange={e => (store.pageSize = e.target.value)}
           value={store.pageSize}
         >
-          <option value="letter">Letter</option>
+          {store.pageSizes.map(p => (
+            <option value={p.key} key={p.key}>
+              {p.name}
+            </option>
+          ))}
           <option value="a4">A4</option>
         </select>
         <select
