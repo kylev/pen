@@ -1,14 +1,15 @@
 import React from "react";
+import { Select } from "antd";
 
 const DropDown = ({ choices, label, onChange, value }) => {
   return (
-    <select onChange={onChange} value={value}>
+    <Select onChange={onChange} value={value}>
       {choices.map(p => (
-        <option value={p.key} key={p.key}>
+        <Select.Option value={p.key} key={p.key}>
           {p.name}
-        </option>
+        </Select.Option>
       ))}
-    </select>
+    </Select>
   );
 };
 

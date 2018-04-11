@@ -8,19 +8,20 @@ const PaperSettings = ({ store }) => {
   return (
     <form>
       <DropDown
-        onChange={e => (store.pageSize = e.target.value)}
+        onChange={v => (store.pageSize = v)}
         value={store.pageSize}
         choices={store.pageSizes}
       />
       <DropDown
-        onChange={e => (store.orientation = e.target.value)}
+        onChange={v => (store.orientation = v)}
         value={store.orientation}
         choices={store.orientations}
       />
       <NumberInput
-        type="number"
+        min={0}
+        max={20}
         value={store.margin}
-        onChange={e => (store.margin = e.target.value)}
+        onChange={v => (store.margin = v)}
       />
     </form>
   );
