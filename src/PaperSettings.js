@@ -1,26 +1,22 @@
 import React from "react";
+import { observer } from "mobx-react";
+
+import DropDown from "./DropDown";
 
 const PaperSettings = ({ store }) => {
   return (
     <form>
-      <select
+      <DropDown
         onChange={e => (store.pageSize = e.target.value)}
         value={store.pageSize}
-      >
-        {store.pageSizes.map(p => (
-          <option value={p.key} key={p.key}>
-            {p.name}
-          </option>
-        ))}
-        <option value="a4">A4</option>
-      </select>
-      <select
+        choices={store.pageSizes}
+      />
+      <DropDown
         onChange={e => (store.orientation = e.target.value)}
         value={store.orientation}
-      >
-        <option value="portrait">Portrait</option>
-        <option value="landscape">Landscape</option>
-      </select>
+        choices={store.orientations}
+      />
+
       <input
         type="number"
         value={store.margin}
@@ -30,4 +26,4 @@ const PaperSettings = ({ store }) => {
   );
 };
 
-export default PaperSettings;
+export default observer(PaperSettings);
