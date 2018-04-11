@@ -23,6 +23,11 @@ const SettingsForm = ({ store }) => {
           <option value="portrait">Portrait</option>
           <option value="landscape">Landscape</option>
         </select>
+        <input
+          type="number"
+          value={store.margin}
+          onChange={e => (store.margin = e.target.value)}
+        />
       </form>
     </div>
   );

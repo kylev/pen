@@ -1,11 +1,11 @@
 import { computed, decorate, observable } from "mobx";
 
-const offsetLine = (width, offset) => {
+const offsetLine = (x, y, width) => {
   return {
-    x1: 0,
-    y1: offset,
+    x1: x,
+    y1: y,
     x2: width,
-    y2: offset,
+    y2: y,
     stroke: "black",
     strokeWidth: 0.2
   };
@@ -14,8 +14,10 @@ const offsetLine = (width, offset) => {
 class PenStore {
   pageSize = "letter";
   orientation = "landscape";
+  margin = 15;
   gap = 10;
 
+  // Read-only
   pageSizes = [
     { key: "a4", name: "A4", width: 200, height: 287 },
     { key: "letter", name: "Letter", width: 203, height: 271 }
@@ -30,20 +32,22 @@ class PenStore {
   }
 
   get lineSet() {
-    const dims = this.dimensions;
+    const { margin, dimensions } = this;
+    const lineWidth = dimensions.width - margin * 2;
+
     return [
       {
         key: "headline",
-        ...offsetLine(dims.width, 0)
+        ...offsetLine(margin, 0, lineWidth)
       },
       {
         key: "midline",
-        ...offsetLine(dims.width, 7.5),
+        ...offsetLine(margin, 7.5, lineWidth),
         strokeDasharray: [1, 1]
       },
       {
         key: "baseline",
-        ...offsetLine(dims.width, 15)
+        ...offsetLine(margin, 15, lineWidth)
       }
     ];
   }
@@ -52,6 +56,7 @@ class PenStore {
 decorate(PenStore, {
   pageSize: observable,
   orientation: observable,
+  margin: observable,
   gap: observable,
 
   dimensions: computed,
