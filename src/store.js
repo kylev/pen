@@ -2,17 +2,6 @@ import { computed, decorate, observable } from "mobx";
 
 import { composeLine, defaultLineSpec } from "./lines";
 
-const offsetLine = (x, y, width) => {
-  return {
-    x1: x,
-    y1: y,
-    x2: width,
-    y2: y,
-    stroke: "black",
-    strokeWidth: 0.2
-  };
-};
-
 class PenStore {
   pageSize = "letter";
   orientation = "landscape";
