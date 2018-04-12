@@ -2,6 +2,7 @@ import React from "react";
 import { Collapse, Icon } from "antd";
 
 import PaperSettings from "./PaperSettings";
+import LineSetDebug from "./LineSetDebug";
 
 const SettingsForm = ({ store }) => {
   return (
@@ -17,6 +18,9 @@ const SettingsForm = ({ store }) => {
         }
       >
         <PaperSettings store={store} />
+      </Collapse.Panel>
+      <Collapse.Panel key="lines" showArrow={false} header={<span>Debug</span>}>
+        <LineSetDebug lineSet={store.lineSet} />
       </Collapse.Panel>
     </Collapse>
   );

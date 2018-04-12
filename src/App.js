@@ -16,11 +16,13 @@ class App extends Component {
           <h1 style={{ color: "white" }}>Pen Page</h1>
         </Layout.Header>
         <Layout.Content style={{ padding: 16 }}>
-          <Row gutter={16}>
-            <Col span={6}>
+          <Row>
+            <Col span={24}>
               <SettingsForm store={store} />
             </Col>
-            <Col span={18}>
+          </Row>
+          <Row>
+            <Col span={24}>
               <PracticePage store={store} />
             </Col>
           </Row>
