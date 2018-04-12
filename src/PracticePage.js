@@ -17,18 +17,23 @@ const PracticePage = ({ store }) => {
   const count = Math.round(height / setHeight);
 
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={`${width}mm`}
-      height={`${height}mm`}
-      viewBox={`0 0 ${width} ${height}`}
-      style={{ backgroundColor: "white" }}
-    >
-      <circle cx={40} cy={40} r={20} fill={"lightblue"} />
-      {Array.from(Array(count)).map((_, i) => (
-        <LineSet lineSet={shiftedLineSet(lineSet, 1 + setHeight * i)} key={i} />
-      ))}
-    </svg>
+    <div className="Body-printable">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={`${width}mm`}
+        height={`${height}mm`}
+        viewBox={`0 0 ${width} ${height}`}
+        style={{ backgroundColor: "white" }}
+      >
+        <circle cx={40} cy={40} r={20} fill={"lightblue"} />
+        {Array.from(Array(count)).map((_, i) => (
+          <LineSet
+            lineSet={shiftedLineSet(lineSet, 1 + setHeight * i)}
+            key={i}
+          />
+        ))}
+      </svg>
+    </div>
   );
 };
 

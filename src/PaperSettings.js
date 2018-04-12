@@ -12,11 +12,13 @@ const PaperSettings = ({ store }) => {
         value={store.pageSize}
         choices={store.pageSizes}
       />
+      <br />
       <DropDown
         onChange={v => (store.orientation = v)}
         value={store.orientation}
         choices={store.orientations}
       />
+      <br />
       <NumberInput
         min={0}
         max={20}

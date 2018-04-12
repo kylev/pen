@@ -1,33 +1,5 @@
-.App {
-}
-
-.App-header {
-  background-color: #222;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-.Body-wrapper {
-}
-
-.Body-fakepage {
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 8px 8px 5px grey;
-  background-color: cyan;
-}
-
 .Body-printable {
-  background-color: lightgreen;
+
 }
 
 @media print {
@@ -43,6 +15,5 @@
     position: absolute;
     left: 0;
     top: 0;
-    background-color: white;
   }
 }

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Layout } from "antd";
+
 import "./App.css";
 
 import PracticePage from "./PracticePage";
@@ -9,19 +11,23 @@ import store from "./store";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Pen Page</h1>
-        </header>
-        <div className="Body-wrapper">
-          <SettingsForm store={store} />
-          <div className="Body-fakepage">
-            <div className="Body-printable">
-              <PracticePage store={store} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <Layout>
+        <Layout.Header>
+          <h1 style={{ color: "white" }}>Pen Page</h1>
+        </Layout.Header>
+        <Layout>
+          <Layout.Sider style={{ paddingLeft: 12 }}>
+            <SettingsForm store={store} />
+          </Layout.Sider>
+          <Layout.Content style={{ padding: 24 }}>
+            <PracticePage store={store} />
+          </Layout.Content>
+        </Layout>
+        <Layout.Footer style={{ textAlign: "center" }}>
+          Kyle VanderBeek ©2018 Created with{" "}
+          <a href="https://ant.design/">Ant Design</a>
+        </Layout.Footer>
+      </Layout>
     );
   }
 }
