@@ -11,8 +11,9 @@ const lineColors = [
     key: "black",
     name: "Black"
   },
-  { key: "red", name: "Red" },
-  { key: "green", name: "Green" }
+  { key: "grey", name: "Grey" },
+  { key: "green", name: "Green" },
+  { key: "red", name: "Red" }
 ];
 
 const dashTypes = [
