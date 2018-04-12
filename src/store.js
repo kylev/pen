@@ -1,5 +1,7 @@
 import { computed, decorate, observable } from "mobx";
 
+import { composeLine, defaultLineSpec } from "./lines";
+
 const offsetLine = (x, y, width) => {
   return {
     x1: x,
@@ -16,6 +18,9 @@ class PenStore {
   orientation = "landscape";
   margin = 0;
   gap = 10;
+  headline = defaultLineSpec();
+  midline = defaultLineSpec({ offset: 7.5, color: "red", dash: "even1cm" });
+  baseline = defaultLineSpec({ offset: 15 });
 
   // Read-only
   pageSizes = [
@@ -36,22 +41,33 @@ class PenStore {
   }
 
   get lineSet() {
-    const { margin, dimensions } = this;
-    const lineWidth = dimensions.width - margin * 2;
+    const { margin, dimensions: { width }, headline, midline, baseline } = this;
 
     return [
       {
         key: "headline",
-        ...offsetLine(margin, 0, lineWidth)
+        ...composeLine({
+          ...headline,
+          width,
+          margin
+        })
       },
       {
         key: "midline",
-        ...offsetLine(margin, 7.5, lineWidth),
-        strokeDasharray: [1, 1]
+        ...composeLine({
+          ...midline,
+          width,
+          margin
+        })
       },
       {
         key: "baseline",
-        ...offsetLine(margin, 15, lineWidth)
+        ...composeLine({
+          ...baseline,
+          width,
+          margin,
+          offset: 15
+        })
       }
     ];
   }
@@ -62,6 +78,10 @@ decorate(PenStore, {
   orientation: observable,
   margin: observable,
   gap: observable,
+
+  headline: observable,
+  midline: observable,
+  baseline: observable,
 
   dimensions: computed,
   lineSet: computed
