@@ -42,7 +42,7 @@ class PenStore {
     { key: "red", name: "Red" }
   ];
   ratioChoices = [
-    { key: "2422", name: "2, 4, 2, 2", value: [2, 4, 2, 2] },
+    { key: "2422", name: "Italic 2:4:2", value: [2, 4, 2, 2] },
     { key: "simple", name: "Basic Penmanship", value: [1, 1, 2, 0] },
     {
       key: "winterplate",
@@ -51,8 +51,13 @@ class PenStore {
     },
     {
       key: "foundation",
-      name: "Foundation hand (even space)",
+      name: "Foundation 2:2:2",
       value: [2, 2, 2, 0]
+    },
+    {
+      key: "german",
+      name: "German Kurrent 2:1:2",
+      value: [2, 1, 2, 0]
     }
   ];
 
