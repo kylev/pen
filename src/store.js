@@ -43,7 +43,17 @@ class PenStore {
   ];
   ratioChoices = [
     { key: "2422", name: "2, 4, 2, 2", value: [2, 4, 2, 2] },
-    { key: "simple", name: "Basic Penmanship", value: [1, 1, 2, 0] }
+    { key: "simple", name: "Basic Penmanship", value: [1, 1, 2, 0] },
+    {
+      key: "winterplate",
+      name: "Copperplate (Winters) 3:2:3",
+      value: [3, 2, 3, 0]
+    },
+    {
+      key: "foundation",
+      name: "Foundation hand (even space)",
+      value: [2, 2, 2, 0]
+    }
   ];
 
   get ratios() {
