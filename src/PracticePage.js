@@ -32,7 +32,7 @@ const PracticePage = ({ store }) => {
         viewBox={`0 0 ${width} ${height}`}
         style={{ backgroundColor: "white" }}
       >
-        <circle cx={40} cy={40} r={20} fill={"lightblue"} />
+        {false && <circle cx={40} cy={40} r={20} fill={"lightblue"} />}
         {times(count, i => (
           <g key={`lineset-${i}`}>
             <rect {...gapRect} y={1 + lineSetHeight * i + workHeight} />
