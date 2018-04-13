@@ -9,7 +9,7 @@ import NumberInput from "./NumberInput";
 const GuideLineSettings = ({ line, colors }) => {
   return (
     <Row>
-      <Col>Guide Lines</Col>
+      <Col>Angle Guides</Col>
       <ColFormItem span={8} label="Color">
         <DropDown
           value={line.color}
