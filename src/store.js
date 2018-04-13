@@ -21,6 +21,16 @@ class PenStore {
     { key: "landscape", name: "Landcape" },
     { key: "portrait", name: "Portrait" }
   ];
+  colors = [
+    {
+      key: "black",
+      name: "Black"
+    },
+    { key: "green", name: "Green" },
+    { key: "grey", name: "Grey" },
+    { key: "pink", name: "Pink" },
+    { key: "red", name: "Red" }
+  ];
 
   get dimensions() {
     const dims = this.pageSizes.find(s => s.key === this.pageSize);

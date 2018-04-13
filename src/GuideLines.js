@@ -7,11 +7,11 @@ const RAD_RATIO = Math.PI / 180;
 const GuideLines = ({ guideline }) => {
   const { angle, color, spacing } = guideline;
   const ratio = Math.tan(angle * RAD_RATIO);
-  console.log(ratio);
+  const count = 10;
 
   return (
     <g>
-      {times(10, i => (
+      {times(count, i => (
         <line
           key={i}
           x1={0}

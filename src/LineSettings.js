@@ -7,30 +7,19 @@ import DropDown from "./DropDown";
 import NumberInput from "./NumberInput";
 import GuideLineSettings from "./GuideLineSettings";
 
-const lineColors = [
-  {
-    key: "black",
-    name: "Black"
-  },
-  { key: "green", name: "Green" },
-  { key: "grey", name: "Grey" },
-  { key: "pink", name: "Pink" },
-  { key: "red", name: "Red" }
-];
-
 const dashTypes = [
   { key: "none", name: "None" },
   { key: "even1cm", name: "1cm Even" }
 ];
 
-let LineSetting = ({ label, line }) => {
+let LineSetting = ({ label, line, colors }) => {
   return (
     <Row>
       <Col>{label}</Col>
       <ColFormItem span={8} label="Color">
         <DropDown
           value={line.color}
-          choices={lineColors}
+          choices={colors}
           onChange={v => (line.color = v)}
         />
       </ColFormItem>
@@ -58,9 +47,14 @@ const LineSettings = ({ store }) => {
   return (
     <Form>
       {lineNames.map(ln => (
-        <LineSetting line={store[ln]} label={ln} key={ln} />
+        <LineSetting
+          line={store[ln]}
+          label={ln}
+          key={ln}
+          colors={store.colors}
+        />
       ))}
-      <GuideLineSettings line={store.guideline} />
+      <GuideLineSettings line={store.guideline} colors={store.colors} />
     </Form>
   );
 };
