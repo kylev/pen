@@ -12,10 +12,10 @@ class PenStore {
   ratio = "2422";
   nibHeight = 6;
   gapColor = "lightgrey";
-  ascender = defaultLineSpec();
-  midline = defaultLineSpec({ color: "red", dash: "even1cm" });
-  baseline = defaultLineSpec();
-  descender = defaultLineSpec({ color: "lightgrey" });
+  ascender = defaultLineSpec({ name: "Ascender" });
+  midline = defaultLineSpec({ name: "Midline", color: "red", dash: "even1cm" });
+  baseline = defaultLineSpec({ name: "Baseline" });
+  descender = defaultLineSpec({ name: "Descender", color: "lightgrey" });
 
   guideline = { angle: 55, color: "pink", spacing: 40 };
 

@@ -48,7 +48,7 @@ const LineSettings = ({ store }) => {
     <Form>
       {lineNames.map(ln => (
         <LineSetting
-          label={ln}
+          label={store[ln].name}
           line={store[ln]}
           key={ln}
           colors={store.colors}
