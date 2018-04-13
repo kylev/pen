@@ -28,8 +28,7 @@ class App extends Component {
           </Row>
         </Layout.Content>
         <Layout.Footer style={{ textAlign: "center" }}>
-          Kyle VanderBeek ©2018 Created with{" "}
-          <a href="https://ant.design/">Ant Design</a>
+          Kyle V ©2018 Created with <a href="https://ant.design/">Ant Design</a>
         </Layout.Footer>
       </Layout>
     );
