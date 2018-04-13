@@ -9,7 +9,7 @@ class PenStore {
   pageSize = "letter";
   orientation = "landscape";
   margin = 0;
-  ratio = "2422";
+  ratio = "simple";
   nibHeight = 6;
   gapColor = "lightgrey";
   ascender = defaultLineSpec({ name: "Ascender" });
@@ -43,7 +43,7 @@ class PenStore {
   ];
   ratioChoices = [
     { key: "2422", name: "2, 4, 2, 2", value: [2, 4, 2, 2] },
-    { key: "Simple", name: "Simple", value: [1, 1, 2, 0] }
+    { key: "simple", name: "Basic Penmanship", value: [1, 1, 2, 0] }
   ];
 
   get ratios() {
