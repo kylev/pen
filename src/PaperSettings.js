@@ -10,6 +10,13 @@ const PaperSettings = ({ store }) => {
   return (
     <Form>
       <Row>
+        <ColFormItem span={8} label="Ratios">
+          <DropDown
+            onChange={v => (store.ratio = v)}
+            value={store.ratio}
+            choices={store.ratioChoices}
+          />
+        </ColFormItem>
         <ColFormItem span={8} label="Size">
           <DropDown
             onChange={v => (store.pageSize = v)}
@@ -33,13 +40,6 @@ const PaperSettings = ({ store }) => {
             step={0.1}
             value={store.nibHeight}
             onChange={v => (store.nibHeight = v)}
-          />
-        </ColFormItem>
-        <ColFormItem span={8} label="Ratios">
-          <DropDown
-            onChange={v => (store.ratio = v)}
-            value={store.ratio}
-            choices={store.ratioChoices}
           />
         </ColFormItem>
         <ColFormItem span={8} label="Gap Color">
