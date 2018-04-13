@@ -24,14 +24,6 @@ const PaperSettings = ({ store }) => {
             choices={store.orientations}
           />
         </ColFormItem>
-        <ColFormItem span={8} label="Margin">
-          <NumberInput
-            min={0}
-            max={20}
-            value={store.margin}
-            onChange={v => (store.margin = v)}
-          />
-        </ColFormItem>
       </Row>
       <Row>
         <ColFormItem span={8} label="Nib Width">
