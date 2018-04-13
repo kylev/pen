@@ -10,6 +10,7 @@ class PenStore {
   headline = defaultLineSpec();
   midline = defaultLineSpec({ offset: 7.5, color: "red", dash: "even1cm" });
   baseline = defaultLineSpec({ offset: 15 });
+  guideline = { angle: 55, color: "pink", spacing: 40 };
 
   // Read-only
   pageSizes = [
@@ -71,6 +72,7 @@ decorate(PenStore, {
   headline: observable,
   midline: observable,
   baseline: observable,
+  guideline: observable,
 
   dimensions: computed,
   lineSet: computed

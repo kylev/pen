@@ -5,14 +5,16 @@ import { Col, Form, Row } from "antd";
 import ColFormItem from "./ColFormItem";
 import DropDown from "./DropDown";
 import NumberInput from "./NumberInput";
+import GuideLineSettings from "./GuideLineSettings";
 
 const lineColors = [
   {
     key: "black",
     name: "Black"
   },
-  { key: "grey", name: "Grey" },
   { key: "green", name: "Green" },
+  { key: "grey", name: "Grey" },
+  { key: "pink", name: "Pink" },
   { key: "red", name: "Red" }
 ];
 
@@ -58,6 +60,7 @@ const LineSettings = ({ store }) => {
       {lineNames.map(ln => (
         <LineSetting line={store[ln]} label={ln} key={ln} />
       ))}
+      <GuideLineSettings line={store.guideline} />
     </Form>
   );
 };
