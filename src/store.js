@@ -1,6 +1,9 @@
+import { times } from "lodash";
 import { computed, decorate, observable } from "mobx";
 
 import { composeLine, defaultLineSpec } from "./lines";
+
+const RAD_RATIO = Math.PI / 180;
 
 class PenStore {
   pageSize = "letter";
@@ -71,6 +74,21 @@ class PenStore {
       }
     ];
   }
+
+  get guideLineSet() {
+    const { angle, color, spacing } = this.guideline;
+    const ratio = Math.tan(angle * RAD_RATIO);
+    const count = 10;
+
+    return times(count, i => ({
+      x1: 0,
+      y1: ratio * i * spacing,
+      x2: i * spacing,
+      y2: 0,
+      stroke: color,
+      strokeWidth: 0.1
+    }));
+  }
 }
 
 decorate(PenStore, {
@@ -85,7 +103,8 @@ decorate(PenStore, {
   guideline: observable,
 
   dimensions: computed,
-  lineSet: computed
+  lineSet: computed,
+  guideLineSet: computed
 });
 
 const store = new PenStore();

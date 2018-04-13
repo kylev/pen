@@ -2,7 +2,6 @@ import React from "react";
 import { observer } from "mobx-react";
 
 import LineSet from "./LineSet";
-import GuideLines from "./GuideLines";
 
 const shiftedLineSet = (lineSet, offset) =>
   lineSet.map(l => ({
@@ -33,7 +32,7 @@ const PracticePage = ({ store }) => {
             key={i}
           />
         ))}
-        <GuideLines guideline={store.guideline} />
+        <LineSet lineSet={store.guideLineSet} key="guidelines" />
       </svg>
     </div>
   );
