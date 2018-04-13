@@ -7,7 +7,7 @@ const RAD_RATIO = Math.PI / 180;
 
 class PenStore {
   pageSize = "letter";
-  orientation = "landscape";
+  orientation = "portrait";
   margin = 0;
   ratio = "simple";
   nibHeight = 6;
