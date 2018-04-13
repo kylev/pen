@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <Layout>
         <Layout.Header>
-          <h1 style={{ color: "white" }}>Pen Page</h1>
+          <h1 style={{ color: "white" }}>Penmanship Practice Sheets</h1>
         </Layout.Header>
         <Layout.Content style={{ padding: 16 }}>
           <Row>
