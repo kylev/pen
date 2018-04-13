@@ -11,7 +11,7 @@ class PenStore {
   margin = 0;
   ratio = "simple";
   nibHeight = 6;
-  gapColor = "lightgrey";
+  gapColor = "white";
   ascender = defaultLineSpec({ name: "Ascender" });
   midline = defaultLineSpec({ name: "Midline", color: "red", dash: "even1cm" });
   baseline = defaultLineSpec({ name: "Baseline" });
