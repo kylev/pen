@@ -76,11 +76,15 @@ class PenStore {
   }
 
   get guideLineSet() {
-    const { angle, color, spacing } = this.guideline;
+    const {
+      dimensions: { width },
+      guideline: { angle, color, spacing }
+    } = this;
     const ratio = Math.tan(angle * RAD_RATIO);
-    const count = 10;
+    const count = width / spacing * 2; // Not exact...
 
     return times(count, i => ({
+      key: `guideline-${i}`,
       x1: 0,
       y1: ratio * i * spacing,
       x2: i * spacing,
