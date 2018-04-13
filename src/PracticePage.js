@@ -1,4 +1,5 @@
 import React from "react";
+import { times } from "lodash";
 import { observer } from "mobx-react";
 
 import LineSet from "./LineSet";
@@ -11,10 +12,16 @@ const shiftedLineSet = (lineSet, offset) =>
   }));
 
 const PracticePage = ({ store }) => {
-  const { gap, lineSet, dimensions: { width, height } } = store;
+  const {
+    gap,
+    gapRect,
+    lineSet,
+    lineSetHeight,
+    dimensions: { width, height }
+  } = store;
 
-  const setHeight = gap + lineSet[lineSet.length - 1].y1;
-  const count = Math.round(height / setHeight);
+  const workHeight = lineSetHeight - gap;
+  const count = Math.round(height / lineSetHeight);
 
   return (
     <div className="Body-printable">
@@ -26,11 +33,14 @@ const PracticePage = ({ store }) => {
         style={{ backgroundColor: "white" }}
       >
         <circle cx={40} cy={40} r={20} fill={"lightblue"} />
-        {Array.from(Array(count)).map((_, i) => (
-          <LineSet
-            lineSet={shiftedLineSet(lineSet, 1 + setHeight * i)}
-            key={i}
-          />
+        {times(count, i => (
+          <g key={`lineset-${i}`}>
+            <rect {...gapRect} y={1 + lineSetHeight * i + workHeight} />
+            <LineSet
+              lineSet={shiftedLineSet(lineSet, 1 + lineSetHeight * i)}
+              key={i}
+            />
+          </g>
         ))}
         <LineSet lineSet={store.guideLineSet} key="guidelines" />
       </svg>

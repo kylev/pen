@@ -43,13 +43,13 @@ let LineSetting = ({ label, line, colors }) => {
 LineSetting = observer(LineSetting);
 
 const LineSettings = ({ store }) => {
-  const lineNames = ["headline", "midline", "baseline"];
+  const lineNames = ["ascender", "midline", "baseline", "descender"];
   return (
     <Form>
       {lineNames.map(ln => (
         <LineSetting
-          line={store[ln]}
           label={ln}
+          line={store[ln]}
           key={ln}
           colors={store.colors}
         />

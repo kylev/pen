@@ -1,5 +1,5 @@
-import { times } from "lodash";
-import { computed, decorate, observable } from "mobx";
+import { reduce, times } from "lodash";
+import { action, computed, decorate, observable } from "mobx";
 
 import { composeLine, defaultLineSpec } from "./lines";
 
@@ -9,10 +9,14 @@ class PenStore {
   pageSize = "letter";
   orientation = "landscape";
   margin = 0;
-  gap = 10;
-  headline = defaultLineSpec();
-  midline = defaultLineSpec({ offset: 7.5, color: "red", dash: "even1cm" });
-  baseline = defaultLineSpec({ offset: 15 });
+  ratio = "2422";
+  nibHeight = 6;
+  gapColor = "lightgrey";
+  ascender = defaultLineSpec();
+  midline = defaultLineSpec({ color: "red", dash: "even1cm" });
+  baseline = defaultLineSpec();
+  descender = defaultLineSpec({ color: "lightgrey" });
+
   guideline = { angle: 55, color: "pink", spacing: 40 };
 
   // Read-only
@@ -25,15 +29,40 @@ class PenStore {
     { key: "portrait", name: "Portrait" }
   ];
   colors = [
+    { key: "white", name: "None (White)" },
     {
       key: "black",
       name: "Black"
     },
+    { key: "cyan", name: "Cyan" },
     { key: "green", name: "Green" },
     { key: "grey", name: "Grey" },
+    { key: "lightgrey", name: "Light Grey" },
     { key: "pink", name: "Pink" },
     { key: "red", name: "Red" }
   ];
+  ratioChoices = [
+    { key: "2422", name: "2, 4, 2, 2", value: [2, 4, 2, 2] },
+    { key: "Simple", name: "Simple", value: [1, 1, 2, 0] }
+  ];
+
+  get ratios() {
+    return this.ratioChoices.find(v => v.key === this.ratio).value;
+  }
+
+  get gap() {
+    return this.nibHeight * this.ratios[3];
+  }
+
+  get gapRect() {
+    return {
+      x: 0,
+      y: 0,
+      width: this.dimensions.width,
+      height: this.gap,
+      fill: this.gapColor
+    };
+  }
 
   get dimensions() {
     const dims = this.pageSizes.find(s => s.key === this.pageSize);
@@ -44,35 +73,62 @@ class PenStore {
   }
 
   get lineSet() {
-    const { margin, dimensions: { width }, headline, midline, baseline } = this;
+    const {
+      margin,
+      dimensions: { width },
+      ratios,
+      nibHeight,
+      ascender,
+      midline,
+      baseline,
+      descender
+    } = this;
+
+    const midlineOffset = nibHeight * ratios[0],
+      baselineOffset = midlineOffset + nibHeight * ratios[1],
+      descenderOffset = baselineOffset + nibHeight * ratios[2];
 
     return [
       {
-        key: "headline",
+        key: "Ascender",
         ...composeLine({
-          ...headline,
+          ...ascender,
           width,
           margin
         })
       },
       {
-        key: "midline",
+        key: "Midline",
         ...composeLine({
           ...midline,
+          offset: midlineOffset,
           width,
           margin
         })
       },
       {
-        key: "baseline",
+        key: "Baseline",
         ...composeLine({
           ...baseline,
+          offset: baselineOffset,
           width,
-          margin,
-          offset: 15
+          margin
+        })
+      },
+      {
+        key: "Descender",
+        ...composeLine({
+          ...descender,
+          offset: descenderOffset,
+          width,
+          margin
         })
       }
     ];
+  }
+
+  get lineSetHeight() {
+    return reduce(this.ratios, (sum, r) => sum + r * this.nibHeight, 0);
   }
 
   get guideLineSet() {
@@ -99,16 +155,25 @@ decorate(PenStore, {
   pageSize: observable,
   orientation: observable,
   margin: observable,
-  gap: observable,
+  ratio: observable,
+  nibHeight: observable,
+  gapColor: observable,
 
-  headline: observable,
+  ascender: observable,
   midline: observable,
   baseline: observable,
+  descender: observable,
   guideline: observable,
 
+  ratios: computed,
+  gap: computed,
+  gapRect: computed,
   dimensions: computed,
   lineSet: computed,
-  guideLineSet: computed
+  lineSetHeight: computed,
+  guideLineSet: computed,
+
+  updateRatio: action
 });
 
 const store = new PenStore();

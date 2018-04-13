@@ -34,12 +34,27 @@ const PaperSettings = ({ store }) => {
         </ColFormItem>
       </Row>
       <Row>
-        <ColFormItem span={8} label="Gap">
+        <ColFormItem span={8} label="Nib Width">
           <NumberInput
-            min={0}
-            max={100}
-            value={store.gap}
-            onChange={v => (store.gap = v)}
+            min={0.1}
+            max={20}
+            step={0.1}
+            value={store.nibHeight}
+            onChange={v => (store.nibHeight = v)}
+          />
+        </ColFormItem>
+        <ColFormItem span={8} label="Ratios">
+          <DropDown
+            onChange={v => (store.ratio = v)}
+            value={store.ratio}
+            choices={store.ratioChoices}
+          />
+        </ColFormItem>
+        <ColFormItem span={8} label="Gap Color">
+          <DropDown
+            onChange={v => (store.gapColor = v)}
+            value={store.gapColor}
+            choices={store.colors}
           />
         </ColFormItem>
       </Row>
