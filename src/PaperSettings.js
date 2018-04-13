@@ -33,7 +33,7 @@ const PaperSettings = ({ store }) => {
         </ColFormItem>
       </Row>
       <Row>
-        <ColFormItem span={8} label="Nib Width">
+        <ColFormItem span={8} label="Unit Height (mm)">
           <NumberInput
             min={0.1}
             max={20}
