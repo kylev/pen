@@ -1,6 +1,6 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { Col, Form, Row } from "antd";
+import { Col, Row } from "antd";
 
 import ColFormItem from "./ColFormItem";
 import DropDown from "./DropDown";
