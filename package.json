@@ -2,6 +2,7 @@
   "name": "penpage",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://kylev.github.io/pen",
   "dependencies": {
     "antd": "^3.4.1",
     "lodash": "^4.17.5",
