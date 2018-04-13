@@ -7,7 +7,7 @@ import LineSetDebug from "./LineSetDebug";
 
 const SettingsForm = ({ store }) => {
   return (
-    <Collapse mode="inline" theme="dark">
+    <Collapse mode="inline" theme="dark" defaultActiveKey={"lines"}>
       <Collapse.Panel
         key="paper"
         showArrow={false}
