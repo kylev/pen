@@ -10,7 +10,7 @@ class PenStore {
   orientation = "portrait";
   margin = 0;
   ratio = "simple";
-  ratios = [2, 4, 2, 0];
+  ratios = [1, 1, 2, 0];
   nibHeight = 6;
   gapColor = "white";
   ascender = defaultLineSpec({ name: "Ascender" });
