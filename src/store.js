@@ -10,6 +10,7 @@ class PenStore {
   orientation = "portrait";
   margin = 0;
   ratio = "simple";
+  ratios = [2, 4, 2, 0];
   nibHeight = 6;
   gapColor = "white";
   ascender = defaultLineSpec({ name: "Ascender" });
@@ -164,6 +165,11 @@ class PenStore {
       strokeWidth: 0.1
     }));
   }
+
+  ratioPreset(key) {
+    this.ratio = key;
+    this.ratios = this.ratioChoices.find(c => key === c.key).value;
+  }
 }
 
 decorate(PenStore, {
@@ -171,6 +177,7 @@ decorate(PenStore, {
   orientation: observable,
   margin: observable,
   ratio: observable,
+  ratios: observable,
   nibHeight: observable,
   gapColor: observable,
 
@@ -180,7 +187,6 @@ decorate(PenStore, {
   descender: observable,
   guideline: observable,
 
-  ratios: computed,
   gap: computed,
   gapRect: computed,
   dimensions: computed,
@@ -188,7 +194,7 @@ decorate(PenStore, {
   lineSetHeight: computed,
   guideLineSet: computed,
 
-  updateRatio: action
+  ratioPreset: action.bound
 });
 
 const store = new PenStore();

@@ -12,7 +12,7 @@ const PaperSettings = ({ store }) => {
       <Row>
         <ColFormItem span={8} label="Ratios">
           <DropDown
-            onChange={v => (store.ratio = v)}
+            onChange={store.ratioPreset}
             value={store.ratio}
             choices={store.ratioChoices}
           />
