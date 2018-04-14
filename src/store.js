@@ -1,7 +1,10 @@
-import { reduce, times } from "lodash";
+import { reduce, times, range } from "lodash";
 import { action, computed, decorate, observable } from "mobx";
+import Color from "color";
 
 import { composeLine, defaultLineSpec } from "./lines";
+
+console.log(Color.rgb(255, 255, 255).darken(0.5));
 
 const RAD_RATIO = Math.PI / 180;
 
@@ -40,6 +43,12 @@ class PenStore {
     { key: "darkgrey", name: "Dark Grey" },
     { key: "green", name: "Green" },
     { key: "grey", name: "Grey" },
+    ...range(1, 10).map(v => ({
+      key: Color.rgb(255, 255, 255)
+        .darken(v / 10.0)
+        .string(),
+      name: `Grey ${v * 10}%`
+    })),
     { key: "lightgrey", name: "Light Grey" },
     { key: "pink", name: "Pink" },
     { key: "red", name: "Red" }
