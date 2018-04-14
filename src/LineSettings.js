@@ -46,6 +46,7 @@ const LineSettings = ({ store }) => {
   const lineNames = ["ascender", "midline", "baseline", "descender"];
   return (
     <Form>
+      <GuideLineSettings line={store.guideline} colors={store.colors} />
       {lineNames.map(ln => (
         <LineSetting
           label={store[ln].name}
@@ -54,7 +55,6 @@ const LineSettings = ({ store }) => {
           colors={store.colors}
         />
       ))}
-      <GuideLineSettings line={store.guideline} colors={store.colors} />
     </Form>
   );
 };
