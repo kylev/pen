@@ -62,7 +62,7 @@ const PaperSettings = ({ store }) => {
             choices={store.colors}
           />
         </ColFormItem>
-        <ColFormItem span={8} label="Watermark Color">
+        <ColFormItem span={8} label="Watermark">
           <DropDown
             onChange={v => (store.watermarkColor = v)}
             value={store.watermarkColor}
