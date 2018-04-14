@@ -16,11 +16,11 @@ class PenStore {
   ratios = [1, 1, 2, 0];
   nibHeight = 6;
   gapColor = "white";
-  watermarkColor = "darkgrey";
+  watermarkColor = "darkgray";
   ascender = defaultLineSpec({ name: "Ascender" });
   midline = defaultLineSpec({ name: "Midline", color: "red", dash: "even1cm" });
   baseline = defaultLineSpec({ name: "Baseline" });
-  descender = defaultLineSpec({ name: "Descender", color: "lightgrey" });
+  descender = defaultLineSpec({ name: "Descender", color: "lightgray" });
 
   guideline = { angle: 55, color: "pink", spacing: 40 };
 
@@ -40,16 +40,16 @@ class PenStore {
       name: "Black"
     },
     { key: "cyan", name: "Cyan" },
-    { key: "darkgrey", name: "Dark Grey" },
+    { key: "darkgray", name: "Dark Gray" },
     { key: "green", name: "Green" },
-    { key: "grey", name: "Grey" },
+    { key: "gray", name: "Gray" },
     ...range(1, 10).map(v => ({
       key: Color.rgb(255, 255, 255)
         .darken(v / 10.0)
         .string(),
-      name: `Grey ${v * 10}%`
+      name: `Gray ${v * 10}%`
     })),
-    { key: "lightgrey", name: "Light Grey" },
+    { key: "lightgray", name: "Light Gray" },
     { key: "pink", name: "Pink" },
     { key: "red", name: "Red" }
   ];
