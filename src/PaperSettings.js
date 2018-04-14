@@ -32,7 +32,7 @@ const PaperSettings = ({ store }) => {
         <ColFormItem span={8} label="X Height">
           <NumberInput
             min={0.1}
-            max={20}
+            max={40}
             step={0.1}
             value={store.xHeight}
             onChange={v => (store.xHeight = v)}
