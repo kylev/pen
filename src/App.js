@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Layout, Row, Col } from "antd";
+import download from "downloadjs";
 
 import "./App.css";
 
@@ -23,6 +24,12 @@ const doPrinting = e => {
   printWindow.print();
 };
 
+const doSaving = e => {
+  const svg = document.getElementById("theSVG");
+
+  download(svg.outerHTML, "Something.svg", "image/svg");
+};
+
 class App extends Component {
   render() {
     return (
@@ -34,6 +41,11 @@ class App extends Component {
           <Button
             icon="printer"
             onClick={doPrinting}
+            style={{ float: "right", margin: "16px 0px 16px 24px " }}
+          />
+          <Button
+            icon="save"
+            onClick={doSaving}
             style={{ float: "right", margin: "16px 0px 16px 24px " }}
           />
         </Layout.Header>
