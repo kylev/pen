@@ -24,7 +24,7 @@ const PaperSettings = ({ store }) => {
             labelCol={{ span: 4 }}
             wrapperCol={{ span: 20 }}
           >
-            <RatiosInput ratios={store.ratios} />
+            <RatiosInput store={store} />
           </Form.Item>
         </Col>
       </Row>

@@ -43,6 +43,7 @@ class PenStore {
     { key: "red", name: "Red" }
   ];
   ratioChoices = [
+    { key: "custom", name: "Custom" },
     { key: "2422", name: "Italic 2:4:2", value: [2, 4, 2, 2] },
     { key: "simple", name: "Basic Penmanship", value: [1, 1, 2, 0] },
     {
@@ -61,10 +62,6 @@ class PenStore {
       value: [2, 1, 2, 0]
     }
   ];
-
-  get ratios() {
-    return this.ratioChoices.find(v => v.key === this.ratio).value;
-  }
 
   get gap() {
     return this.nibHeight * this.ratios[3];
@@ -168,7 +165,8 @@ class PenStore {
 
   ratioPreset(key) {
     this.ratio = key;
-    this.ratios = this.ratioChoices.find(c => key === c.key).value;
+    this.ratios =
+      this.ratioChoices.find(c => key === c.key).value || this.ratios;
   }
 }
 
