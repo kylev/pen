@@ -70,6 +70,14 @@ const PaperSettings = ({ store }) => {
             choices={store.colors}
           />
         </ColFormItem>
+        <ColFormItem span={8} label="Angle">
+          <NumberInput
+            min={0}
+            max={90}
+            value={store.guideline.angle}
+            onChange={v => (store.guideline.angle = v)}
+          />
+        </ColFormItem>
       </Row>
     </Form>
   );

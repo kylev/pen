@@ -17,9 +17,6 @@ const GuideLineSettings = ({ line, colors }) => {
           onChange={v => (line.color = v)}
         />
       </ColFormItem>
-      <ColFormItem span={8} label="Angle">
-        <NumberInput value={line.angle} onChange={v => (line.angle = v)} />
-      </ColFormItem>
       <ColFormItem span={8} label="Spacing">
         <NumberInput value={line.spacing} onChange={v => (line.spacing = v)} />
       </ColFormItem>
