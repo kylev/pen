@@ -32,7 +32,7 @@ class PenStore {
     { key: "portrait", name: "Portrait" }
   ];
   colors = [
-    { key: "white", name: "None (White)" },
+    { key: "transparent", name: "None (transparent)" },
     {
       key: "black",
       name: "Black"
@@ -49,7 +49,8 @@ class PenStore {
     })),
     { key: "lightgray", name: "Light Gray" },
     { key: "pink", name: "Pink" },
-    { key: "red", name: "Red" }
+    { key: "red", name: "Red" },
+    { key: "white", name: "White" }
   ];
   ratioChoices = [
     { key: "custom", name: "Custom" },

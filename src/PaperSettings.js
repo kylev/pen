@@ -37,6 +37,7 @@ const PaperSettings = ({ store }) => {
             value={store.xHeight}
             onChange={v => (store.xHeight = v)}
             formatter={v => `${v}mm`}
+            parser={v => v.replace(/m*/g, "")}
           />
         </ColFormItem>
         <ColFormItem span={8} label="Size">
