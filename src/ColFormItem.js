@@ -2,8 +2,17 @@ import React from "react";
 
 import { Col, Form } from "antd";
 
-const ColFormItem = ({ label, span, children }) => {
-  const itemStyle = { labelCol: { span: 8 }, wrapperCol: { span: 16 } };
+const ColFormItem = ({
+  fieldSpan = 16,
+  label,
+  labelSpan = 8,
+  span,
+  children
+}) => {
+  const itemStyle = {
+    labelCol: { span: labelSpan },
+    wrapperCol: { span: fieldSpan }
+  };
 
   return (
     <Col span={span}>
