@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Layout, Row, Col } from "antd";
+import { Button, Layout, Row, Col } from "antd";
 
 import "./App.css";
 
@@ -8,12 +8,34 @@ import SettingsForm from "./SettingsForm";
 
 import store from "./store";
 
+const doPrinting = e => {
+  const svg = document.getElementById("theSVG");
+
+  const printWindow = window.open("", "printwindow", "status=1");
+  printWindow.document.write(`
+    <html>
+      <body style="margin: 0; padding: 0;" onAfterPrint="self.close()">${
+        svg.outerHTML
+      }</body>
+    </html>
+  `);
+
+  printWindow.print();
+};
+
 class App extends Component {
   render() {
     return (
       <Layout>
-        <Layout.Header>
-          <h1 style={{ color: "white" }}>Penmanship Practice Sheets</h1>
+        <Layout.Header style={{ alignItems: "space-between" }}>
+          <h1 style={{ color: "white", float: "left" }}>
+            Penmanship Practice Sheets
+          </h1>
+          <Button
+            icon="printer"
+            onClick={doPrinting}
+            style={{ float: "right", margin: "16px 0px 16px 24px " }}
+          />
         </Layout.Header>
         <Layout.Content style={{ padding: 16 }}>
           <Row>
