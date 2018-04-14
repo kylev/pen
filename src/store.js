@@ -54,7 +54,7 @@ class PenStore {
   ];
   ratioChoices = [
     { key: "custom", name: "Custom" },
-    { key: "2422", name: "Italic 2:4:2", ratios: [2, 4, 2, 2] },
+    { key: "italic", name: "Italic 2:4:2", ratios: [2, 4, 2, 2], angle: 83 },
     { key: "simple", name: "Basic Penmanship", ratios: [1, 1, 2, 0], angle: 0 },
     {
       key: "winterplate",
