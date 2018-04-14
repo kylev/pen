@@ -1,20 +1,42 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { Form, Row } from "antd";
+import { Col, Form, Row } from "antd";
 
 import ColFormItem from "./ColFormItem";
 import DropDown from "./DropDown";
 import NumberInput from "./NumberInput";
+import RatiosInput from "./RatiosInput";
 
 const PaperSettings = ({ store }) => {
   return (
     <Form>
       <Row>
-        <ColFormItem span={8} label="Ratios">
+        <ColFormItem span={8} label="Presets">
           <DropDown
             onChange={store.ratioPreset}
             value={store.ratio}
             choices={store.ratioChoices}
+          />
+        </ColFormItem>
+        <Col span={16}>
+          <Form.Item
+            label={"Ratios"}
+            labelCol={{ span: 4 }}
+            wrapperCol={{ span: 20 }}
+          >
+            <RatiosInput ratios={store.ratios} />
+          </Form.Item>
+        </Col>
+      </Row>
+      <Row>
+        <ColFormItem span={8} label="Unit Height">
+          <NumberInput
+            min={0.1}
+            max={20}
+            step={0.1}
+            value={store.nibHeight}
+            onChange={v => (store.nibHeight = v)}
+            formatter={v => `${v}mm`}
           />
         </ColFormItem>
         <ColFormItem span={8} label="Size">
@@ -33,15 +55,6 @@ const PaperSettings = ({ store }) => {
         </ColFormItem>
       </Row>
       <Row>
-        <ColFormItem span={8} label="Unit Height (mm)">
-          <NumberInput
-            min={0.1}
-            max={20}
-            step={0.1}
-            value={store.nibHeight}
-            onChange={v => (store.nibHeight = v)}
-          />
-        </ColFormItem>
         <ColFormItem span={8} label="Gap Color">
           <DropDown
             onChange={v => (store.gapColor = v)}

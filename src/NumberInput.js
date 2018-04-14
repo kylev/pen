@@ -2,7 +2,7 @@ import React from "react";
 
 import { InputNumber } from "antd";
 
-const NumberInput = ({ min, max, onChange, step, value }) => {
+const NumberInput = ({ formatter, min, max, onChange, step, value }) => {
   return (
     <InputNumber
       value={value}
@@ -11,6 +11,7 @@ const NumberInput = ({ min, max, onChange, step, value }) => {
       max={max}
       step={step}
       parser={Number}
+      formatter={formatter}
     />
   );
 };
