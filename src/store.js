@@ -75,7 +75,7 @@ class PenStore {
   ];
 
   get gap() {
-    return this.xHeight * (this.ratios[3] / this.ratios[1]);
+    return this.heights[3];
   }
 
   get gapRect() {
@@ -96,21 +96,24 @@ class PenStore {
     else return dims;
   }
 
+  get heights() {
+    return this.ratios.map(r => r / this.ratios[1] * this.xHeight);
+  }
+
   get lineSet() {
     const {
       margin,
       dimensions: { width },
-      ratios,
-      xHeight,
+      heights,
       ascender,
       midline,
       baseline,
       descender
     } = this;
 
-    const midlineOffset = xHeight * (ratios[0] / ratios[1]),
-      baselineOffset = midlineOffset + xHeight,
-      descenderOffset = baselineOffset + xHeight * (ratios[2] / ratios[1]);
+    const midlineOffset = heights[0],
+      baselineOffset = midlineOffset + heights[1],
+      descenderOffset = baselineOffset + heights[2];
 
     return [
       {
@@ -152,11 +155,7 @@ class PenStore {
   }
 
   get lineSetHeight() {
-    return reduce(
-      this.ratios,
-      (sum, r) => sum + r / this.ratios[1] * this.xHeight,
-      0
-    );
+    return reduce(this.heights, (sum, h) => sum + h, 0);
   }
 
   get guideLineSet() {
@@ -179,7 +178,7 @@ class PenStore {
   }
 
   get watermark() {
-    return `https://kylev.github.io/pen/ Ratios(${this.ratios}) Unit(${
+    return `https://kylev.github.io/pen/ Ratios(${this.ratios}) XHeight(${
       this.xHeight
     }mm)`;
   }
@@ -210,6 +209,7 @@ decorate(PenStore, {
   gap: computed,
   gapRect: computed,
   dimensions: computed,
+  heights: computed,
   lineSet: computed,
   lineSetHeight: computed,
   guideLineSet: computed,
