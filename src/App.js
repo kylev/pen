@@ -44,11 +44,15 @@ class App extends Component {
           </h1>
           <Button
             icon="printer"
+            type="primary"
+            shape="circle"
             onClick={doPrinting}
             style={{ float: "right", margin: "16px 0px 16px 24px " }}
           />
           <Button
             icon="save"
+            type="primary"
+            shape="circle"
             onClick={e => doSaving(store)}
             style={{ float: "right", margin: "16px 0px 16px 24px " }}
           />
