@@ -75,7 +75,10 @@ const PaperSettings = ({ store }) => {
             min={0}
             max={90}
             value={store.guideline.angle}
-            onChange={v => (store.guideline.angle = v)}
+            onChange={v => {
+              store.ratioPreset("custom");
+              store.guideline.angle = v;
+            }}
           />
         </ColFormItem>
       </Row>

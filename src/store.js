@@ -20,7 +20,7 @@ class PenStore {
   baseline = defaultLineSpec({ name: "Baseline" });
   descender = defaultLineSpec({ name: "Descender", color: "lightgray" });
 
-  guideline = { angle: 55, color: "pink", spacing: 40 };
+  guideline = { angle: 0, color: "pink", spacing: 40 };
 
   // Read-only
   pageSizes = [
@@ -54,22 +54,23 @@ class PenStore {
   ];
   ratioChoices = [
     { key: "custom", name: "Custom" },
-    { key: "2422", name: "Italic 2:4:2", value: [2, 4, 2, 2] },
-    { key: "simple", name: "Basic Penmanship", value: [1, 1, 2, 0] },
+    { key: "2422", name: "Italic 2:4:2", ratios: [2, 4, 2, 2] },
+    { key: "simple", name: "Basic Penmanship", ratios: [1, 1, 2, 0], angle: 0 },
     {
       key: "winterplate",
-      name: "Copperplate (Winters) 3:2:3",
-      value: [3, 2, 3, 0]
+      name: "Copperplate (Winters) 3:2:3 55º",
+      ratios: [3, 2, 3, 0],
+      angle: 55
     },
     {
       key: "foundation",
       name: "Foundation 2:2:2",
-      value: [2, 2, 2, 0]
+      ratios: [2, 2, 2, 0]
     },
     {
       key: "german",
       name: "German Kurrent 2:1:2",
-      value: [2, 1, 2, 0]
+      ratios: [2, 1, 2, 0]
     }
   ];
 
@@ -162,6 +163,9 @@ class PenStore {
       dimensions: { width },
       guideline: { angle, color, spacing }
     } = this;
+
+    if (angle < 1) return [];
+
     const slopeRatio = Math.tan(angle * RAD_RATIO);
     const count = width / spacing * 2; // Not exact...
 
@@ -183,9 +187,11 @@ class PenStore {
   }
 
   ratioPreset(key) {
+    const preset = this.ratioChoices.find(c => key === c.key);
+
     this.ratio = key;
-    this.ratios =
-      this.ratioChoices.find(c => key === c.key).value || this.ratios;
+    this.ratios = preset.ratios || this.ratios;
+    this.guideline.angle = preset.angle || this.guideline.angle;
   }
 }
 
