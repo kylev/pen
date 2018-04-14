@@ -13,6 +13,7 @@ class PenStore {
   ratios = [1, 1, 2, 0];
   nibHeight = 6;
   gapColor = "white";
+  watermarkColor = "darkgrey";
   ascender = defaultLineSpec({ name: "Ascender" });
   midline = defaultLineSpec({ name: "Midline", color: "red", dash: "even1cm" });
   baseline = defaultLineSpec({ name: "Baseline" });
@@ -36,6 +37,7 @@ class PenStore {
       name: "Black"
     },
     { key: "cyan", name: "Cyan" },
+    { key: "darkgrey", name: "Dark Grey" },
     { key: "green", name: "Green" },
     { key: "grey", name: "Grey" },
     { key: "lightgrey", name: "Light Grey" },
@@ -163,6 +165,12 @@ class PenStore {
     }));
   }
 
+  get watermark() {
+    return `https://kylev.github.io/pen/ Ratios(${this.ratios}) Unit(${
+      this.nibHeight
+    }mm)`;
+  }
+
   ratioPreset(key) {
     this.ratio = key;
     this.ratios =
@@ -178,6 +186,7 @@ decorate(PenStore, {
   ratios: observable,
   nibHeight: observable,
   gapColor: observable,
+  watermarkColor: observable,
 
   ascender: observable,
   midline: observable,

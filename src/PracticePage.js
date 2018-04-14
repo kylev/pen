@@ -44,6 +44,9 @@ const PracticePage = ({ store }) => {
           </g>
         ))}
         <LineSet lineSet={store.guideLineSet} key="guidelines" />
+        <text x={1} y={height - 1} fontSize={3} fill={store.watermarkColor}>
+          {store.watermark}
+        </text>
       </svg>
     </div>
   );
