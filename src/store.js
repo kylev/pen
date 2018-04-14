@@ -14,7 +14,7 @@ class PenStore {
   margin = 0;
   ratio = "simple";
   ratios = [1, 1, 2, 0];
-  nibHeight = 6;
+  xHeight = 6;
   gapColor = "white";
   watermarkColor = "darkgray";
   ascender = defaultLineSpec({ name: "Ascender" });
@@ -75,7 +75,7 @@ class PenStore {
   ];
 
   get gap() {
-    return this.nibHeight * this.ratios[3];
+    return this.xHeight * (this.ratios[3] / this.ratios[1]);
   }
 
   get gapRect() {
@@ -101,16 +101,16 @@ class PenStore {
       margin,
       dimensions: { width },
       ratios,
-      nibHeight,
+      xHeight,
       ascender,
       midline,
       baseline,
       descender
     } = this;
 
-    const midlineOffset = nibHeight * ratios[0],
-      baselineOffset = midlineOffset + nibHeight * ratios[1],
-      descenderOffset = baselineOffset + nibHeight * ratios[2];
+    const midlineOffset = xHeight * (ratios[0] / ratios[1]),
+      baselineOffset = midlineOffset + xHeight,
+      descenderOffset = baselineOffset + xHeight * (ratios[2] / ratios[1]);
 
     return [
       {
@@ -152,7 +152,11 @@ class PenStore {
   }
 
   get lineSetHeight() {
-    return reduce(this.ratios, (sum, r) => sum + r * this.nibHeight, 0);
+    return reduce(
+      this.ratios,
+      (sum, r) => sum + r / this.ratios[1] * this.xHeight,
+      0
+    );
   }
 
   get guideLineSet() {
@@ -176,7 +180,7 @@ class PenStore {
 
   get watermark() {
     return `https://kylev.github.io/pen/ Ratios(${this.ratios}) Unit(${
-      this.nibHeight
+      this.xHeight
     }mm)`;
   }
 
@@ -193,7 +197,7 @@ decorate(PenStore, {
   margin: observable,
   ratio: observable,
   ratios: observable,
-  nibHeight: observable,
+  xHeight: observable,
   gapColor: observable,
   watermarkColor: observable,
 

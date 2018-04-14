@@ -29,13 +29,13 @@ const PaperSettings = ({ store }) => {
         </Col>
       </Row>
       <Row>
-        <ColFormItem span={8} label="Unit Height">
+        <ColFormItem span={8} label="X Height">
           <NumberInput
             min={0.1}
             max={20}
             step={0.1}
-            value={store.nibHeight}
-            onChange={v => (store.nibHeight = v)}
+            value={store.xHeight}
+            onChange={v => (store.xHeight = v)}
             formatter={v => `${v}mm`}
           />
         </ColFormItem>
