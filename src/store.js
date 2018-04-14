@@ -4,8 +4,6 @@ import Color from "color";
 
 import { composeLine, defaultLineSpec } from "./lines";
 
-console.log(Color.rgb(255, 255, 255).darken(0.5));
-
 const RAD_RATIO = Math.PI / 180;
 
 class PenStore {
