@@ -54,11 +54,16 @@ class PenStore {
   ];
   ratioChoices = [
     { key: "custom", name: "Custom" },
-    { key: "italic", name: "Italic 2:4:2", ratios: [2, 4, 2, 2], angle: 83 },
+    {
+      key: "italic",
+      name: "Italic 2:4:2 83°",
+      ratios: [2, 4, 2, 2],
+      angle: 83
+    },
     { key: "simple", name: "Basic Penmanship", ratios: [1, 1, 2, 0], angle: 0 },
     {
       key: "winterplate",
-      name: "Copperplate (Winters) 3:2:3 55º",
+      name: "Copperplate (Winters) 3:2:3 55°",
       ratios: [3, 2, 3, 0],
       angle: 55
     },
@@ -183,7 +188,7 @@ class PenStore {
   get watermark() {
     return `https://kylev.github.io/pen/ Ratios(${this.ratios}) XHeight(${
       this.xHeight
-    }mm)`;
+    }mm) Angle(${this.guideline.angle}°)`;
   }
 
   ratioPreset(key) {
@@ -191,7 +196,7 @@ class PenStore {
 
     this.ratio = key;
     this.ratios = preset.ratios || this.ratios;
-    this.guideline.angle = preset.angle || this.guideline.angle;
+    this.guideline.angle = preset.angle || 0;
   }
 }
 
