@@ -24,10 +24,14 @@ const doPrinting = e => {
   printWindow.print();
 };
 
-const doSaving = e => {
+const doSaving = store => {
   const svg = document.getElementById("theSVG");
 
-  download(svg.outerHTML, "Something.svg", "image/svg");
+  download(
+    svg.outerHTML,
+    `pen-${store.ratio} ${store.pageSize}-${store.orientation}.svg`,
+    "image/svg"
+  );
 };
 
 class App extends Component {
@@ -45,7 +49,7 @@ class App extends Component {
           />
           <Button
             icon="save"
-            onClick={doSaving}
+            onClick={e => doSaving(store)}
             style={{ float: "right", margin: "16px 0px 16px 24px " }}
           />
         </Layout.Header>
