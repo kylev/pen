@@ -162,13 +162,13 @@ class PenStore {
       dimensions: { width },
       guideline: { angle, color, spacing }
     } = this;
-    const ratio = Math.tan(angle * RAD_RATIO);
+    const slopeRatio = Math.tan(angle * RAD_RATIO);
     const count = width / spacing * 2; // Not exact...
 
     return times(count, i => ({
       key: `guideline-${i}`,
       x1: 0,
-      y1: ratio * i * spacing,
+      y1: slopeRatio * i * spacing,
       x2: i * spacing,
       y2: 0,
       stroke: color,
