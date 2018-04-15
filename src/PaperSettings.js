@@ -1,10 +1,9 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { Col, Form, Row } from "antd";
+import { Col, Form, InputNumber, Row } from "antd";
 
 import ColFormItem from "./ColFormItem";
 import DropDown from "./DropDown";
-import NumberInput from "./NumberInput";
 import RatiosInput from "./RatiosInput";
 
 const PaperSettings = ({ store }) => {
@@ -37,7 +36,7 @@ const PaperSettings = ({ store }) => {
       </Row>
       <Row>
         <ColFormItem span={8} label="X Height">
-          <NumberInput
+          <InputNumber
             min={0.1}
             max={40}
             step={0.1}
@@ -78,10 +77,12 @@ const PaperSettings = ({ store }) => {
           />
         </ColFormItem>
         <ColFormItem span={8} label="Angle">
-          <NumberInput
+          <InputNumber
             min={0}
             max={90}
             value={store.guideline.angle}
+            formatter={v => `${v}°`}
+            parser={v => v.replace("°", "")}
             onChange={v => {
               store.ratioPreset("custom");
               store.guideline.angle = v;
