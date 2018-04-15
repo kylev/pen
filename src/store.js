@@ -25,7 +25,7 @@ class PenStore {
   // Read-only
   pageSizes = [
     { key: "a4", name: "A4", width: 200, height: 287 },
-    { key: "letter", name: "Letter", width: 200, height: 266 }
+    { key: "letter", name: "US Letter", width: 200, height: 266 }
   ];
   orientations = [
     { key: "landscape", name: "Landcape" },
