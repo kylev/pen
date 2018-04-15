@@ -54,18 +54,24 @@ class PenStore {
   ];
   ratioChoices = [
     { key: "custom", name: "Custom" },
+    { key: "simple", name: "Basic Penmanship", ratios: [1, 1, 2, 0], angle: 0 },
     {
       key: "italic",
       name: "Italic 2:4:2 83°",
       ratios: [2, 4, 2, 2],
       angle: 83
     },
-    { key: "simple", name: "Basic Penmanship", ratios: [1, 1, 2, 0], angle: 0 },
     {
       key: "winterplate",
       name: "Copperplate (Winters) 3:2:3 55°",
       ratios: [3, 2, 3, 0],
       angle: 55
+    },
+    {
+      key: "spencerian",
+      name: "Spencerian 2:1:2 52°",
+      ratios: [2, 1, 2, 1],
+      angle: 52
     },
     {
       key: "foundation",
