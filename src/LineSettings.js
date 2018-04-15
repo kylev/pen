@@ -1,10 +1,9 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { Col, Form, Row } from "antd";
+import { Col, Form, InputNumber, Row } from "antd";
 
 import ColFormItem from "./ColFormItem";
 import DropDown from "./DropDown";
-import NumberInput from "./NumberInput";
 import GuideLineSettings from "./GuideLineSettings";
 
 const dashTypes = [
@@ -31,8 +30,9 @@ let LineSetting = ({ label, line, colors }) => {
         />
       </ColFormItem>
       <ColFormItem span={8} label="Thickness">
-        <NumberInput
+        <InputNumber
           value={line.thickness}
+          min={0.1}
           step={0.1}
           onChange={v => (line.thickness = v)}
         />
