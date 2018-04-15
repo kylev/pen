@@ -11,10 +11,10 @@ class PenStore {
   orientation = "portrait";
   margin = 0;
   ratio = "simple";
-  ratios = [1, 1, 2, 0];
+  ratios = [1, 1, 1, 1];
   xHeight = 6;
   xColor = "transparent";
-  gapColor = "white";
+  gapColor = "transparent";
   watermarkColor = "darkgray";
   ascender = defaultLineSpec({ name: "Ascender" });
   midline = defaultLineSpec({ name: "Midline", color: "red", dash: "even1cm" });
@@ -55,7 +55,7 @@ class PenStore {
   ];
   ratioChoices = [
     { key: "custom", name: "Custom" },
-    { key: "simple", name: "Basic Penmanship", ratios: [1, 1, 2, 0], angle: 0 },
+    { key: "simple", name: "Basic Penmanship", ratios: [1, 1, 1, 1], angle: 0 },
     {
       key: "italic",
       name: "Italic 2:4:2 83°",
