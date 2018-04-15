@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Layout, Row, Col } from "antd";
+import { Button, Icon, Layout, Row, Col } from "antd";
 import download from "downloadjs";
 
 import "./App.css";
@@ -74,13 +74,23 @@ class App extends Component {
           </div>
         </Layout.Content>
         <Layout.Footer style={{ textAlign: "center" }}>
-          Kyle V ©2018 Created with <a href="https://ant.design/">Ant Design</a>{" "}
-          and <a href="https://reactjs.org/">React</a> /{" "}
-          <a href="https://mobx.js.org">Mobx</a>
+          <a href="https://github.com/kylev/pen">
+            <Icon type="github" style={styles.footerIcons} />
+          </a>
+          <a href="https://twitter.com/kylev">
+            <Icon type="twitter" style={styles.footerIcons} />
+          </a>
+          Kyle V ©2018 Created with <a href="https://ant.design/">Ant Design</a>,{" "}
+          <a href="https://reactjs.org/">React</a>
+          {" and "}
+          <a href="https://mobx.js.org">Mobx</a>.{" "}
+          <a href="https://github.com/kylev/pen/issues">Bugs? Suggestions?</a>
         </Layout.Footer>
       </Layout>
     );
   }
 }
+
+const styles = { footerIcons: { paddingLeft: 8, paddingRight: 8 } };
 
 export default App;
