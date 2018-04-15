@@ -21,7 +21,7 @@ const PracticePage = ({ store }) => {
   } = store;
 
   const workHeight = lineSetHeight - gap;
-  const count = Math.floor(height / lineSetHeight);
+  const count = Math.floor((height + gap) / lineSetHeight);
 
   return (
     <div className="Body-printable">
