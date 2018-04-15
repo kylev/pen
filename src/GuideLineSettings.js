@@ -1,10 +1,9 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { Col, Row } from "antd";
+import { Col, InputNumber, Row } from "antd";
 
 import ColFormItem from "./ColFormItem";
 import DropDown from "./DropDown";
-import NumberInput from "./NumberInput";
 
 const GuideLineSettings = ({ line, colors }) => {
   return (
@@ -18,7 +17,7 @@ const GuideLineSettings = ({ line, colors }) => {
         />
       </ColFormItem>
       <ColFormItem span={8} label="Spacing">
-        <NumberInput value={line.spacing} onChange={v => (line.spacing = v)} />
+        <InputNumber value={line.spacing} onChange={v => (line.spacing = v)} />
       </ColFormItem>
     </Row>
   );
