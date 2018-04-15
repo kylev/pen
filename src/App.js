@@ -83,7 +83,8 @@ class App extends Component {
           Kyle V ©2018 Created with <a href="https://ant.design/">Ant Design</a>,{" "}
           <a href="https://reactjs.org/">React</a>
           {" and "}
-          <a href="https://mobx.js.org">Mobx</a>.{" "}
+          <a href="https://mobx.js.org">Mobx</a> while thinking about my mom, a
+          teacher.{" "}
           <a href="https://github.com/kylev/pen/issues">Bugs? Suggestions?</a>
         </Layout.Footer>
       </Layout>
