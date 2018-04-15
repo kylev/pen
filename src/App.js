@@ -63,11 +63,15 @@ class App extends Component {
               <SettingsForm store={store} />
             </Col>
           </Row>
-          <Row>
-            <Col span={24}>
-              <PracticePage store={store} />
-            </Col>
-          </Row>
+          <div
+            style={{
+              width: "100%",
+              textAlign: "center",
+              padding: 16
+            }}
+          >
+            <PracticePage store={store} />
+          </div>
         </Layout.Content>
         <Layout.Footer style={{ textAlign: "center" }}>
           Kyle V ©2018 Created with <a href="https://ant.design/">Ant Design</a>{" "}
