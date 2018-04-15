@@ -42,7 +42,7 @@ const PracticePage = ({ store }) => {
               key={`x-${i}`}
               x={1}
               y={i * lineSetHeight + xOffset + 1}
-              fontSize={heights[0] + heights[1]}
+              fontSize={heights[1] * 2}
               fill={store.xColor}
             >
               x
