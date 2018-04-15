@@ -9,19 +9,15 @@ import SettingsForm from "./SettingsForm";
 
 import store from "./store";
 
-const doPrinting = e => {
+const doPrintWindow = e => {
   const svg = document.getElementById("theSVG");
 
   const printWindow = window.open("", "printwindow", "status=1");
   printWindow.document.write(`
     <html>
-      <body style="margin: 0; padding: 0;" onAfterPrint="self.close()">${
-        svg.outerHTML
-      }</body>
+      <body style="margin: 0; padding: 0;">${svg.outerHTML}</body>
     </html>
   `);
-
-  printWindow.print();
 };
 
 const doSaving = store => {
@@ -46,7 +42,14 @@ class App extends Component {
             icon="printer"
             type="primary"
             shape="circle"
-            onClick={doPrinting}
+            onClick={() => window.print()}
+            style={{ float: "right", margin: "16px 0px 16px 24px " }}
+          />
+          <Button
+            icon="copy"
+            type="primary"
+            shape="circle"
+            onClick={doPrintWindow}
             style={{ float: "right", margin: "16px 0px 16px 24px " }}
           />
           <Button
