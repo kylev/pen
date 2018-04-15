@@ -1,5 +1,7 @@
 .Body-printable {
-
+  padding: 16px;
+  background-color: white;
+  display: inline-block;
 }
 
 @media print {
