@@ -15,6 +15,7 @@ const PracticePage = ({ store }) => {
   const {
     gap,
     gapRect,
+    heights,
     lineSet,
     lineSetHeight,
     dimensions: { width, height }
@@ -22,6 +23,7 @@ const PracticePage = ({ store }) => {
 
   const workHeight = lineSetHeight - gap;
   const count = Math.floor((height + gap) / lineSetHeight);
+  const xOffset = heights[0] + heights[1];
 
   return (
     <div className="Body-printable">
@@ -34,6 +36,19 @@ const PracticePage = ({ store }) => {
         style={{ backgroundColor: "white" }}
       >
         {false && <circle cx={40} cy={40} r={20} fill={"lightblue"} />}
+        <g key="X">
+          {times(count, i => (
+            <text
+              key={`x-${i}`}
+              x={1}
+              y={i * lineSetHeight + xOffset + 1}
+              fontSize={heights[0] + heights[1]}
+              fill={store.xColor}
+            >
+              x
+            </text>
+          ))}
+        </g>
         {times(count, i => (
           <g key={`lineset-${i}`}>
             <rect {...gapRect} y={1 + lineSetHeight * i + workHeight} />

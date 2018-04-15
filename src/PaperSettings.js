@@ -18,7 +18,7 @@ const PaperSettings = ({ store }) => {
             choices={store.ratioChoices}
           />
         </ColFormItem>
-        <Col span={16}>
+        <Col span={8}>
           <Form.Item
             label={"Ratios"}
             labelCol={{ span: 4 }}
@@ -27,6 +27,13 @@ const PaperSettings = ({ store }) => {
             <RatiosInput store={store} />
           </Form.Item>
         </Col>
+        <ColFormItem span={8} label="X">
+          <DropDown
+            onChange={v => (store.xColor = v)}
+            value={store.xColor}
+            choices={store.colors}
+          />
+        </ColFormItem>
       </Row>
       <Row>
         <ColFormItem span={8} label="X Height">

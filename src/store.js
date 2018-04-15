@@ -13,6 +13,7 @@ class PenStore {
   ratio = "simple";
   ratios = [1, 1, 2, 0];
   xHeight = 6;
+  xColor = "transparent";
   gapColor = "white";
   watermarkColor = "darkgray";
   ascender = defaultLineSpec({ name: "Ascender" });
@@ -213,6 +214,7 @@ decorate(PenStore, {
   ratio: observable,
   ratios: observable,
   xHeight: observable,
+  xColor: observable,
   gapColor: observable,
   watermarkColor: observable,
 
