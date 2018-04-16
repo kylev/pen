@@ -21,7 +21,7 @@ class Header extends React.Component {
               color="inherit"
               className={classes.flex}
             >
-              Pen
+              Penmanship Practice Sheets
             </Typography>
             <HeaderButtons />
           </Toolbar>
