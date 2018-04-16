@@ -1,6 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { Row, Col } from "antd";
+
+import Grid from "material-ui/Grid";
 
 const showFields = [
   "x1",
@@ -14,22 +15,23 @@ const showFields = [
 
 const LineItem = ({ line }) => {
   return (
-    <div>
-      <Row key="name">
-        <Col span={24}>Line: {line.key}</Col>
-      </Row>
+    <Grid item xs={3}>
+      <div>Line: {line.key}</div>
+
       {showFields.map(key => (
-        <Row key={key}>
-          <Col span={14}>{key}</Col>
-          <Col span={10}>{line[key]}</Col>
-        </Row>
+        <div key={key}>
+          <div>{key}</div>
+          <div>{line[key]}</div>
+        </div>
       ))}
-    </div>
+    </Grid>
   );
 };
 
 const LineSetDebug = ({ lineSet }) => {
-  return <div>{lineSet.map(l => <LineItem key={l.key} line={l} />)}</div>;
+  return (
+    <Grid container>{lineSet.map(l => <LineItem key={l.key} line={l} />)}</Grid>
+  );
 };
 
 export default observer(LineSetDebug);
