@@ -13,63 +13,60 @@ import MillimeterField from "./MillimeterFeed";
 const PaperSettings = ({ store }) => {
   return (
     <Grid container spacing={24}>
-      <ColFormItem xs={3} label="Presets">
+      <ColFormItem xs={12} md={4} label="Presets">
         <DropDown
           onChange={e => store.ratioPreset(e.target.value)}
           value={store.ratio}
           choices={store.ratioChoices}
         />
       </ColFormItem>
-
-      <Grid item xs={9}>
+      <Grid item xs={12} md={8}>
         <RatiosInput store={store} />
       </Grid>
 
-      <Grid item xs={3}>
+      <Grid item sm={6} md={4}>
         <MillimeterField
           label="X Height"
           value={store.xHeight}
           onChange={v => (store.xHeight = v)}
         />
       </Grid>
-      <ColFormItem xs={3} label="Size">
+      <ColFormItem sm={6} md={4} label="Size">
         <DropDown
           onChange={e => (store.pageSize = e.target.value)}
           value={store.pageSize}
           choices={store.pageSizes}
         />
       </ColFormItem>
-      <ColFormItem xs={3} label="Orentation">
+      <ColFormItem sm={6} md={4} label="Orentation">
         <DropDown
           onChange={e => (store.orientation = e.target.value)}
           value={store.orientation}
           choices={store.orientations}
         />
       </ColFormItem>
-      <ColFormItem xs={3} label="Gap Color">
+      <ColFormItem sm={6} md={4} label="Gap Color">
         <DropDown
           onChange={e => (store.gapColor = e.target.value)}
           value={store.gapColor}
           choices={store.colors}
         />
       </ColFormItem>
-      <ColFormItem xs={3} label="X Marker">
+      <ColFormItem sm={6} md={4} label="X Marker">
         <DropDown
           onChange={e => (store.xColor = e.target.value)}
           value={store.xColor}
           choices={store.colors}
         />
       </ColFormItem>
-
-      <ColFormItem xs={3} label="Watermark">
+      <ColFormItem sm={6} md={4} label="Watermark">
         <DropDown
           onChange={e => (store.watermarkColor = e.target.value)}
           value={store.watermarkColor}
           choices={store.colors}
         />
       </ColFormItem>
-
-      <Grid item xs={3}>
+      <Grid item sm={6} md={4}>
         <TextField
           label="Angle"
           type="number"
