@@ -27,15 +27,13 @@ let LineSetting = ({ label, line, colors }) => {
           onChange={e => (line.color = e.target.value)}
         />
       </ColFormItem>
-
-      <Grid item xs={4}>
-        <TextField
-          label="Dash"
+      <ColFormItem xs={4} label="Dash">
+        <DropDown
           value={line.dash}
           choices={dashTypes}
           onChange={e => (line.dash = e.target.value)}
         />
-      </Grid>
+      </ColFormItem>
       <Grid item xs={4}>
         <MillimeterField
           label="Thickness"
