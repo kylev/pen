@@ -1,4 +1,5 @@
 import React from "react";
+import { clamp } from "lodash";
 import { observer } from "mobx-react";
 
 import TextField from "material-ui/TextField";
@@ -10,12 +11,10 @@ const RatiosInput = ({ store }) => {
     <TextField
       type="number"
       label={labels[i]}
-      min={0}
-      max={10}
       value={r}
       onChange={e => {
         store.ratioPreset("custom");
-        store.ratios[i] = e.target.value;
+        store.ratios[i] = clamp(e.target.value, 0, 10);
       }}
       style={{ marginRight: 10 }}
       key={i}

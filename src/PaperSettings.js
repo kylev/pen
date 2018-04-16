@@ -1,4 +1,5 @@
 import React from "react";
+import { clamp } from "lodash";
 import { observer } from "mobx-react";
 
 import Grid from "material-ui/Grid";
@@ -77,7 +78,7 @@ const PaperSettings = ({ store }) => {
           value={store.guideline.angle}
           onChange={e => {
             store.ratioPreset("custom");
-            store.guideline.angle = e.target.value;
+            store.guideline.angle = clamp(e.target.value, 0, 90);
           }}
         />
       </Grid>
