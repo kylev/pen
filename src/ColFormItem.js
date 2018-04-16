@@ -1,25 +1,16 @@
 import React from "react";
+import { FormControl } from "material-ui/Form";
+import { InputLabel } from "material-ui/Input";
+import Grid from "material-ui/Grid";
 
-import { Col, Form } from "antd";
-
-const ColFormItem = ({
-  fieldSpan = 16,
-  label,
-  labelSpan = 8,
-  span,
-  children
-}) => {
-  const itemStyle = {
-    labelCol: { span: labelSpan },
-    wrapperCol: { span: fieldSpan }
-  };
-
+const ColFormItem = ({ label, children, ...rest }) => {
   return (
-    <Col span={span}>
-      <Form.Item label={label} {...itemStyle}>
+    <Grid item {...rest}>
+      <FormControl>
+        <InputLabel>{label}</InputLabel>
         {children}
-      </Form.Item>
-    </Col>
+      </FormControl>
+    </Grid>
   );
 };
 
