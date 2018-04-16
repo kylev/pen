@@ -18,7 +18,7 @@ const GuideLineSettings = ({ line, colors }) => {
         <DropDown
           value={line.color}
           choices={colors}
-          onChange={v => (line.color = v)}
+          onChange={e => (line.color = e.target.value)}
         />
       </ColFormItem>
 
@@ -28,7 +28,7 @@ const GuideLineSettings = ({ line, colors }) => {
           label="Spacing"
           type="number"
           value={line.spacing}
-          onChange={v => (line.spacing = v)}
+          onChange={e => (line.spacing = e.target.value)}
         />
       </Grid>
     </Grid>
