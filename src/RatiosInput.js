@@ -4,7 +4,7 @@ import { observer } from "mobx-react";
 
 import TextField from "material-ui/TextField";
 
-const labels = ["Asc", "XHeight", "Desc", "Spacing"];
+const labels = ["Ascender", "X", "Descender", "Gap"];
 
 const RatiosInput = ({ store }) => {
   return store.ratios.map((r, i) => (
