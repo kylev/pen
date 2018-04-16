@@ -6459,6 +6459,12 @@ react-lifecycles-compat@^1.0.2:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-1.1.4.tgz#fc005c72849b7ed364de20a0f64ff58ebdc2009a"
 
+react-number-format@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/react-number-format/-/react-number-format-3.3.1.tgz#e8cf77979e776225996826f37b64ad2aefa378d5"
+  dependencies:
+    prop-types "^15.6.0"
+
 react-popper@^0.8.0:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-0.8.3.tgz#0f73333137c9fb0af6ec4074d2d0585a0a0461e1"
