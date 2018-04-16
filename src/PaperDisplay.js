@@ -24,7 +24,8 @@ const styles = theme => {
   return {
     root: {
       flexGrow: 1,
-      padding: theme.spacing.unit * 3
+      padding: theme.spacing.unit * 3,
+      overflow: "scroll"
     },
     paper: { padding: 20 }
   };
