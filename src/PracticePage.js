@@ -1,6 +1,7 @@
 import React from "react";
 import { times } from "lodash";
 import { observer } from "mobx-react";
+import Paper from "material-ui/Paper";
 
 import LineSet from "./LineSet";
 
@@ -26,7 +27,7 @@ const PracticePage = ({ store }) => {
   const xOffset = heights[0] + heights[1];
 
   return (
-    <div className="Body-printable">
+    <Paper className="Body-printable" style={{ marginTop: 16 }} elevation={4}>
       <svg
         id="theSVG"
         xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +64,7 @@ const PracticePage = ({ store }) => {
           {store.watermark}
         </text>
       </svg>
-    </div>
+    </Paper>
   );
 };
 

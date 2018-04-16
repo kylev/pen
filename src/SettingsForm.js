@@ -1,31 +1,25 @@
 import React from "react";
-import { Collapse } from "antd";
+
+import { withStyles } from "material-ui/styles";
+import Paper from "material-ui/Paper";
 
 import PaperSettings from "./PaperSettings";
 import LineSettings from "./LineSettings";
 import LineSetDebug from "./LineSetDebug";
 
-const SettingsForm = ({ store }) => {
+const SettingsForm = ({ active, classes, store }) => {
   return (
-    <Collapse mode="inline" defaultActiveKey={"paper"}>
-      <Collapse.Panel key="paper" header={<span>Paper</span>}>
-        <PaperSettings store={store} />
-      </Collapse.Panel>
-      <Collapse.Panel key="lines" header={<span>Lines</span>}>
-        <LineSettings store={store} />
-      </Collapse.Panel>
-      {false && (
-        <Collapse.Panel
-          key="debug"
-          showArrow={false}
-          header={<span>Debug</span>}
-        >
-          <LineSetDebug lineSet={store.lineSet} />
-        </Collapse.Panel>
-      )}
-    </Collapse>
+    <div className={classes.root}>
+      <Paper style={{ padding: 24 }}>
+        {active === "paper" && <PaperSettings store={store} />}
+        {active === "lines" && <LineSettings store={store} />}
+        {active === "debug" && <LineSetDebug lineSet={store.lineSet} />}
+      </Paper>
+    </div>
   );
 };
 
+const styles = theme => ({ root: { flexGrow: 1 } });
+
 //export default observer(SettingsForm);
-export default SettingsForm;
+export default withStyles(styles)(SettingsForm);

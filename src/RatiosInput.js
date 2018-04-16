@@ -1,17 +1,20 @@
 import React from "react";
-import { InputNumber } from "antd";
+import { clamp } from "lodash";
 import { observer } from "mobx-react";
+
+import TextField from "material-ui/TextField";
+
+const labels = ["Asc", "XHeight", "Desc", "Spacing"];
 
 const RatiosInput = ({ store }) => {
   return store.ratios.map((r, i) => (
-    <InputNumber
-      min={0}
-      max={10}
+    <TextField
+      type="number"
+      label={labels[i]}
       value={r}
-      parser={Number}
-      onChange={v => {
+      onChange={e => {
         store.ratioPreset("custom");
-        store.ratios[i] = v;
+        store.ratios[i] = clamp(e.target.value, 0, 10);
       }}
       style={{ marginRight: 10 }}
       key={i}

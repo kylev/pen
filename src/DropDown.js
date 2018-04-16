@@ -1,13 +1,14 @@
 import React from "react";
-import { Select } from "antd";
+import { MenuItem } from "material-ui/Menu";
+import Select from "material-ui/Select";
 
 const DropDown = ({ choices, label, onChange, value }) => {
   return (
     <Select onChange={onChange} value={value}>
       {choices.map(p => (
-        <Select.Option value={p.key} key={p.key}>
+        <MenuItem value={p.key} key={p.key}>
           {p.name}
-        </Select.Option>
+        </MenuItem>
       ))}
     </Select>
   );
