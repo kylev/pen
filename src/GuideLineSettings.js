@@ -10,8 +10,8 @@ import DropDown from "./DropDown";
 
 const GuideLineSettings = ({ line, colors }) => {
   return (
-    <Grid container>
-      <Grid item xs={12}>
+    <Grid container spacing={24}>
+      <Grid item xs={12} style={{ paddingBottom: 0 }}>
         <Typography variant="subheading">Angle Guides</Typography>
       </Grid>
       <ColFormItem xs={3} label="Color">

@@ -12,7 +12,7 @@ import MillimeterField from "./MillimeterFeed";
 
 const PaperSettings = ({ store }) => {
   return (
-    <Grid container spacing={8}>
+    <Grid container spacing={24}>
       <ColFormItem xs={3} label="Presets">
         <DropDown
           onChange={e => store.ratioPreset(e.target.value)}

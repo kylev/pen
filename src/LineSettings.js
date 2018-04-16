@@ -16,25 +16,25 @@ const dashTypes = [
 
 let LineSetting = ({ label, line, colors }) => {
   return (
-    <Grid container spacing={16}>
-      <Grid item xs={12}>
+    <Grid container spacing={24} style={{ marginBottom: 24 }}>
+      <Grid item xs={12} style={{ paddingBottom: 0 }}>
         <Typography variant="subheading">{label}</Typography>
       </Grid>
-      <ColFormItem xs={4} label="Color">
+      <ColFormItem xs={3} label="Color">
         <DropDown
           value={line.color}
           choices={colors}
           onChange={e => (line.color = e.target.value)}
         />
       </ColFormItem>
-      <ColFormItem xs={4} label="Dash">
+      <ColFormItem xs={3} label="Dash">
         <DropDown
           value={line.dash}
           choices={dashTypes}
           onChange={e => (line.dash = e.target.value)}
         />
       </ColFormItem>
-      <Grid item xs={4}>
+      <Grid item xs={3}>
         <MillimeterField
           label="Thickness"
           value={line.thickness}
@@ -51,11 +51,6 @@ LineSetting = observer(LineSetting);
 const LineSettings = ({ store }) => {
   const lineNames = ["ascender", "midline", "baseline", "descender"];
   return [
-    <GuideLineSettings
-      key="guide"
-      line={store.guideline}
-      colors={store.colors}
-    />,
     ...lineNames.map(ln => (
       <LineSetting
         label={store[ln].name}
@@ -63,7 +58,12 @@ const LineSettings = ({ store }) => {
         key={ln}
         colors={store.colors}
       />
-    ))
+    )),
+    <GuideLineSettings
+      key="guide"
+      line={store.guideline}
+      colors={store.colors}
+    />
   ];
 };
 
