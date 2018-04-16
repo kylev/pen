@@ -2,7 +2,6 @@ import React from "react";
 
 import NumberFormat from "react-number-format";
 import TextField from "material-ui/TextField";
-// import { InputAdornment } from "material-ui/Input";
 
 const TextFieldMM = props => {
   return (
@@ -10,14 +9,13 @@ const TextFieldMM = props => {
       {...props}
       InputProps={{
         inputComponent: NumberFormatMM
-        //endAdornment: <InputAdornment position="end">mm</InputAdornment>
       }}
     />
   );
 };
 
 const NumberFormatMM = props => {
-  const { onChange, inputRef, ...other } = props;
+  const { onChange, inputRef, type, ...other } = props;
 
   return (
     <NumberFormat
