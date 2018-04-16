@@ -8,19 +8,25 @@ import PracticePage from "./PracticePage";
 
 const PaperDisplay = ({ classes, store }) => {
   return (
-    <Grid container className={classes.root} justify="center" spacing={24}>
-      <Grid item>
-        <Paper style={{ padding: 24 }}>
-          <PracticePage store={store} />
-        </Paper>
+    <div className={classes.root}>
+      <Grid container justify="center">
+        <Grid item padding={24}>
+          <Paper className={classes.paper}>
+            <PracticePage store={store} />
+          </Paper>
+        </Grid>
       </Grid>
-    </Grid>
+    </div>
   );
 };
 
 const styles = theme => {
   return {
-    root: { flexGrow: 1, marginTop: 24 }
+    root: {
+      flexGrow: 1,
+      padding: theme.spacing.unit * 3
+    },
+    paper: { padding: 20 }
   };
 };
 
