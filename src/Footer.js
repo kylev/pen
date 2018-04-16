@@ -9,10 +9,10 @@ import twitterIcon from "@fortawesome/fontawesome-free-brands/faTwitter";
 
 const Footer = ({ classes }) => {
   return (
-    <Grid container justify="center" spacing={24}>
+    <Grid container justify="center">
       <Grid item xs={8}>
-        <Typography align="center">
-          <a href="https://github.com/kylev/pen">
+        <Typography paragraph align="center">
+          <a href="https://github.com/kylev/pen" padding={24}>
             <FontAwesomeIcon icon={githubIcon} className={classes.icon} />
           </a>
           <a href="https://twitter.com/kylev">
