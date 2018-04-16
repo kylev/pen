@@ -21,7 +21,7 @@ class PenStore {
   baseline = defaultLineSpec({ name: "Baseline" });
   descender = defaultLineSpec({ name: "Descender", color: "lightgray" });
 
-  guideline = { angle: 0, color: "pink", spacing: 40 };
+  guideline = { angle: 0, color: "pink", spacing: 30 };
 
   // Read-only
   pageSizes = [
