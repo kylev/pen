@@ -24,14 +24,6 @@ const PaperSettings = ({ store }) => {
         <RatiosInput store={store} />
       </Grid>
 
-      <ColFormItem xs={3} label="X">
-        <DropDown
-          onChange={e => (store.xColor = e.target.value)}
-          value={store.xColor}
-          choices={store.colors}
-        />
-      </ColFormItem>
-
       <Grid item xs={3}>
         <MillimeterField
           label="X Height"
@@ -60,6 +52,14 @@ const PaperSettings = ({ store }) => {
           choices={store.colors}
         />
       </ColFormItem>
+      <ColFormItem xs={3} label="X Marker">
+        <DropDown
+          onChange={e => (store.xColor = e.target.value)}
+          value={store.xColor}
+          choices={store.colors}
+        />
+      </ColFormItem>
+
       <ColFormItem xs={3} label="Watermark">
         <DropDown
           onChange={e => (store.watermarkColor = e.target.value)}
@@ -67,6 +67,7 @@ const PaperSettings = ({ store }) => {
           choices={store.colors}
         />
       </ColFormItem>
+
       <Grid item xs={3}>
         <TextField
           label="Angle"
