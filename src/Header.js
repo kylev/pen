@@ -26,6 +26,7 @@ class Header extends React.Component {
             <HeaderButtons />
           </Toolbar>
           <Tabs
+            className={classes.tabs}
             onChange={(e, active) => this.setState({ active })}
             value={this.state.active}
           >
@@ -40,12 +41,15 @@ class Header extends React.Component {
 }
 
 const styles = theme => {
-  console.log(theme);
   return {
     root: {
       flexGrow: 1
     },
-    flex: { flex: 1 }
+    flex: { flex: 1 },
+    tabs: {
+      paddingLeft: theme.spacing.unit * 3,
+      paddingRight: theme.spacing.unit * 3
+    }
   };
 };
 
