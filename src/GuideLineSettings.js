@@ -1,5 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
+
+import { Typography } from "material-ui";
 import TextField from "material-ui/TextField";
 import Grid from "material-ui/Grid";
 
@@ -10,7 +12,7 @@ const GuideLineSettings = ({ line, colors }) => {
   return (
     <Grid container>
       <Grid item xs={12}>
-        Angle Guides
+        <Typography variant="subheading">Angle Guides</Typography>
       </Grid>
       <ColFormItem xs={3} label="Color">
         <DropDown

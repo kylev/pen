@@ -1,6 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 
+import { Typography } from "material-ui";
 import Grid from "material-ui/Grid";
 
 import ColFormItem from "./ColFormItem";
@@ -17,7 +18,7 @@ let LineSetting = ({ label, line, colors }) => {
   return (
     <Grid container spacing={16}>
       <Grid item xs={12}>
-        {label}
+        <Typography variant="subheading">{label}</Typography>
       </Grid>
       <ColFormItem xs={4} label="Color">
         <DropDown
