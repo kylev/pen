@@ -6,7 +6,7 @@ import "./App.css";
 
 import Header from "./Header";
 import Footer from "./Footer";
-import PracticePage from "./PracticePage";
+import PaperDisplay from "./PaperDisplay";
 
 import store from "./store";
 
@@ -16,9 +16,7 @@ const App = ({ classes }) => {
   return (
     <MuiThemeProvider theme={theme}>
       <Header store={store} />
-      <div style={{ flexGrow: 1 }}>
-        <PracticePage store={store} />
-      </div>
+      <PaperDisplay store={store} />
       <Footer />
     </MuiThemeProvider>
   );
