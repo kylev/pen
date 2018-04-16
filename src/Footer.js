@@ -6,7 +6,7 @@ import Icon from "material-ui/Icon";
 
 const Footer = () => {
   return (
-    <Grid container justify="center">
+    <Grid container justify="center" spacing={24}>
       <Grid item xs={8}>
         <Typography align="center">
           <a href="https://github.com/kylev/pen">
