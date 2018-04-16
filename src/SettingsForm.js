@@ -1,29 +1,17 @@
 import React from "react";
-import { Collapse } from "antd";
+import Paper from "material-ui/Paper";
 
 import PaperSettings from "./PaperSettings";
 import LineSettings from "./LineSettings";
 import LineSetDebug from "./LineSetDebug";
 
-const SettingsForm = ({ store }) => {
+const SettingsForm = ({ active, store }) => {
   return (
-    <Collapse mode="inline" defaultActiveKey={"paper"}>
-      <Collapse.Panel key="paper" header={<span>Paper</span>}>
-        <PaperSettings store={store} />
-      </Collapse.Panel>
-      <Collapse.Panel key="lines" header={<span>Lines</span>}>
-        <LineSettings store={store} />
-      </Collapse.Panel>
-      {false && (
-        <Collapse.Panel
-          key="debug"
-          showArrow={false}
-          header={<span>Debug</span>}
-        >
-          <LineSetDebug lineSet={store.lineSet} />
-        </Collapse.Panel>
-      )}
-    </Collapse>
+    <Paper>
+      {active === "paper" && <PaperSettings store={store} />}
+      {active === "lines" && <LineSettings store={store} />}
+      {active === "debug" && <LineSetDebug lineSet={store.lineSet} />}
+    </Paper>
   );
 };
 

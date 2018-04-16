@@ -1,11 +1,19 @@
 import React, { Component } from "react";
-import { Button, Icon, Layout, Row, Col } from "antd";
+import { Button, Layout, Row, Col } from "antd";
+import { AppBar, Toolbar, Typography } from "material-ui";
+import {
+  MuiThemeProvider,
+  createMuiTheme,
+  withStyles
+} from "material-ui/styles";
+import IconButton from "material-ui/IconButton";
+import Icon from "material-ui/Icon";
 import download from "downloadjs";
 
 import "./App.css";
 
+import Header from "./Header";
 import PracticePage from "./PracticePage";
-import SettingsForm from "./SettingsForm";
 
 import store from "./store";
 
@@ -30,8 +38,10 @@ const doSaving = store => {
   );
 };
 
-class App extends Component {
+class OldApp extends Component {
   render() {
+    const styles = {};
+
     return (
       <Layout>
         <Layout.Header style={{ alignItems: "space-between" }}>
@@ -62,9 +72,7 @@ class App extends Component {
         </Layout.Header>
         <Layout.Content style={{ padding: 16 }}>
           <Row>
-            <Col span={24}>
-              <SettingsForm store={store} />
-            </Col>
+            <Col span={24} />
           </Row>
           <div
             style={{
@@ -72,9 +80,7 @@ class App extends Component {
               textAlign: "center",
               padding: 16
             }}
-          >
-            <PracticePage store={store} />
-          </div>
+          />
         </Layout.Content>
         <Layout.Footer style={{ textAlign: "center" }}>
           <a href="https://github.com/kylev/pen">
@@ -95,6 +101,27 @@ class App extends Component {
   }
 }
 
-const styles = { footerIcons: { paddingLeft: 8, paddingRight: 8 } };
+const TabContainer = props => {
+  return (
+    <Typography component="div" style={{ padding: 8 * 3 }}>
+      {props.children}
+    </Typography>
+  );
+};
+
+const theme = createMuiTheme({});
+
+const App = ({ classes }) => {
+  return (
+    <MuiThemeProvider theme={theme}>
+      <Header store={store} />
+      <div style={{ flexGrow: 1 }}>
+        <PracticePage store={store} />
+      </div>
+    </MuiThemeProvider>
+  );
+};
+
+//const styles = { footerIcons: { paddingLeft: 8, paddingRight: 8 } };
 
 export default App;

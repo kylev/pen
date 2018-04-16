@@ -1,15 +1,21 @@
 import React from "react";
-import { Select } from "antd";
+import { FormControl } from "material-ui/Form";
+import { InputLabel } from "material-ui/Input";
+import { MenuItem } from "material-ui/Menu";
+import Select from "material-ui/Select";
 
 const DropDown = ({ choices, label, onChange, value }) => {
   return (
-    <Select onChange={onChange} value={value}>
-      {choices.map(p => (
-        <Select.Option value={p.key} key={p.key}>
-          {p.name}
-        </Select.Option>
-      ))}
-    </Select>
+    <FormControl>
+      <InputLabel>{label}</InputLabel>
+      <Select onChange={e => onChange(e.target.value)} value={value}>
+        {choices.map(p => (
+          <MenuItem value={p.key} key={p.key}>
+            {p.name}
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
   );
 };
 
