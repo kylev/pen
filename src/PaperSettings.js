@@ -8,7 +8,7 @@ import TextField from "material-ui/TextField";
 import ColFormItem from "./ColFormItem";
 import DropDown from "./DropDown";
 import RatiosInput from "./RatiosInput";
-import MillimeterField from "./MillimeterFeed";
+import MillimeterField from "./MillimeterField";
 
 const PaperSettings = ({ store }) => {
   return (

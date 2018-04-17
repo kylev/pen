@@ -6,7 +6,7 @@ import Grid from "material-ui/Grid";
 
 import ColFormItem from "./ColFormItem";
 import DropDown from "./DropDown";
-import MillimeterField from "./MillimeterFeed";
+import MillimeterField from "./MillimeterField";
 
 const dashTypes = [
   { key: "none", name: "None" },
