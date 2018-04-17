@@ -28,13 +28,17 @@ const doSaving = store => {
 const HeaderButtons = () => {
   return (
     <div>
-      <IconButton onClick={doSaving} color="inherit">
+      <IconButton onClick={doSaving} color="inherit" aria-label="Download">
         <Icon>file_download</Icon>
       </IconButton>
-      <IconButton onClick={doPrintWindow} color="inherit">
+      <IconButton onClick={doPrintWindow} color="inherit" aria-label="Pop Out">
         <Icon>input</Icon>
       </IconButton>
-      <IconButton onClick={() => window.print()} color="inherit">
+      <IconButton
+        onClick={() => window.print()}
+        color="inherit"
+        aria-label="Print"
+      >
         <Icon>print</Icon>
       </IconButton>
     </div>
