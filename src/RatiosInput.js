@@ -37,4 +37,4 @@ const RatiosInput = ({ store }) => {
   );
 };
 
-export default observer(RatiosInput);
+export default RatiosInput;

@@ -88,12 +88,14 @@ class PenStore {
     {
       key: "foundation",
       name: "Foundation 2:2:2",
-      ratios: [2, 2, 2, 0]
+      ratios: [2, 2, 2, 0],
+      angle: 0
     },
     {
       key: "german",
       name: "German Kurrent 2:1:2",
-      ratios: [2, 1, 2, 0]
+      ratios: [2, 1, 2, 0],
+      angle: 0
     }
   ];
 
@@ -210,7 +212,7 @@ class PenStore {
 
     this.ratio = key;
     this.ratios = preset.ratios || this.ratios;
-    this.guideline.angle = preset.angle || 0;
+    this.guideline.angle = preset.angle || this.guideline.angle;
   }
 }
 
