@@ -44,7 +44,7 @@ class PenStore {
     { key: "portrait", name: "Portrait" }
   ];
   colors = [
-    { key: "transparent", name: "None (transparent)" },
+    { key: "transparent", name: "None" },
     {
       key: "black",
       name: "Black"
