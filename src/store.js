@@ -186,20 +186,25 @@ class PenStore {
   }
 
   get guideLineSet() {
-    const { dimensions: { width }, guideline: { angle, spacing } } = this;
+    const {
+      dimensions: { height, width },
+      guideline: { angle, spacing }
+    } = this;
 
     if (angle < 1) return [];
 
     const slopeRatio = Math.tan(angle * RAD_RATIO);
-    const count = width / spacing * 2; // Not exact...
+    const yOffset = width * slopeRatio;
+    const yStep = spacing * slopeRatio;
+    const count = Math.round((height + yOffset) / yStep);
 
     return times(count, i => ({
       key: `guideline-${i}`,
       ...composeLine({ ...this.guideline }),
       x1: 0,
-      y1: slopeRatio * i * spacing,
-      x2: i * spacing,
-      y2: 0
+      y1: i * yStep,
+      x2: width,
+      y2: i * yStep - yOffset
     }));
   }
 
