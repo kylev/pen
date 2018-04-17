@@ -6,7 +6,6 @@ import Grid from "material-ui/Grid";
 
 import ColFormItem from "./ColFormItem";
 import DropDown from "./DropDown";
-import GuideLineSettings from "./GuideLineSettings";
 import MillimeterField from "./MillimeterFeed";
 
 const dashTypes = [
@@ -20,21 +19,21 @@ let LineSetting = ({ label, line, colors }) => {
       <Grid item xs={12} style={{ paddingBottom: 0 }}>
         <Typography variant="subheading">{label}</Typography>
       </Grid>
-      <ColFormItem xs={3} label="Color">
+      <ColFormItem xs={6} md={4} label="Color">
         <DropDown
           value={line.color}
           choices={colors}
           onChange={e => (line.color = e.target.value)}
         />
       </ColFormItem>
-      <ColFormItem xs={3} label="Dash">
+      <ColFormItem xs={5} md={4} label="Dash">
         <DropDown
           value={line.dash}
           choices={dashTypes}
           onChange={e => (line.dash = e.target.value)}
         />
       </ColFormItem>
-      <Grid item xs={3}>
+      <Grid item xs={12} md={4}>
         <MillimeterField
           label="Thickness"
           value={line.thickness}
@@ -55,14 +54,15 @@ const LineSettings = ({ store }) => {
       <LineSetting
         label={store[ln].name}
         line={store[ln]}
-        key={ln}
         colors={store.colors}
+        key={ln}
       />
     )),
-    <GuideLineSettings
-      key="guide"
+    <LineSetting
+      label={store.guideline.name}
       line={store.guideline}
       colors={store.colors}
+      key="guide"
     />
   ];
 };

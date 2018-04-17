@@ -21,7 +21,13 @@ class PenStore {
   baseline = defaultLineSpec({ name: "Baseline" });
   descender = defaultLineSpec({ name: "Descender", color: "lightgray" });
 
-  guideline = { angle: 0, color: "pink", spacing: 30 };
+  guideline = defaultLineSpec({
+    name: "Guide Lines",
+    strokeWidth: 0.1,
+    color: "pink",
+    angle: 0,
+    spacing: 30
+  });
 
   // Read-only
   pageSizes = [
@@ -171,10 +177,7 @@ class PenStore {
   }
 
   get guideLineSet() {
-    const {
-      dimensions: { width },
-      guideline: { angle, color, spacing }
-    } = this;
+    const { dimensions: { width }, guideline: { angle, spacing } } = this;
 
     if (angle < 1) return [];
 
@@ -183,12 +186,11 @@ class PenStore {
 
     return times(count, i => ({
       key: `guideline-${i}`,
+      ...composeLine({ ...this.guideline }),
       x1: 0,
       y1: slopeRatio * i * spacing,
       x2: i * spacing,
-      y2: 0,
-      stroke: color,
-      strokeWidth: 0.1
+      y2: 0
     }));
   }
 
