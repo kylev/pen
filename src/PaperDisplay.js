@@ -24,7 +24,8 @@ const styles = theme => {
   return {
     root: {
       flexGrow: 1,
-      overflow: "hidden"
+      overflow: "hidden",
+      backgroundColor: theme.palette.background.default
     },
     paper: { padding: 20, margin: 20 }
   };

@@ -9,7 +9,7 @@ import twitterIcon from "@fortawesome/fontawesome-free-brands/faTwitter";
 
 const Footer = ({ classes }) => {
   return (
-    <Grid container justify="center">
+    <Grid container className={classes.root} justify="center">
       <Grid item xs={8}>
         <Typography paragraph align="center">
           <a href="https://github.com/kylev/pen" padding={24}>
@@ -31,6 +31,7 @@ const Footer = ({ classes }) => {
 
 const styles = theme => {
   return {
+    root: { backgroundColor: theme.palette.background.default },
     icon: { paddingRight: theme.spacing.unit, paddingLeft: theme.spacing.unit }
   };
 };

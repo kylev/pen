@@ -10,7 +10,7 @@ import LineSetDebug from "./LineSetDebug";
 const SettingsForm = ({ active, classes, store }) => {
   return (
     <div className={classes.root}>
-      <Paper square style={{ padding: 24 }}>
+      <Paper square style={{ padding: 24, marginBottom: 4 }}>
         {active === "paper" && <PaperSettings store={store} />}
         {active === "lines" && <LineSettings store={store} />}
         {active === "debug" && <LineSetDebug lineSet={store.lineSet} />}
@@ -19,7 +19,9 @@ const SettingsForm = ({ active, classes, store }) => {
   );
 };
 
-const styles = theme => ({ root: { flexGrow: 1 } });
+const styles = theme => ({
+  root: { backgroundColor: theme.palette.background.default, flexGrow: 1 }
+});
 
 //export default observer(SettingsForm);
 export default withStyles(styles)(SettingsForm);
