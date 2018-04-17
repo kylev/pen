@@ -24,7 +24,7 @@ const NumberFormatMM = props => {
       suffix={"mm"}
       decimalScale={1}
       fixedDecimalScale={true}
-      onValueChange={v => onChange(v.floatValue)}
+      onValueChange={v => onChange(v.floatValue || v.formattedValue)}
     />
   );
 };
