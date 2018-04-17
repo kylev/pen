@@ -45,7 +45,7 @@ const PaperSettings = ({ store }) => {
           choices={store.orientations}
         />
       </ColFormItem>
-      <ColFormItem sm={6} md={4} label="Gap Color">
+      <ColFormItem sm={6} md={4} label="Gap&nbsp;Color">
         <DropDown
           onChange={e => (store.gapColor = e.target.value)}
           value={store.gapColor}
