@@ -26,7 +26,7 @@ let LineSetting = ({ label, line, colors }) => {
           onChange={e => (line.color = e.target.value)}
         />
       </ColFormItem>
-      <ColFormItem xs={5} md={4} label="Dash">
+      <ColFormItem xs={6} md={4} label="Dash">
         <DropDown
           value={line.dash}
           choices={dashTypes}
