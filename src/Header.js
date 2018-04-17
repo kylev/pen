@@ -32,6 +32,7 @@ class Header extends React.Component {
           >
             <Tab label="Paper" value="paper" />
             <Tab label="Lines" value="lines" />
+            {store.isDev && <Tab label="Debug" value="debug" />}
           </Tabs>
         </AppBar>
         <SettingsForm store={store} active={this.state.active} />

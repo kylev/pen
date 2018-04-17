@@ -30,6 +30,7 @@ class PenStore {
   });
 
   // Read-only
+  isDev = process.env.NODE_ENV === "development";
   pageSizes = [
     { key: "a4", name: "A4", width: 200, height: 287 },
     { key: "letter", name: "US Letter", width: 199, height: 260 }
