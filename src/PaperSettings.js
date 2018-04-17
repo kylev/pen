@@ -13,14 +13,14 @@ import MillimeterField from "./MillimeterFeed";
 const PaperSettings = ({ store }) => {
   return (
     <Grid container spacing={24}>
-      <ColFormItem xs={12} md={4} label="Presets">
+      <ColFormItem xs={12} md={3} label="Presets">
         <DropDown
           onChange={e => store.ratioPreset(e.target.value)}
           value={store.ratio}
           choices={store.ratioChoices}
         />
       </ColFormItem>
-      <Grid item xs={12} md={8}>
+      <Grid item xs={12} md={9}>
         <RatiosInput store={store} />
       </Grid>
 
