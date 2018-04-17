@@ -20,7 +20,7 @@ const PaperSettings = ({ store }) => {
           choices={store.ratioChoices}
         />
       </ColFormItem>
-      <Grid item xs={12} md={9}>
+      <Grid item xs={12} md={6}>
         <RatiosInput store={store} />
       </Grid>
 

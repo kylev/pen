@@ -16,7 +16,7 @@ const RatiosInput = ({ store }) => {
         store.ratioPreset("custom");
         store.ratios[i] = clamp(e.target.value, 0, 10);
       }}
-      style={{ marginRight: 10 }}
+      style={{ marginRight: 10, width: 100 }}
       key={i}
     />
   ));
