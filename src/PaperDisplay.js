@@ -10,7 +10,7 @@ const PaperDisplay = ({ classes, store }) => {
   return (
     <div className={classes.root}>
       <Grid container justify="center">
-        <Grid item padding={24}>
+        <Grid item>
           <Paper className={classes.paper}>
             <PracticePage store={store} />
           </Paper>
@@ -24,10 +24,9 @@ const styles = theme => {
   return {
     root: {
       flexGrow: 1,
-      padding: theme.spacing.unit * 3,
-      overflow: "scroll"
+      overflow: "hidden"
     },
-    paper: { padding: 20 }
+    paper: { padding: 20, margin: 20 }
   };
 };
 
