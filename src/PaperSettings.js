@@ -68,7 +68,7 @@ const PaperSettings = ({ store }) => {
       </ColFormItem>
       <Grid item sm={6} md={4}>
         <TextField
-          label="Angle"
+          label="Guide Angle"
           type="number"
           min={0}
           max={90}
@@ -77,6 +77,14 @@ const PaperSettings = ({ store }) => {
             store.ratioPreset("custom");
             store.guideline.angle = clamp(e.target.value, 0, 90);
           }}
+        />
+      </Grid>
+      <Grid item sm={6} md={4}>
+        <TextField
+          label="Guide Spacing"
+          type="number"
+          value={store.guideline.spacing}
+          onChange={e => (store.guideline.spacing = e.target.value)}
         />
       </Grid>
     </Grid>
