@@ -31,9 +31,13 @@ class PenStore {
 
   // Read-only
   isDev = process.env.NODE_ENV === "development";
+  // Round down and subtract 20mm?
   pageSizes = [
+    { key: "a3", name: "A3", width: 277, height: 400 },
     { key: "a4", name: "A4", width: 200, height: 287 },
-    { key: "letter", name: "US Letter", width: 199, height: 260 }
+    { key: "ledger", name: "US Ledger (11x17)", width: 259, height: 412 },
+    { key: "legal", name: "US Legal", width: 196, height: 336 },
+    { key: "letter", name: "US Letter", width: 196, height: 259 }
   ];
   orientations = [
     { key: "landscape", name: "Landcape" },
