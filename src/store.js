@@ -49,9 +49,6 @@ class PenStore {
       key: "black",
       name: "Black"
     },
-    { key: "cyan", name: "Cyan" },
-    { key: "darkgray", name: "Dark Gray" },
-    { key: "green", name: "Green" },
     { key: "gray", name: "Gray" },
     ...range(1, 10).map(v => ({
       key: Color.rgb(255, 255, 255)
@@ -59,10 +56,15 @@ class PenStore {
         .string(),
       name: `Gray ${v * 10}%`
     })),
+    { key: "blue", name: "Blue" },
+    { key: "cyan", name: "Cyan" },
+    { key: "darkgray", name: "Dark Gray" },
+    { key: "green", name: "Green" },
     { key: "lightgray", name: "Light Gray" },
     { key: "pink", name: "Pink" },
     { key: "red", name: "Red" },
-    { key: "white", name: "White" }
+    { key: "white", name: "White" },
+    { key: "yellow", name: "Yellow" }
   ];
   ratioChoices = [
     { key: "custom", name: "Custom" },
