@@ -10,7 +10,7 @@ import LineSetDebug from "./LineSetDebug";
 const SettingsForm = ({ active, classes, store }) => {
   return (
     <div className={classes.root}>
-      <Paper style={{ padding: 24 }}>
+      <Paper square style={{ padding: 24 }}>
         {active === "paper" && <PaperSettings store={store} />}
         {active === "lines" && <LineSettings store={store} />}
         {active === "debug" && <LineSetDebug lineSet={store.lineSet} />}
