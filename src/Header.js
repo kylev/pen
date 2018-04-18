@@ -8,7 +8,7 @@ import HeaderButtons from "./HeaderButtons";
 import SettingsForm from "./SettingsForm";
 
 class Header extends React.Component {
-  state = { active: "paper" };
+  state = { active: "basic" };
 
   render() {
     const { classes, store } = this.props;
@@ -30,7 +30,8 @@ class Header extends React.Component {
             onChange={(e, active) => this.setState({ active })}
             value={this.state.active}
           >
-            <Tab label="Paper" value="paper" />
+            <Tab label="Basic" value="basic" />
+            <Tab label="Custom" value="custom" />
             <Tab label="Lines" value="lines" />
             {store.isDev && <Tab label="Debug" value="debug" />}
           </Tabs>
