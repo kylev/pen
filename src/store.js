@@ -220,7 +220,8 @@ class PenStore {
 
     this.ratio = key;
     this.ratios = preset.ratios || this.ratios;
-    this.guideline.angle = preset.angle || this.guideline.angle;
+    this.guideline.angle =
+      preset.angle === undefined ? this.guideline.angle : preset.angle;
   }
 }
 
