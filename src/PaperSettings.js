@@ -2,6 +2,7 @@ import React from "react";
 import { clamp } from "lodash";
 import { observer } from "mobx-react";
 
+import { InputAdornment } from "material-ui/Input";
 import Grid from "material-ui/Grid";
 import TextField from "material-ui/TextField";
 
@@ -27,6 +28,8 @@ const PaperSettings = ({ store }) => {
       <Grid item sm={6} md={4}>
         <MillimeterField
           label="X Height"
+          min={0.1}
+          step={0.1}
           value={store.xHeight}
           onChange={v => (store.xHeight = v)}
         />
@@ -77,14 +80,16 @@ const PaperSettings = ({ store }) => {
             store.ratioPreset("custom");
             store.guideline.angle = clamp(e.target.value, 0, 90);
           }}
+          InputProps={{
+            endAdornment: <InputAdornment position="end">°</InputAdornment>
+          }}
         />
       </Grid>
       <Grid item sm={6} md={4}>
-        <TextField
+        <MillimeterField
           label="Guide Spacing"
-          type="number"
           value={store.guideline.spacing}
-          onChange={e => (store.guideline.spacing = e.target.value)}
+          onChange={v => (store.guideline.spacing = v)}
         />
       </Grid>
     </Grid>

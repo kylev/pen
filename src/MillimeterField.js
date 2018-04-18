@@ -1,36 +1,26 @@
 import React from "react";
 
-import NumberFormat from "react-number-format";
+import { InputAdornment } from "material-ui/Input";
 import TextField from "material-ui/TextField";
 
-const TextFieldMM = props => {
+const MillimeterField = props => {
+  const { onChange, max, min, step, ...other } = props;
+
   return (
     <TextField
-      {...props}
+      {...other}
+      onChange={e => onChange(e.target.value)}
+      type="number"
+      inputProps={{
+        max,
+        min,
+        step
+      }}
       InputProps={{
-        inputComponent: NumberFormatMM
+        endAdornment: <InputAdornment position="end">mm</InputAdornment>
       }}
     />
   );
-};
-
-const NumberFormatMM = props => {
-  const { onChange, inputRef, type, ...other } = props;
-
-  return (
-    <NumberFormat
-      {...other}
-      ref={inputRef}
-      suffix={"mm"}
-      decimalScale={1}
-      fixedDecimalScale={true}
-      onValueChange={v => onChange(v.floatValue || v.formattedValue)}
-    />
-  );
-};
-
-const MillimeterField = props => {
-  return <TextFieldMM {...props} />;
 };
 
 export default MillimeterField;
