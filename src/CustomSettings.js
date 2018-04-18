@@ -7,7 +7,7 @@ import Grid from "material-ui/Grid";
 import TextField from "material-ui/TextField";
 
 import ColFormItem from "./ColFormItem";
-import DropDown from "./DropDown";
+import DropDownField from "./DropDownField";
 import RatiosInput from "./RatiosInput";
 import MillimeterField from "./MillimeterField";
 
@@ -41,27 +41,30 @@ const CustomSettings = ({ store }) => {
         />
       </Grid>
 
-      <ColFormItem sm={6} md={4} label="Gap&nbsp;Color">
-        <DropDown
-          onChange={e => (store.gapColor = e.target.value)}
+      <Grid item sm={6} md={4}>
+        <DropDownField
+          label="Gap&nbsp;Color"
+          onChange={v => (store.gapColor = v)}
           value={store.gapColor}
           choices={store.colors}
         />
-      </ColFormItem>
-      <ColFormItem sm={6} md={4} label="X Marker">
-        <DropDown
-          onChange={e => (store.xColor = e.target.value)}
+      </Grid>
+      <Grid item sm={6} md={4}>
+        <DropDownField
+          label="X Marker"
+          onChange={v => (store.xColor = v)}
           value={store.xColor}
           choices={store.colors}
         />
-      </ColFormItem>
-      <ColFormItem sm={12} md={4} label="Watermark">
-        <DropDown
-          onChange={e => (store.watermarkColor = e.target.value)}
+      </Grid>
+      <Grid item sm={6} md={4}>
+        <DropDownField
+          label="Watermark"
+          onChange={v => (store.watermarkColor = v)}
           value={store.watermarkColor}
           choices={store.colors}
         />
-      </ColFormItem>
+      </Grid>
     </Grid>
   );
 };
