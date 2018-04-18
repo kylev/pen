@@ -61,6 +61,7 @@ class PenStore {
     { key: "darkgray", name: "Dark Gray" },
     { key: "green", name: "Green" },
     { key: "lightgray", name: "Light Gray" },
+    { key: Color.rgb(164, 221, 237).string(), name: "Non-Photo Blue" },
     { key: "pink", name: "Pink" },
     { key: "red", name: "Red" },
     { key: "white", name: "White" },
