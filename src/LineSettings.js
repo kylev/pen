@@ -32,6 +32,7 @@ let LineSetting = ({ label, line, colors, dashes }) => {
           value={line.dash}
           choices={dashes}
           onChange={v => (line.dash = v)}
+          disabled={line.color === "transparent"}
         />
       </Grid>
       <Grid item xs={12} md={4}>
@@ -41,6 +42,7 @@ let LineSetting = ({ label, line, colors, dashes }) => {
           min={0.1}
           step={0.1}
           onChange={v => (line.thickness = v)}
+          disabled={line.color === "transparent"}
         />
       </Grid>
     </Grid>
