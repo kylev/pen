@@ -12,7 +12,7 @@ const dashTypes = [
   { key: "even1cm", name: "1cm Even" }
 ];
 
-let LineSetting = ({ label, line, colors }) => {
+let LineSetting = ({ label, line, colors, dashes }) => {
   return (
     <Grid container spacing={24} style={{ marginBottom: 24 }}>
       <Grid item xs={12} style={{ paddingBottom: 0 }}>
@@ -30,7 +30,7 @@ let LineSetting = ({ label, line, colors }) => {
         <DropDownField
           label="Dash"
           value={line.dash}
-          choices={dashTypes}
+          choices={dashes}
           onChange={v => (line.dash = v)}
         />
       </Grid>
@@ -56,6 +56,7 @@ const LineSettings = ({ store }) => {
         label={store[ln].name}
         line={store[ln]}
         colors={store.colors}
+        dashes={store.dashChoices}
         key={ln}
       />
     )),
@@ -63,6 +64,7 @@ const LineSettings = ({ store }) => {
       label={store.guideline.name}
       line={store.guideline}
       colors={store.colors}
+      dashes={store.dashChoices}
       key="guide"
     />
   ];

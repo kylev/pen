@@ -20,11 +20,8 @@ export const thickness = x => {
 };
 
 export const lineDash = name => {
-  const xlate = {
-    none: null,
-    even1cm: [1, 1]
-  };
-  return { strokeDasharray: xlate[name] };
+  if (!name) return {};
+  return { strokeDasharray: name };
 };
 
 export const composeLine = spec => {
@@ -32,7 +29,7 @@ export const composeLine = spec => {
     basicLine(spec.width, spec.offset),
     color(spec.color),
     thickness(spec.thickness),
-    spec.dash && lineDash(spec.dash)
+    lineDash(spec.dash)
   );
 };
 

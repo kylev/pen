@@ -17,7 +17,7 @@ class PenStore {
   gapColor = "transparent";
   watermarkColor = "darkgray";
   ascender = defaultLineSpec({ name: "Ascender" });
-  midline = defaultLineSpec({ name: "Midline", color: "red", dash: "even1cm" });
+  midline = defaultLineSpec({ name: "Midline", color: "red", dash: "1, 1" });
   baseline = defaultLineSpec({ name: "Baseline" });
   descender = defaultLineSpec({ name: "Descender", color: "lightgray" });
 
@@ -99,6 +99,12 @@ class PenStore {
       ratios: [2, 1, 2, 0],
       angle: 0
     }
+  ];
+  dashChoices = [
+    { key: "none", name: "Solid" },
+    { key: "1, 1", name: "1cm" },
+    { key: "2, 2", name: "2cm" },
+    { key: "4, 2", name: "4:2cm" }
   ];
 
   get gap() {
