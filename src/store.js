@@ -200,16 +200,28 @@ class PenStore {
     const slopeRatio = Math.tan(angle * RAD_RATIO);
     const yOffset = width * slopeRatio;
     const yStep = spacing * slopeRatio;
-    const count = Math.round((height + yOffset) / yStep);
+    const count = Math.floor(height / yStep) + 1;
+    const baseCount = Math.floor(width / spacing) + 1;
+    const baseOffset = (count * yStep - height) / slopeRatio;
 
-    return times(count, i => ({
-      key: `guideline-${i}`,
-      ...composeLine({ ...this.guideline }),
-      x1: 0,
-      y1: i * yStep,
-      x2: width,
-      y2: i * yStep - yOffset
-    }));
+    return [
+      ...times(count, i => ({
+        key: `guideline-${i}`,
+        ...composeLine({ ...this.guideline }),
+        x1: 0,
+        y1: i * yStep,
+        x2: width,
+        y2: i * yStep - yOffset
+      })),
+      ...times(baseCount, i => ({
+        key: `guidelinebase-${i}`,
+        ...composeLine({ ...this.guideline }),
+        x1: i * spacing + baseOffset,
+        y1: height,
+        x2: width,
+        y2: height - slopeRatio * (width - baseOffset - i * spacing)
+      }))
+    ];
   }
 
   get watermark() {
