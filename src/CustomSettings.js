@@ -6,7 +6,6 @@ import { InputAdornment } from "material-ui/Input";
 import Grid from "material-ui/Grid";
 import TextField from "material-ui/TextField";
 
-import ColFormItem from "./ColFormItem";
 import DropDownField from "./DropDownField";
 import RatiosInput from "./RatiosInput";
 import MillimeterField from "./MillimeterField";

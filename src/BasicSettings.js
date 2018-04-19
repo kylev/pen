@@ -3,20 +3,20 @@ import { observer } from "mobx-react";
 
 import Grid from "material-ui/Grid";
 
-import ColFormItem from "./ColFormItem";
-import DropDown from "./DropDown";
+import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
 
 const PaperSettings = ({ store }) => {
   return (
     <Grid container spacing={24}>
-      <ColFormItem xs={6} md={3} label="Presets">
-        <DropDown
-          onChange={e => store.ratioPreset(e.target.value)}
+      <Grid item xs={6} md={3}>
+        <DropDownField
+          label="Presets"
+          onChange={v => store.ratioPreset(v)}
           value={store.ratio}
           choices={store.ratioChoices}
         />
-      </ColFormItem>
+      </Grid>
       <Grid item sm={6} md={3}>
         <MillimeterField
           label="X Height"
@@ -26,20 +26,22 @@ const PaperSettings = ({ store }) => {
           onChange={v => (store.xHeight = v)}
         />
       </Grid>
-      <ColFormItem sm={6} md={3} label="Size">
-        <DropDown
-          onChange={e => (store.pageSize = e.target.value)}
+      <Grid item sm={6} md={3}>
+        <DropDownField
+          label="Size"
+          onChange={v => (store.pageSize = v)}
           value={store.pageSize}
           choices={store.pageSizes}
         />
-      </ColFormItem>
-      <ColFormItem sm={6} md={3} label="Orentation">
-        <DropDown
-          onChange={e => (store.orientation = e.target.value)}
+      </Grid>
+      <Grid item sm={6} md={3}>
+        <DropDownField
+          label="Orentation"
+          onChange={v => (store.orientation = v)}
           value={store.orientation}
           choices={store.orientations}
         />
-      </ColFormItem>
+      </Grid>
     </Grid>
   );
 };
