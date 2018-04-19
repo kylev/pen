@@ -4,8 +4,6 @@ import { InputLabel } from "material-ui/Input";
 import { MenuItem } from "material-ui/Menu";
 import Select from "material-ui/Select";
 
-import DropDown from "./DropDown";
-
 const DropDownField = ({ label, onChange, choices, id, ...rest }) => {
   return (
     <FormControl>
