@@ -1,10 +1,10 @@
 import { merge } from "lodash";
 
-export const basicLine = (width, margin, offset) => {
+export const basicLine = (width, offset) => {
   return {
-    x1: margin,
+    x1: 0,
     y1: offset,
-    x2: width - margin * 2,
+    x2: width,
     y2: offset,
     stroke: "black",
     strokeWidth: 0.2
@@ -29,7 +29,7 @@ export const lineDash = name => {
 
 export const composeLine = spec => {
   return merge(
-    basicLine(spec.width, spec.margin, spec.offset),
+    basicLine(spec.width, spec.offset),
     color(spec.color),
     thickness(spec.thickness),
     spec.dash && lineDash(spec.dash)

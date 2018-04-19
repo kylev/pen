@@ -41,7 +41,7 @@ const CustomSettings = ({ store }) => {
         />
       </Grid>
 
-      <Grid item sm={6} md={4}>
+      <Grid item sm={6} md={3}>
         <DropDownField
           label="Gap&nbsp;Color"
           onChange={v => (store.gapColor = v)}
@@ -49,7 +49,7 @@ const CustomSettings = ({ store }) => {
           choices={store.colors}
         />
       </Grid>
-      <Grid item sm={6} md={4}>
+      <Grid item sm={6} md={3}>
         <DropDownField
           label="X Marker"
           onChange={v => (store.xColor = v)}
@@ -57,12 +57,19 @@ const CustomSettings = ({ store }) => {
           choices={store.colors}
         />
       </Grid>
-      <Grid item sm={6} md={4}>
+      <Grid item sm={6} md={3}>
         <DropDownField
           label="Watermark"
           onChange={v => (store.watermarkColor = v)}
           value={store.watermarkColor}
           choices={store.colors}
+        />
+      </Grid>
+      <Grid item sm={6} md={3}>
+        <MillimeterField
+          label="Unprintable Margin"
+          onChange={v => (store.printGap = v)}
+          value={store.printGap}
         />
       </Grid>
     </Grid>

@@ -9,7 +9,7 @@ const RAD_RATIO = Math.PI / 180;
 class PenStore {
   pageSize = "letter";
   orientation = "portrait";
-  margin = 0;
+  printGap = 20;
   ratio = "simple";
   ratios = [1, 1, 1, 1];
   xHeight = 9.5;
@@ -31,13 +31,12 @@ class PenStore {
 
   // Read-only
   isDev = process.env.NODE_ENV === "development";
-  // Round down and subtract 20mm?
   pageSizes = [
-    { key: "a3", name: "A3", width: 277, height: 400 },
-    { key: "a4", name: "A4", width: 200, height: 287 },
-    { key: "ledger", name: "US Ledger (11x17)", width: 259, height: 412 },
-    { key: "legal", name: "US Legal", width: 196, height: 336 },
-    { key: "letter", name: "US Letter", width: 196, height: 259 }
+    { key: "a3", name: "A3", width: 297, height: 420 },
+    { key: "a4", name: "A4", width: 210, height: 297 },
+    { key: "ledger", name: "US Ledger (11x17)", width: 279, height: 432 },
+    { key: "legal", name: "US Legal", width: 216, height: 356 },
+    { key: "letter", name: "US Letter", width: 216, height: 279 }
   ];
   orientations = [
     { key: "landscape", name: "Landcape" },
@@ -120,8 +119,17 @@ class PenStore {
     const dims = this.pageSizes.find(s => s.key === this.pageSize);
 
     if (this.orientation === "landscape")
-      return { ...dims, width: dims.height, height: dims.width };
-    else return dims;
+      return {
+        ...dims,
+        width: dims.height - this.printGap,
+        height: dims.width - this.printGap
+      };
+    else
+      return {
+        ...dims,
+        width: dims.width - this.printGap,
+        height: dims.height - this.printGap
+      };
   }
 
   get heights() {
@@ -130,7 +138,6 @@ class PenStore {
 
   get lineSet() {
     const {
-      margin,
       dimensions: { width },
       heights,
       ascender,
@@ -148,8 +155,7 @@ class PenStore {
         key: "Ascender",
         ...composeLine({
           ...ascender,
-          width,
-          margin
+          width
         })
       },
       {
@@ -157,8 +163,7 @@ class PenStore {
         ...composeLine({
           ...midline,
           offset: midlineOffset,
-          width,
-          margin
+          width
         })
       },
       {
@@ -166,8 +171,7 @@ class PenStore {
         ...composeLine({
           ...baseline,
           offset: baselineOffset,
-          width,
-          margin
+          width
         })
       },
       {
@@ -175,8 +179,7 @@ class PenStore {
         ...composeLine({
           ...descender,
           offset: descenderOffset,
-          width,
-          margin
+          width
         })
       }
     ];
@@ -228,7 +231,7 @@ class PenStore {
 decorate(PenStore, {
   pageSize: observable,
   orientation: observable,
-  margin: observable,
+  printGap: observable,
   ratio: observable,
   ratios: observable,
   xHeight: observable,
