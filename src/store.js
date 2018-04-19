@@ -206,12 +206,12 @@ class PenStore {
     const slopeRatio = Math.tan(angle * RAD_RATIO);
     const yOffset = width * slopeRatio;
     const yStep = spacing * slopeRatio;
-    const count = Math.floor(height / yStep) + 1;
-    const baseCount = Math.floor(width / spacing) + 1;
+    const count = Math.floor(height / yStep);
+    const baseCount = Math.floor(width / spacing);
     const baseOffset = (count * yStep - height) / slopeRatio;
 
     return [
-      ...times(count, i => ({
+      ...range(1, count + 1).map(i => ({
         key: `guideline-${i}`,
         ...composeLine({ ...this.guideline }),
         x1: 0,
@@ -219,7 +219,7 @@ class PenStore {
         x2: width,
         y2: i * yStep - yOffset
       })),
-      ...times(baseCount, i => ({
+      ...range(1, baseCount + 1).map(i => ({
         key: `guidelinebase-${i}`,
         ...composeLine({ ...this.guideline }),
         x1: i * spacing + baseOffset,
