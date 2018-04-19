@@ -20,8 +20,6 @@ const CustomSettings = ({ store }) => {
         <TextField
           label="Guide Angle"
           type="number"
-          min={0}
-          max={90}
           value={store.guideline.angle}
           onChange={e => {
             store.ratioPreset("custom");
