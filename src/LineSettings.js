@@ -4,8 +4,7 @@ import { observer } from "mobx-react";
 import { Typography } from "material-ui";
 import Grid from "material-ui/Grid";
 
-import ColFormItem from "./ColFormItem";
-import DropDown from "./DropDown";
+import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
 
 const dashTypes = [
@@ -19,20 +18,22 @@ let LineSetting = ({ label, line, colors }) => {
       <Grid item xs={12} style={{ paddingBottom: 0 }}>
         <Typography variant="subheading">{label}</Typography>
       </Grid>
-      <ColFormItem xs={6} md={4} label="Color">
-        <DropDown
+      <Grid item xs={6} md={4}>
+        <DropDownField
+          label="Color"
           value={line.color}
           choices={colors}
-          onChange={e => (line.color = e.target.value)}
+          onChange={v => (line.color = v)}
         />
-      </ColFormItem>
-      <ColFormItem xs={6} md={4} label="Dash">
-        <DropDown
+      </Grid>
+      <Grid item xs={6} md={4}>
+        <DropDownField
+          label="Dash"
           value={line.dash}
           choices={dashTypes}
-          onChange={e => (line.dash = e.target.value)}
+          onChange={v => (line.dash = v)}
         />
-      </ColFormItem>
+      </Grid>
       <Grid item xs={12} md={4}>
         <MillimeterField
           label="Thickness"
