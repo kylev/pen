@@ -18,6 +18,7 @@ const CustomSettings = ({ store }) => {
       </Grid>
       <Grid item sm={6} md={4}>
         <TextField
+          id="guide-angle-field"
           label="Guide Angle"
           type="number"
           value={store.guideline.angle}
@@ -32,6 +33,7 @@ const CustomSettings = ({ store }) => {
       </Grid>
       <Grid item sm={6} md={4}>
         <MillimeterField
+          id="guide-spacing-field"
           label="Guide Spacing"
           value={store.guideline.spacing}
           onChange={v => (store.guideline.spacing = v)}
@@ -40,6 +42,7 @@ const CustomSettings = ({ store }) => {
 
       <Grid item sm={6} md={3}>
         <DropDownField
+          id="gap-color-field"
           label="Gap&nbsp;Color"
           onChange={v => (store.gapColor = v)}
           value={store.gapColor}
@@ -48,6 +51,7 @@ const CustomSettings = ({ store }) => {
       </Grid>
       <Grid item sm={6} md={3}>
         <DropDownField
+          id="x-marker-field"
           label="X Marker"
           onChange={v => (store.xColor = v)}
           value={store.xColor}
@@ -56,6 +60,7 @@ const CustomSettings = ({ store }) => {
       </Grid>
       <Grid item sm={6} md={3}>
         <DropDownField
+          id="watermark-color-field"
           label="Watermark"
           onChange={v => (store.watermarkColor = v)}
           value={store.watermarkColor}
@@ -64,6 +69,7 @@ const CustomSettings = ({ store }) => {
       </Grid>
       <Grid item sm={6} md={3}>
         <MillimeterField
+          id="print-gap-field"
           label="Unprintable Margin"
           onChange={v => (store.printGap = v)}
           value={store.printGap}
