@@ -1,7 +1,9 @@
 import React from "react";
 import { observer } from "mobx-react";
 
+import { Typography } from "material-ui";
 import Grid from "material-ui/Grid";
+import Card, { CardContent } from "material-ui/Card";
 
 const showFields = [
   "x1",
@@ -16,14 +18,19 @@ const showFields = [
 const LineItem = ({ line }) => {
   return (
     <Grid item xs={3}>
-      <div>Line: {line.key}</div>
-
-      {showFields.map(key => (
-        <div key={key}>
-          <div>{key}</div>
-          <div>{line[key]}</div>
-        </div>
-      ))}
+      <Card>
+        <CardContent>
+          <Typography variant="headline">{line.key}</Typography>
+          <Typography>
+            {showFields.map(key => (
+              <span key={key}>
+                {key}: {line[key]}
+                <br />
+              </span>
+            ))}
+          </Typography>
+        </CardContent>
+      </Card>
     </Grid>
   );
 };
