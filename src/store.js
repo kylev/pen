@@ -20,6 +20,11 @@ class PenStore {
   midline = defaultLineSpec({ name: "Midline", color: "red", dash: "1, 1" });
   baseline = defaultLineSpec({ name: "Baseline" });
   descender = defaultLineSpec({ name: "Descender", color: "lightgray" });
+  halfLine = defaultLineSpec({
+    name: "Half-Lines",
+    color: "transparent",
+    dash: "2, 2"
+  });
 
   guideline = defaultLineSpec({
     name: "Guide Lines",
@@ -230,6 +235,25 @@ class PenStore {
     ];
   }
 
+  get halfLineSet() {
+    const { dimensions: { width }, heights } = this;
+
+    return [
+      {
+        key: "top-half-line",
+        ...composeLine({ ...this.halfLine, width, offset: heights[0] / 2 })
+      },
+      {
+        key: "bottom-half-line",
+        ...composeLine({
+          ...this.halfLine,
+          width,
+          offset: heights[0] + heights[1] + heights[2] / 2
+        })
+      }
+    ];
+  }
+
   get watermark() {
     return `https://kylev.github.io/pen/ Ratios(${this.ratios}) XHeight(${
       this.xHeight
@@ -262,6 +286,7 @@ decorate(PenStore, {
   baseline: observable,
   descender: observable,
   guideline: observable,
+  halfLine: observable,
 
   gap: computed,
   gapRect: computed,
@@ -270,6 +295,7 @@ decorate(PenStore, {
   lineSet: computed,
   lineSetHeight: computed,
   guideLineSet: computed,
+  halfLineSet: computed,
 
   ratioPreset: action.bound
 });

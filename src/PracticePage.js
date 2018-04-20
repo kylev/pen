@@ -18,6 +18,7 @@ const PracticePage = ({ store }) => {
     heights,
     lineSet,
     lineSetHeight,
+    halfLineSet,
     dimensions: { width, height }
   } = store;
 
@@ -53,12 +54,17 @@ const PracticePage = ({ store }) => {
           <g key={`lineset-${i}`}>
             <rect {...gapRect} y={1 + lineSetHeight * i + workHeight} />
             <LineSet
+              key={`core-lines-${i}`}
               lineSet={shiftedLineSet(lineSet, 1 + lineSetHeight * i)}
-              key={i}
+            />
+            <LineSet
+              key={`half-lines-${i}`}
+              lineSet={shiftedLineSet(halfLineSet, 1 + lineSetHeight * i)}
             />
           </g>
         ))}
         <LineSet lineSet={store.guideLineSet} key="guidelines" />
+
         <text x={1} y={height - 1} fontSize={3} fill={store.watermarkColor}>
           {store.watermark}
         </text>

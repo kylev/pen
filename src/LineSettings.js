@@ -68,6 +68,13 @@ const LineSettings = ({ store }) => {
       colors={store.colors}
       dashes={store.dashChoices}
       key="guide"
+    />,
+    <LineSetting
+      label={store.halfLine.name}
+      line={store.halfLine}
+      colors={store.colors}
+      dashes={store.dashChoices}
+      key="half-line"
     />
   ];
 };
