@@ -1,4 +1,4 @@
-import { reduce, times, range } from "lodash";
+import { reduce, range } from "lodash";
 import { action, computed, decorate, observable } from "mobx";
 import Color from "color";
 

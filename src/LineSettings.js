@@ -7,11 +7,6 @@ import Grid from "material-ui/Grid";
 import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
 
-const dashTypes = [
-  { key: "none", name: "None" },
-  { key: "even1cm", name: "1cm Even" }
-];
-
 let LineSetting = ({ label, line, colors, dashes }) => {
   return (
     <Grid container spacing={24} style={{ marginBottom: 24 }}>
