@@ -1,6 +1,0 @@
-<svg width="192" height="192" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="96" cy="96" r="80" fill="blue" stroke="white" stroke-width="16"/>
-    <line x1="24" y1="80" x2="172" y2="80" stroke="white" stroke-width="16" stroke-linecap="round"
-          stroke-dasharray="12, 24"/>
-    <line x1="16" y1="112" x2="176" y2="112" stroke="white" stroke-width="16"/>
-</svg>
