@@ -9,7 +9,7 @@ import MillimeterField from "./MillimeterField";
 const PaperSettings = ({ store }) => {
   return (
     <Grid container spacing={24}>
-      <Grid item xs={6} md={3}>
+      <Grid item xs={6} md={4}>
         <DropDownField
           id="presets-field"
           label="Presets"
@@ -18,7 +18,7 @@ const PaperSettings = ({ store }) => {
           choices={store.ratioChoices}
         />
       </Grid>
-      <Grid item sm={6} md={3}>
+      <Grid item sm={6} md={2}>
         <MillimeterField
           id="x-height-field"
           label="X Height"
