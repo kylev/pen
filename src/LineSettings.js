@@ -47,31 +47,33 @@ LineSetting = observer(LineSetting);
 
 const LineSettings = ({ store }) => {
   const lineNames = ["ascender", "midline", "baseline", "descender"];
-  return [
-    ...lineNames.map(ln => (
+  return (
+    <div>
+      {lineNames.map(ln => (
+        <LineSetting
+          label={store[ln].name}
+          line={store[ln]}
+          colors={store.colors}
+          dashes={store.dashChoices}
+          key={ln}
+        />
+      ))},
       <LineSetting
-        label={store[ln].name}
-        line={store[ln]}
+        label={store.guideline.name}
+        line={store.guideline}
         colors={store.colors}
         dashes={store.dashChoices}
-        key={ln}
+        key="guide"
+      />,
+      <LineSetting
+        label={store.halfLine.name}
+        line={store.halfLine}
+        colors={store.colors}
+        dashes={store.dashChoices}
+        key="half-line"
       />
-    )),
-    <LineSetting
-      label={store.guideline.name}
-      line={store.guideline}
-      colors={store.colors}
-      dashes={store.dashChoices}
-      key="guide"
-    />,
-    <LineSetting
-      label={store.halfLine.name}
-      line={store.halfLine}
-      colors={store.colors}
-      dashes={store.dashChoices}
-      key="half-line"
-    />
-  ];
+    </div>
+  );
 };
 
 export default observer(LineSettings);
