@@ -18,11 +18,7 @@ const doPrintWindow = e => {
 const doSaving = e => {
   const svg = document.getElementById("theSVG");
 
-  download(
-    svg.outerHTML,
-    `pen-${store.ratio} ${store.pageSize}-${store.orientation}.svg`,
-    "image/svg"
-  );
+  download(svg.outerHTML, `pen-output.svg`, "image/svg");
 };
 
 const HeaderButtons = () => {
