@@ -15,7 +15,7 @@ const doPrintWindow = e => {
   `);
 };
 
-const doSaving = store => {
+const doSaving = e => {
   const svg = document.getElementById("theSVG");
 
   download(
@@ -28,17 +28,13 @@ const doSaving = store => {
 const HeaderButtons = () => {
   return (
     <div>
-      <IconButton onClick={doSaving} color="inherit" aria-label="Download">
+      <IconButton onClick={doSaving} color="inherit" title="Download">
         <Icon>file_download</Icon>
       </IconButton>
-      <IconButton onClick={doPrintWindow} color="inherit" aria-label="Pop Out">
+      <IconButton onClick={doPrintWindow} color="inherit" title="Pop Out">
         <Icon>input</Icon>
       </IconButton>
-      <IconButton
-        onClick={() => window.print()}
-        color="inherit"
-        aria-label="Print"
-      >
+      <IconButton onClick={() => window.print()} color="inherit" title="Print">
         <Icon>print</Icon>
       </IconButton>
     </div>
