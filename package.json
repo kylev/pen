@@ -28,8 +28,11 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.7.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "gh-pages": "^1.1.0",
     "prettier": "^1.11.1",
     "react-app-rewired": "^1.5.0"
-  }
+  },
+  "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js"
 }
