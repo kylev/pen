@@ -8,3 +8,5 @@ export const trackEvent = (action, label) => {
 };
 
 export const presetChange = partial(trackEvent, "select_preset");
+
+export const outputAttempt = partial(trackEvent, "output_attempt");

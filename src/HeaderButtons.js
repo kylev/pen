@@ -4,7 +4,10 @@ import download from "downloadjs";
 import Icon from "material-ui/Icon";
 import IconButton from "material-ui/IconButton";
 
+import { outputAttempt } from "./ga";
+
 const doPrintWindow = e => {
+  outputAttempt("popout");
   const svg = document.getElementById("theSVG");
 
   const printWindow = window.open("", "printwindow", "status=1");
@@ -16,9 +19,15 @@ const doPrintWindow = e => {
 };
 
 const doSaving = e => {
+  outputAttempt("save");
   const svg = document.getElementById("theSVG");
 
   download(svg.outerHTML, `pen-output.svg`, "image/svg");
+};
+
+const doPrint = e => {
+  outputAttempt("print");
+  window.print();
 };
 
 const HeaderButtons = () => {
@@ -30,7 +39,7 @@ const HeaderButtons = () => {
       <IconButton onClick={doPrintWindow} color="inherit" title="Pop Out">
         <Icon>input</Icon>
       </IconButton>
-      <IconButton onClick={() => window.print()} color="inherit" title="Print">
+      <IconButton onClick={doPrint} color="inherit" title="Print">
         <Icon>print</Icon>
       </IconButton>
     </div>
