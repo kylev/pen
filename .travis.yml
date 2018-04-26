@@ -4,4 +4,4 @@ before_deploy:
 branches:
   only:
     master
-after_success: yarn run deploy
+after_success: yarn run deploy -r https://$GITHUB_TOKEN@github.com/kylev/pen.git/
