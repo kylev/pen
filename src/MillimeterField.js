@@ -16,6 +16,7 @@ const MillimeterField = props => {
         min,
         step
       }}
+      // eslint-disable-next-line react/jsx-no-duplicate-props
       InputProps={{
         endAdornment: <InputAdornment position="end">mm</InputAdornment>
       }}
