@@ -1,7 +1,7 @@
 language: node_js
 before_deploy:
   run: yarn run build
-after_success:
-  script: yarn run deploy
-  on:
-    branch: master
+branches:
+  only:
+    master
+after_success: yarn run deploy
