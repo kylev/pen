@@ -263,6 +263,11 @@ class PenStore {
   ratioPreset(key) {
     const preset = this.ratioChoices.find(c => key === c.key);
 
+    window.gtag("event", {
+      event_category: "Pen",
+      event_action: "Preset",
+      event_label: key
+    });
     this.ratio = key;
     this.ratios = preset.ratios || this.ratios;
     this.guideline.angle =
