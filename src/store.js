@@ -2,7 +2,6 @@ import { reduce, range } from "lodash";
 import { action, computed, decorate, observable } from "mobx";
 import Color from "color";
 
-import { presetChange } from "./ga";
 import { composeLine, defaultLineSpec } from "./lines";
 
 const RAD_RATIO = Math.PI / 180;
@@ -264,11 +263,9 @@ class PenStore {
   ratioPreset(key) {
     const preset = this.ratioChoices.find(c => key === c.key);
 
-    presetChange(key);
     this.ratio = key;
-    this.ratios = preset.ratios || this.ratios;
-    this.guideline.angle =
-      preset.angle === undefined ? this.guideline.angle : preset.angle;
+    if (preset.ratios) this.ratios = preset.ratios;
+    if (preset.angle !== undefined) this.guideline.angle = preset.angle;
   }
 }
 
