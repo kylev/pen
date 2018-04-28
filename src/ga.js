@@ -2,7 +2,6 @@ import { join, partial } from "lodash";
 import { reaction } from "mobx";
 
 export const trackEvent = (action, label) => {
-  console.log(`Tracking ${action} ${label}`);
   window.gtag("event", action, {
     event_category: "Pen",
     event_label: label
