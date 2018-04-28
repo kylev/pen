@@ -39,6 +39,7 @@ class PenStore {
   pageSizes = [
     { key: "a3", name: "A3", width: 297, height: 420 },
     { key: "a4", name: "A4", width: 210, height: 297 },
+    { key: "a5", name: "A5", width: 148, height: 210 },
     { key: "ledger", name: "US Ledger (11x17)", width: 279, height: 432 },
     { key: "legal", name: "US Legal", width: 216, height: 356 },
     { key: "letter", name: "US Letter", width: 216, height: 279 }
