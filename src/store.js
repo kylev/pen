@@ -82,7 +82,7 @@ class PenStore {
       angle: 83
     },
     {
-      key: "winterplate",
+      key: "copperplate",
       name: "Copperplate (Winters) 3:2:3 55°",
       ratios: [3, 2, 3, 0],
       angle: 55
