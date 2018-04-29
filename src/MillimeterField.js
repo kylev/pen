@@ -14,7 +14,8 @@ const MillimeterField = props => {
       inputProps={{
         max,
         min,
-        step
+        step,
+        style: { width: 80 }
       }}
       // eslint-disable-next-line react/jsx-no-duplicate-props
       InputProps={{
