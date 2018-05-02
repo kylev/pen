@@ -1,4 +1,4 @@
-import { join, partial } from "lodash";
+import { debounce, join, partial } from "lodash";
 import { reaction } from "mobx";
 
 export const trackEvent = (action, label) => {
@@ -17,7 +17,7 @@ export const xHeightChange = partial(trackEvent, "change_x_height");
 export const outputAttempt = partial(trackEvent, "output_attempt");
 
 const reactRatio = ratio => {
-  if (ratio !== "custom") presetChange(ratio);
+  presetChange(ratio);
 };
 
 const reactRatios = args => {
@@ -31,6 +31,6 @@ const reactXHeight = height => {
 
 export const gaWatchStore = store => {
   reaction(() => store.ratio, reactRatio);
-  reaction(() => [store.ratio, ...store.ratios], reactRatios);
-  reaction(() => store.xHeight, reactXHeight);
+  reaction(() => [store.ratio, ...store.ratios], debounce(reactRatios, 500));
+  reaction(() => store.xHeight, debounce(reactXHeight, 500));
 };
