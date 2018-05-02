@@ -13,6 +13,7 @@
     "material-ui": "^1.0.0-beta.41",
     "mobx": "^4.1.1",
     "mobx-react": "^5.0.0",
+    "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-number-format": "^3.3.1",
