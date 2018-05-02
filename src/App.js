@@ -14,7 +14,7 @@ gaWatchStore(store);
 
 const theme = createMuiTheme({});
 
-const App = ({ classes }) => {
+const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
       <Header store={store} />
@@ -23,7 +23,5 @@ const App = ({ classes }) => {
     </MuiThemeProvider>
   );
 };
-
-//const styles = { footerIcons: { paddingLeft: 8, paddingRight: 8 } };
 
 export default App;
