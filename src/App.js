@@ -5,7 +5,7 @@ import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";
 
 import "./App.css";
 
-import { gaWatchStore } from "./ga";
+import { gaWatchStore, gaErrorReport } from "./ga";
 import Header from "./Header";
 import Footer from "./Footer";
 import PaperDisplay from "./PaperDisplay";
@@ -16,16 +16,22 @@ gaWatchStore(store);
 
 const theme = createMuiTheme({});
 
-const App = () => {
-  return (
-    <I18nextProvider i18n={i18n}>
-      <MuiThemeProvider theme={theme}>
-        <Header store={store} />
-        <PaperDisplay store={store} />
-        <Footer />
-      </MuiThemeProvider>
-    </I18nextProvider>
-  );
-};
+class App extends React.Component {
+  componentDidCatch(error, info) {
+    gaErrorReport(error);
+  }
+
+  render() {
+    return (
+      <I18nextProvider i18n={i18n}>
+        <MuiThemeProvider theme={theme}>
+          <Header store={store} />
+          <PaperDisplay store={store} />
+          <Footer />
+        </MuiThemeProvider>
+      </I18nextProvider>
+    );
+  }
+}
 
 export default App;

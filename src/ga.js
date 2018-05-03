@@ -34,3 +34,8 @@ export const gaWatchStore = store => {
   reaction(() => [store.ratio, ...store.ratios], debounce(reactRatios, 500));
   reaction(() => store.xHeight, debounce(reactXHeight, 500));
 };
+
+export const gaErrorReport = e => {
+  console.error("Exception", e.message);
+  window.gtag("event", "exception", { description: e.message });
+};
