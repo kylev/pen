@@ -1,5 +1,6 @@
 import React from "react";
 import { observer } from "mobx-react";
+import { translate } from "react-i18next";
 
 import { Typography } from "material-ui";
 import Grid from "material-ui/Grid";
@@ -7,15 +8,15 @@ import Grid from "material-ui/Grid";
 import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
 
-let LineSetting = ({ label, line, colors, dashes }) => {
+let LineSetting = ({ label, line, colors, dashes, t }) => {
   return (
     <Grid container spacing={24} style={{ marginBottom: 24 }}>
       <Grid item xs={12} style={{ paddingBottom: 0 }}>
-        <Typography variant="subheading">{label}</Typography>
+        <Typography variant="subheading">{t(label)}</Typography>
       </Grid>
       <Grid item xs={6} md={4}>
         <DropDownField
-          label="Color"
+          label={t("color")}
           value={line.color}
           choices={colors}
           onChange={v => (line.color = v)}
@@ -23,7 +24,7 @@ let LineSetting = ({ label, line, colors, dashes }) => {
       </Grid>
       <Grid item xs={6} md={4}>
         <DropDownField
-          label="Dash"
+          label={t("dash")}
           value={line.dash}
           choices={dashes}
           onChange={v => (line.dash = v)}
@@ -32,7 +33,7 @@ let LineSetting = ({ label, line, colors, dashes }) => {
       </Grid>
       <Grid item xs={12} md={4}>
         <MillimeterField
-          label="Thickness"
+          label={t("thickness")}
           value={line.thickness}
           min={0.1}
           step={0.1}
@@ -43,7 +44,7 @@ let LineSetting = ({ label, line, colors, dashes }) => {
     </Grid>
   );
 };
-LineSetting = observer(LineSetting);
+LineSetting = translate()(observer(LineSetting));
 
 const LineSettings = ({ store }) => {
   const lineNames = ["ascender", "midline", "baseline", "descender"];
@@ -51,26 +52,26 @@ const LineSettings = ({ store }) => {
     <div>
       {lineNames.map(ln => (
         <LineSetting
-          label={store[ln].name}
+          label={ln}
           line={store[ln]}
           colors={store.colors}
           dashes={store.dashChoices}
           key={ln}
         />
-      ))},
+      ))}
       <LineSetting
-        label={store.guideline.name}
+        label={"guideline"}
         line={store.guideline}
         colors={store.colors}
         dashes={store.dashChoices}
         key="guide"
-      />,
+      />
       <LineSetting
-        label={store.halfLine.name}
+        label={"halfline"}
         line={store.halfLine}
         colors={store.colors}
         dashes={store.dashChoices}
-        key="half-line"
+        key="halfline"
       />
     </div>
   );

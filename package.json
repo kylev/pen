@@ -9,6 +9,8 @@
     "@fortawesome/react-fontawesome": "^0.0.18",
     "color": "^3.0.0",
     "downloadjs": "^1.4.7",
+    "i18next": "^11.2.3",
+    "i18next-browser-languagedetector": "^2.2.0",
     "lodash": "^4.17.5",
     "material-ui": "^1.0.0-beta.41",
     "mobx": "^4.1.1",
@@ -16,6 +18,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
+    "react-i18next": "^7.6.1",
     "react-number-format": "^3.3.1",
     "react-scripts": "1.1.4"
   },

@@ -16,6 +16,7 @@ class PenStore {
   xColor = "transparent";
   gapColor = "transparent";
   watermarkColor = "darkgray";
+
   ascender = defaultLineSpec({ name: "Ascender" });
   midline = defaultLineSpec({ name: "Midline", color: "red", dash: "1, 1" });
   baseline = defaultLineSpec({ name: "Baseline" });
@@ -25,7 +26,6 @@ class PenStore {
     color: "transparent",
     dash: "2, 2"
   });
-
   guideline = defaultLineSpec({
     name: "Guide Lines",
     strokeWidth: 0.1,

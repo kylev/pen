@@ -1,0 +1,15 @@
+{
+  "presets": "Presets",
+  "pagesize": "Paper",
+  "pageorientation": "Orientation",
+  "ascender": "Ascender",
+  "midline": "Midline",
+  "baseline": "Baseline",
+  "descender": "Descender",
+  "guideline": "Angle Guides",
+  "halfline": "Half-Line",
+  "dash": "Dash",
+  "thickness": "Thickness",
+  "xheight": "X-Height",
+  "color": "Color"
+}
