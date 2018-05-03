@@ -2,6 +2,7 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 import enDefault from "./en_default";
+import esDefault from "./es_default";
 
 i18n.use(LanguageDetector).init({
   fallbackLng: "en",
@@ -10,11 +11,7 @@ i18n.use(LanguageDetector).init({
   resources: {
     en: { default: enDefault },
     "en-GB": { default: { color: "Colour" } },
-    es: {
-      default: {
-        xheight: "X-Altura"
-      }
-    }
+    es: { default: esDefault }
   }
 });
 
