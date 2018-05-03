@@ -7,11 +7,10 @@ import esDefault from "./es_default";
 i18n.use(LanguageDetector).init({
   fallbackLng: "en",
   debug: process.env.NODE_ENV === "development",
-  defaultNS: "default",
   resources: {
-    en: { default: enDefault },
-    "en-GB": { default: { color: "Colour" } },
-    es: { default: esDefault }
+    en: { translation: enDefault },
+    "en-GB": { translation: { color: "Colour" } },
+    es: { translation: esDefault }
   }
 });
 
