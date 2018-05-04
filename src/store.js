@@ -37,17 +37,14 @@ class PenStore {
   // Read-only
   isDev = process.env.NODE_ENV === "development";
   pageSizes = [
-    { key: "a3", name: "A3", width: 297, height: 420 },
-    { key: "a4", name: "A4", width: 210, height: 297 },
-    { key: "a5", name: "A5", width: 148, height: 210 },
-    { key: "ledger", name: "US Ledger (11x17)", width: 279, height: 432 },
-    { key: "legal", name: "US Legal", width: 216, height: 356 },
-    { key: "letter", name: "US Letter", width: 216, height: 279 }
+    { key: "a3", width: 297, height: 420 },
+    { key: "a4", width: 210, height: 297 },
+    { key: "a5", width: 148, height: 210 },
+    { key: "ledger", width: 279, height: 432 },
+    { key: "legal", width: 216, height: 356 },
+    { key: "letter", width: 216, height: 279 }
   ];
-  orientations = [
-    { key: "landscape", name: "Landcape" },
-    { key: "portrait", name: "Portrait" }
-  ];
+  orientations = [{ key: "landscape" }, { key: "portrait" }];
   colors = [
     { key: "transparent", name: "None" },
     {
@@ -73,35 +70,30 @@ class PenStore {
     { key: "yellow", name: "Yellow" }
   ];
   ratioChoices = [
-    { key: "custom", name: "Custom" },
-    { key: "simple", name: "Basic Penmanship", ratios: [1, 1, 1, 1], angle: 0 },
+    { key: "custom" },
+    { key: "simple", ratios: [1, 1, 1, 1], angle: 0 },
     {
       key: "italic",
-      name: "Italic 2:4:2 83°",
       ratios: [2, 4, 2, 2],
       angle: 83
     },
     {
       key: "copperplate",
-      name: "Copperplate (Winters) 3:2:3 55°",
       ratios: [3, 2, 3, 0],
       angle: 55
     },
     {
       key: "spencerian",
-      name: "Spencerian 2:1:2 52°",
       ratios: [2, 1, 2, 1],
       angle: 52
     },
     {
       key: "foundation",
-      name: "Foundation 2:2:2",
       ratios: [2, 2, 2, 0],
       angle: 0
     },
     {
       key: "german",
-      name: "German Kurrent 2:1:2",
       ratios: [2, 1, 2, 0],
       angle: 0
     }
@@ -110,7 +102,7 @@ class PenStore {
     { key: "none", name: "Solid" },
     { key: "1, 1", name: "1cm" },
     { key: "2, 2", name: "2cm" },
-    { key: "4, 2", name: "4:2cm" }
+    { key: "4, 2", name: "4cm / 2cm" }
   ];
 
   get gap() {
