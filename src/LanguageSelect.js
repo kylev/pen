@@ -8,7 +8,7 @@ const LanguageSelect = ({ t }) => {
   return (
     <DropDownField
       id="lang-select"
-      label={t("selectlanguage")}
+      label={"selectlanguage"}
       margin="dense"
       value={i18next.language}
       onChange={v => i18next.changeLanguage(v)}

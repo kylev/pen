@@ -17,7 +17,7 @@ const DropDownField = ({
 }) => {
   return (
     <FormControl>
-      <InputLabel htmlFor={id}>{label}</InputLabel>
+      <InputLabel htmlFor={id}>{t(label)}</InputLabel>
       <Select onChange={e => onChange(e.target.value)} id={id} {...rest}>
         {choices.map(p => (
           <MenuItem value={p.key} key={p.key}>

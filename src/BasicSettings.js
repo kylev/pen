@@ -13,7 +13,7 @@ const PaperSettings = ({ store, t }) => {
       <Grid item xs={6} md={4}>
         <DropDownField
           id="presets-field"
-          label={t("presets")}
+          label={"presets"}
           value={store.ratio}
           onChange={v => store.ratioPreset(v)}
           choices={store.ratioChoices}
@@ -32,7 +32,7 @@ const PaperSettings = ({ store, t }) => {
       <Grid item sm={6} md={3}>
         <DropDownField
           id="size-field"
-          label={t("pagesize")}
+          label={"pagesize"}
           value={store.pageSize}
           onChange={v => (store.pageSize = v)}
           choices={store.pageSizes}
@@ -41,7 +41,7 @@ const PaperSettings = ({ store, t }) => {
       <Grid item sm={6} md={3}>
         <DropDownField
           id="orientation-field"
-          label={t("pageorientation")}
+          label={"pageorientation"}
           value={store.orientation}
           onChange={v => (store.orientation = v)}
           choices={store.orientations}
