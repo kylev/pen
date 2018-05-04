@@ -29,5 +29,13 @@
 
   "pageorientation": "Orientation",
   "landscape": "Landscape",
-  "portrait": "Portrait"
+  "portrait": "Portrait",
+
+  "selectlanguage": "Language",
+  "languages": {
+    "en": "English",
+    "en-GB": "British English",
+    "en-US": "US English",
+    "es": "Español"
+  }
 }

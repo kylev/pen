@@ -7,9 +7,12 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import githubIcon from "@fortawesome/fontawesome-free-brands/faGithub";
 import twitterIcon from "@fortawesome/fontawesome-free-brands/faTwitter";
 
+import LanguageSelect from "./LanguageSelect";
+
 const Footer = ({ classes }) => {
   return (
-    <Grid container className={classes.root} justify="center">
+    <Grid container className={classes.root}>
+      <Grid item xs={2} />
       <Grid item xs={8}>
         <Typography paragraph align="center">
           <a href="https://github.com/kylev/pen" padding={24}>
@@ -24,6 +27,9 @@ const Footer = ({ classes }) => {
           teacher.<br />
           <a href="https://github.com/kylev/pen/issues">Bugs? Suggestions?</a>
         </Typography>
+      </Grid>
+      <Grid item xs={2}>
+        <LanguageSelect />
       </Grid>
     </Grid>
   );
