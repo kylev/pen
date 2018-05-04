@@ -5,10 +5,26 @@
   "descender": "Descender",
   "guideline": "Angle Guides",
   "halfline": "Half-Line",
+
   "dash": "Dash",
   "thickness": "Thickness",
   "xheight": "X-Height",
   "color": "Color",
+
+  "colors": {
+    "black": "Black",
+    "blue": "Blue",
+    "cyan": "Cyan",
+    "darkgray": "Dark Gray",
+    "gray": "Gray",
+    "green": "Green",
+    "lightgray": "Light Gray",
+    "pink": "Pink",
+    "red": "Red",
+    "transparent": "None",
+    "white": "White",
+    "yellow": "Yellow"
+  },
 
   "presets": "Presets",
   "custom": "Custom",
@@ -31,11 +47,17 @@
   "landscape": "Landscape",
   "portrait": "Portrait",
 
+  "gapcolor": "Gap Color",
+  "guideangle": "Guide Angle",
+  "guidespacing": "Guide Spacing",
+  "watermark": "Watermark",
+  "xmarker": "X Marker",
+
   "selectlanguage": "Language",
   "languages": {
     "en": "English",
-    "en-GB": "British English",
-    "en-US": "US English",
+    "en-GB": "English (United Kingdom)",
+    "en-US": "English (US)",
     "es": "Español"
   }
 }

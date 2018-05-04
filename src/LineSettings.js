@@ -5,6 +5,7 @@ import { translate } from "react-i18next";
 import { Typography } from "material-ui";
 import Grid from "material-ui/Grid";
 
+import ColorDropDownField from "./ColorDropDownField";
 import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
 
@@ -15,8 +16,8 @@ let LineSetting = ({ label, line, colors, dashes, t }) => {
         <Typography variant="subheading">{t(label)}</Typography>
       </Grid>
       <Grid item xs={6} md={4}>
-        <DropDownField
-          label={t("color")}
+        <ColorDropDownField
+          label={"color"}
           value={line.color}
           choices={colors}
           onChange={v => (line.color = v)}

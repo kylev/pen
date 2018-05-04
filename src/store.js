@@ -46,28 +46,25 @@ class PenStore {
   ];
   orientations = [{ key: "landscape" }, { key: "portrait" }];
   colors = [
-    { key: "transparent", name: "None" },
-    {
-      key: "black",
-      name: "Black"
-    },
-    { key: "gray", name: "Gray" },
+    { key: "transparent" },
+    { key: "black" },
+    { key: "gray" },
     ...range(1, 10).map(v => ({
       key: Color.rgb(255, 255, 255)
         .darken(v / 10.0)
         .string(),
       name: `Gray ${v * 10}%`
     })),
-    { key: "blue", name: "Blue" },
-    { key: "cyan", name: "Cyan" },
-    { key: "darkgray", name: "Dark Gray" },
-    { key: "green", name: "Green" },
-    { key: "lightgray", name: "Light Gray" },
+    { key: "blue" },
+    { key: "cyan" },
+    { key: "darkgray" },
+    { key: "green" },
+    { key: "lightgray" },
     { key: Color.rgb(164, 221, 237).string(), name: "Non-Photo Blue" },
-    { key: "pink", name: "Pink" },
-    { key: "red", name: "Red" },
-    { key: "white", name: "White" },
-    { key: "yellow", name: "Yellow" }
+    { key: "pink" },
+    { key: "red" },
+    { key: "white" },
+    { key: "yellow" }
   ];
   ratioChoices = [
     { key: "custom" },

@@ -1,4 +1,5 @@
 import React from "react";
+import { translate } from "react-i18next";
 import { clamp } from "lodash";
 import { observer } from "mobx-react";
 
@@ -6,11 +7,11 @@ import { InputAdornment } from "material-ui/Input";
 import Grid from "material-ui/Grid";
 import TextField from "material-ui/TextField";
 
-import DropDownField from "./DropDownField";
+import ColorDropDownField from "./ColorDropDownField";
 import RatiosInput from "./RatiosInput";
 import MillimeterField from "./MillimeterField";
 
-const CustomSettings = ({ store }) => {
+const CustomSettings = ({ store, t }) => {
   return (
     <Grid container spacing={24}>
       <Grid item xs={12} md={4}>
@@ -19,7 +20,7 @@ const CustomSettings = ({ store }) => {
       <Grid item sm={6} md={4}>
         <TextField
           id="guide-angle-field"
-          label="Guide Angle"
+          label={t("guideangle")}
           type="number"
           value={store.guideline.angle}
           onChange={e => {
@@ -34,34 +35,34 @@ const CustomSettings = ({ store }) => {
       <Grid item sm={6} md={4}>
         <MillimeterField
           id="guide-spacing-field"
-          label="Guide Spacing"
+          label="guidespacing"
           value={store.guideline.spacing}
           onChange={v => (store.guideline.spacing = v)}
         />
       </Grid>
 
       <Grid item sm={6} md={3}>
-        <DropDownField
+        <ColorDropDownField
           id="gap-color-field"
-          label="Gap&nbsp;Color"
+          label="gapcolor"
           onChange={v => (store.gapColor = v)}
           value={store.gapColor}
           choices={store.colors}
         />
       </Grid>
       <Grid item sm={6} md={3}>
-        <DropDownField
+        <ColorDropDownField
           id="x-marker-field"
-          label="X Marker"
+          label="xmarker"
           onChange={v => (store.xColor = v)}
           value={store.xColor}
           choices={store.colors}
         />
       </Grid>
       <Grid item sm={6} md={3}>
-        <DropDownField
+        <ColorDropDownField
           id="watermark-color-field"
-          label="Watermark"
+          label="watermark"
           onChange={v => (store.watermarkColor = v)}
           value={store.watermarkColor}
           choices={store.colors}
@@ -79,4 +80,4 @@ const CustomSettings = ({ store }) => {
   );
 };
 
-export default observer(CustomSettings);
+export default translate()(observer(CustomSettings));

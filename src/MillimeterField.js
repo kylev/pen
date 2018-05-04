@@ -1,14 +1,16 @@
 import React from "react";
+import { translate } from "react-i18next";
 
 import { InputAdornment } from "material-ui/Input";
 import TextField from "material-ui/TextField";
 
 const MillimeterField = props => {
-  const { onChange, max, min, step, ...other } = props;
+  const { onChange, label, max, min, step, t, tReady, ...other } = props;
 
   return (
     <TextField
       {...other}
+      label={t(label)}
       onChange={e => onChange(e.target.value)}
       type="number"
       inputProps={{
@@ -25,4 +27,4 @@ const MillimeterField = props => {
   );
 };
 
-export default MillimeterField;
+export default translate()(MillimeterField);
