@@ -1,4 +1,9 @@
 {
+  "pagesize": "Papel",
   "dash": "Guión",
-  "xheight": "X-Altura"
+  "xheight": "X-Altura",
+
+  "pageorientation": "Orientación",
+  "landscape": "Horizontal",
+  "portrait": "Vertical"
 }
