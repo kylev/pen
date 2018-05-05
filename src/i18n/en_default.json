@@ -14,7 +14,6 @@
   "guideline": "Angle Guides",
   "halfline": "Half-Line",
 
-  "dash": "Dash",
   "thickness": "Thickness",
   "xheight": "X Height",
   "color": "Color",
@@ -36,6 +35,14 @@
     "yellow": "Yellow"
   },
 
+  "dash": "Dash",
+  "dashtypes": {
+    "none": "Solid",
+    "1cm": "1cm",
+    "2cm": "2cm",
+    "42vary": "4cm / 2cm"
+  },
+  
   "presets": "Presets",
   "custom": "Custom",
   "simple": "Basic Penmanship",
