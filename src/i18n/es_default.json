@@ -1,5 +1,9 @@
 {
   "title": "Guía de Caligrafía",
+  "buttons": {
+    "download": "Descargar",
+    "print": "Imprimir"
+  },
 
   "pagesize": "Papel",
   "dash": "Guión",
