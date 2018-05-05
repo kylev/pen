@@ -1,6 +1,7 @@
 import React from "react";
 import { translate } from "react-i18next";
 
+import { withStyles } from "material-ui/styles";
 import { FormControl } from "material-ui/Form";
 import { InputLabel } from "material-ui/Input";
 import { MenuItem } from "material-ui/Menu";
@@ -13,6 +14,7 @@ const tName = (t, p) => {
 };
 
 const DropDownField = ({
+  classes,
   label,
   onChange,
   choices,
@@ -23,7 +25,9 @@ const DropDownField = ({
 }) => {
   return (
     <FormControl>
-      <InputLabel htmlFor={id}>{t(label)}</InputLabel>
+      <InputLabel className={classes.label} htmlFor={id}>
+        {t(label)}
+      </InputLabel>
       <Select onChange={e => onChange(e.target.value)} id={id} {...rest}>
         {choices.map(p => (
           <MenuItem value={p.key} key={p.key}>
@@ -35,4 +39,10 @@ const DropDownField = ({
   );
 };
 
-export default translate()(DropDownField);
+const styles = theme => {
+  return {
+    label: { whiteSpace: "nowrap" }
+  };
+};
+
+export default translate()(withStyles(styles)(DropDownField));
