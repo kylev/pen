@@ -30,7 +30,7 @@ const DropDownField = ({
       </InputLabel>
       <Select onChange={e => onChange(e.target.value)} id={id} {...rest}>
         {choices.map(p => (
-          <MenuItem value={p.key} key={p.key}>
+          <MenuItem value={p.value || p.key} key={p.key}>
             {tName(t, p)}
           </MenuItem>
         ))}
