@@ -3,6 +3,19 @@
   "dash": "Guión",
   "xheight": "X-Altura",
 
+  "colors" : {
+    "black": "Negro",
+    "blue": "Azul",
+    "gray": "Gris",
+    "graypct": "Gris {{pct}}%",
+    "nonphotoblue": "Azul (no fotografiar)",
+    "red": "Rojo",
+    "transparent": "Nada",
+    "white": "Blanco"
+  },
+
+
+  "presets": "Programar",
   "pageorientation": "Orientación",
   "landscape": "Horizontal",
   "portrait": "Vertical"
