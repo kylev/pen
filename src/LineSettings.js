@@ -24,7 +24,7 @@ let LineSetting = ({ label, line, dashes, t }) => {
       </Grid>
       <Grid item xs={6} md={4}>
         <DropDownField
-          label={t("dash")}
+          label={"dash"}
           value={line.dash}
           choices={dashes}
           onChange={v => (line.dash = v)}
@@ -33,7 +33,7 @@ let LineSetting = ({ label, line, dashes, t }) => {
       </Grid>
       <Grid item xs={12} md={4}>
         <MillimeterField
-          label={t("thickness")}
+          label={"thickness"}
           value={line.thickness}
           min={0.1}
           step={0.1}
