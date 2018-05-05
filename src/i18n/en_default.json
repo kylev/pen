@@ -21,8 +21,9 @@
 
   "thickness": "Thickness",
   "xheight": "X Height",
-  "color": "Color",
+  "ratios": "Ratios",
 
+  "color": "Color",
   "colors": {
     "black": "Black",
     "blue": "Blue",

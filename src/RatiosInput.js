@@ -1,4 +1,5 @@
 import React from "react";
+import { translate } from "react-i18next";
 import { clamp } from "lodash";
 import { observer } from "mobx-react";
 
@@ -7,7 +8,7 @@ import Input, { InputLabel } from "material-ui/Input";
 
 const labels = ["Ascender", "X", "Descender", "Gap"];
 
-let RatioInput = ({ store }) => (
+let RatioInput = ({ store, t }) => (
   <span>
     {store.ratios.map((r, i) => (
       <span key={i} style={{ display: "inline-block", marginRight: 8 }}>
@@ -21,20 +22,20 @@ let RatioInput = ({ store }) => (
           style={{ marginTop: 16, width: 60 }}
         />
         <br />
-        <FormHelperText>{labels[i]}</FormHelperText>
+        <FormHelperText>{t(labels[i])}</FormHelperText>
       </span>
     ))}
   </span>
 );
 RatioInput = observer(RatioInput);
 
-const RatiosInput = ({ store }) => {
+const RatiosInput = ({ store, t }) => {
   return (
     <FormControl>
-      <InputLabel shrink>Ratios</InputLabel>
-      <RatioInput store={store} />
+      <InputLabel shrink>{t("ratios")}</InputLabel>
+      <RatioInput store={store} t={t} />
     </FormControl>
   );
 };
 
-export default RatiosInput;
+export default translate()(RatiosInput);
