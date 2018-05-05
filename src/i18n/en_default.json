@@ -17,6 +17,7 @@
     "cyan": "Cyan",
     "darkgray": "Dark Gray",
     "gray": "Gray",
+    "graypct": "Gray {{pct}}%",
     "green": "Green",
     "lightgray": "Light Gray",
     "nonphotoblue": "Blue (Non-Photo)",

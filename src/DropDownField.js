@@ -6,6 +6,12 @@ import { InputLabel } from "material-ui/Input";
 import { MenuItem } from "material-ui/Menu";
 import Select from "material-ui/Select";
 
+const tName = (t, p) => {
+  if (!p.name) return t(p.key);
+  if (typeof p.name === "string") return t(p.name);
+  else return t(p.name[0], p.name[1]);
+};
+
 const DropDownField = ({
   label,
   onChange,
@@ -21,7 +27,7 @@ const DropDownField = ({
       <Select onChange={e => onChange(e.target.value)} id={id} {...rest}>
         {choices.map(p => (
           <MenuItem value={p.key} key={p.key}>
-            {t(p.name || p.key)}
+            {tName(t, p)}
           </MenuItem>
         ))}
       </Select>
