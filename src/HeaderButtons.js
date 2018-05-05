@@ -1,5 +1,6 @@
 import React from "react";
 import download from "downloadjs";
+import { translate } from "react-i18next";
 
 import Icon from "material-ui/Icon";
 import IconButton from "material-ui/IconButton";
@@ -30,20 +31,28 @@ const doPrint = e => {
   window.print();
 };
 
-const HeaderButtons = () => {
+const HeaderButtons = ({ t }) => {
   return (
     <div>
-      <IconButton onClick={doSaving} color="inherit" title="Download">
+      <IconButton
+        onClick={doSaving}
+        color="inherit"
+        title={t("buttons.download")}
+      >
         <Icon>file_download</Icon>
       </IconButton>
-      <IconButton onClick={doPrintWindow} color="inherit" title="Pop Out">
+      <IconButton
+        onClick={doPrintWindow}
+        color="inherit"
+        title={t("buttons.popout")}
+      >
         <Icon>input</Icon>
       </IconButton>
-      <IconButton onClick={doPrint} color="inherit" title="Print">
+      <IconButton onClick={doPrint} color="inherit" title={t("buttons.print")}>
         <Icon>print</Icon>
       </IconButton>
     </div>
   );
 };
 
-export default HeaderButtons;
+export default translate()(HeaderButtons);

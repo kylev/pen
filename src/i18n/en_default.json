@@ -6,6 +6,11 @@
     "lines": "Lines",
     "debug": "Debug"
   },
+  "buttons":{
+    "download": "Download",
+    "popout": "Pop Out",
+    "print": "Print"
+  },
 
   "ascender": "Ascender",
   "midline": "Midline",
