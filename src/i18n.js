@@ -1,8 +1,8 @@
 import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-import enDefault from "./locales/en/default";
-import esDefault from "./locales/es/default";
+import enDefault from "./locales/en/translation";
+import esDefault from "./locales/es/translation";
 
 let fallbackLng = "en";
 if (process.env.NODE_ENV === "test") fallbackLng = "cimode";
