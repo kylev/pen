@@ -12,7 +12,7 @@ i18n.use(LanguageDetector).init({
   debug: process.env.NODE_ENV === "development",
   resources: {
     en: { translation: enDefault },
-    "en-GB": { translation: { color: "Colour" } },
+    "en-GB": { translation: { color: "Colour", gapcolor: "Gap Colour" } },
     es: { translation: esDefault }
   }
 });
