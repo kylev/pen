@@ -22,7 +22,7 @@ const PaperSettings = ({ store, t }) => {
       <Grid item sm={6} md={2}>
         <MillimeterField
           id="x-height-field"
-          label={t("xheight")}
+          label={"xheight"}
           min={0.1}
           step={0.1}
           value={store.xHeight}
