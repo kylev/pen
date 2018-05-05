@@ -6,7 +6,7 @@ import { observer } from "mobx-react";
 import { FormControl, FormHelperText } from "material-ui/Form";
 import Input, { InputLabel } from "material-ui/Input";
 
-const labels = ["Ascender", "X", "Descender", "Gap"];
+const labels = ["ascender", "x", "descender", "gap"];
 
 let RatioInput = ({ store, t }) => (
   <span>
