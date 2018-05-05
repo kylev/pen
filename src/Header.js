@@ -1,5 +1,6 @@
 import React from "react";
 
+import { translate } from "react-i18next";
 import { AppBar, Toolbar, Typography } from "material-ui";
 import { withStyles } from "material-ui/styles";
 import Tabs, { Tab } from "material-ui/Tabs";
@@ -11,7 +12,7 @@ class Header extends React.Component {
   state = { active: "basic" };
 
   render() {
-    const { classes, store } = this.props;
+    const { classes, store, t } = this.props;
     return (
       <div className={classes.root}>
         <AppBar position="static" color="primary">
@@ -21,7 +22,7 @@ class Header extends React.Component {
               color="inherit"
               className={classes.flex}
             >
-              Penmanship Guides
+              {t("title")}
             </Typography>
             <HeaderButtons />
           </Toolbar>
@@ -30,10 +31,10 @@ class Header extends React.Component {
             onChange={(e, active) => this.setState({ active })}
             value={this.state.active}
           >
-            <Tab label="Basic" value="basic" />
-            <Tab label="Custom" value="custom" />
-            <Tab label="Lines" value="lines" />
-            {store.isDev && <Tab label="Debug" value="debug" />}
+            <Tab label={t("tabs.basic")} value="basic" />
+            <Tab label={t("tabs.custom")} value="custom" />
+            <Tab label={t("tabs.lines")} value="lines" />
+            {store.isDev && <Tab label={t("tabs.debug")} value="debug" />}
           </Tabs>
         </AppBar>
         <SettingsForm store={store} active={this.state.active} />
@@ -55,4 +56,4 @@ const styles = theme => {
   };
 };
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(translate()(Header));

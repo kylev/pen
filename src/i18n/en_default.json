@@ -1,4 +1,12 @@
 {
+  "title": "Penmanship Guides",
+  "tabs": {
+    "basic": "Basic",
+    "custom": "Custom",
+    "lines": "Lines",
+    "debug": "Debug"
+  },
+
   "ascender": "Ascender",
   "midline": "Midline",
   "baseline": "Baseline",

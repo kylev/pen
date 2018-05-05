@@ -1,4 +1,6 @@
 {
+  "title": "Guía de Caligrafía",
+
   "pagesize": "Papel",
   "dash": "Guión",
   "xheight": "X Altura",
@@ -16,6 +18,8 @@
 
 
   "presets": "Programar",
+  "custom": "Personalizado",
+
   "pageorientation": "Orientación",
   "landscape": "Horizontal",
   "portrait": "Vertical"
