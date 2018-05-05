@@ -1,8 +1,8 @@
 import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-import enDefault from "./en_default";
-import esDefault from "./es_default";
+import enDefault from "./locales/en/default";
+import esDefault from "./locales/es/default";
 
 i18n.use(LanguageDetector).init({
   fallbackLng: "en",
