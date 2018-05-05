@@ -36,6 +36,6 @@ export const gaWatchStore = store => {
 };
 
 export const gaErrorReport = e => {
-  console.error("Exception", e.message);
-  window.gtag("event", "exception", { description: e.message });
+  console.error(e);
+  window.gtag && window.gtag("event", "exception", { description: e.message });
 };
