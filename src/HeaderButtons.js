@@ -37,18 +37,22 @@ const HeaderButtons = ({ t }) => {
       <IconButton
         onClick={doSaving}
         color="inherit"
-        title={t("buttons.download")}
+        title={t("buttonNames.download")}
       >
         <Icon>file_download</Icon>
       </IconButton>
       <IconButton
         onClick={doPrintWindow}
         color="inherit"
-        title={t("buttons.popout")}
+        title={t("buttonNames.popout")}
       >
         <Icon>input</Icon>
       </IconButton>
-      <IconButton onClick={doPrint} color="inherit" title={t("buttons.print")}>
+      <IconButton
+        onClick={doPrint}
+        color="inherit"
+        title={t("buttonNames.print")}
+      >
         <Icon>print</Icon>
       </IconButton>
     </div>

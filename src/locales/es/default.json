@@ -1,6 +1,6 @@
 {
   "title": "Guía de Caligrafía",
-  "buttons": {
+  "buttonNames": {
     "download": "Descargar",
     "print": "Imprimir"
   },
@@ -10,7 +10,7 @@
   "xheight": "X Altura",
   "ratios": "Proporciónes",
 
-  "colors" : {
+  "colorNames" : {
     "black": "Negro",
     "blue": "Azul",
     "gray": "Gris",
@@ -20,7 +20,6 @@
     "transparent": "Nada",
     "white": "Blanco"
   },
-
 
   "presets": "Programar",
   "custom": "Personalizado",

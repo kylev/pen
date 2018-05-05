@@ -31,10 +31,10 @@ class Header extends React.Component {
             onChange={(e, active) => this.setState({ active })}
             value={this.state.active}
           >
-            <Tab label={t("tabs.basic")} value="basic" />
-            <Tab label={t("tabs.custom")} value="custom" />
-            <Tab label={t("tabs.lines")} value="lines" />
-            {store.isDev && <Tab label={t("tabs.debug")} value="debug" />}
+            <Tab label={t("tabNames.basic")} value="basic" />
+            <Tab label={t("tabNames.custom")} value="custom" />
+            <Tab label={t("tabNames.lines")} value="lines" />
+            {store.isDev && <Tab label={t("tabNames.debug")} value="debug" />}
           </Tabs>
         </AppBar>
         <SettingsForm store={store} active={this.state.active} />

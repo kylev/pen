@@ -1,12 +1,12 @@
 {
   "title": "Penmanship Guides",
-  "tabs": {
+  "tabNames": {
     "basic": "Basic",
     "custom": "Custom",
     "lines": "Lines",
     "debug": "Debug"
   },
-  "buttons":{
+  "buttonNames": {
     "download": "Download",
     "popout": "Pop Out",
     "print": "Print"
@@ -24,7 +24,7 @@
   "ratios": "Ratios",
 
   "color": "Color",
-  "colors": {
+  "colorNames": {
     "black": "Black",
     "blue": "Blue",
     "cyan": "Cyan",
@@ -42,13 +42,13 @@
   },
 
   "dash": "Dash",
-  "dashtypes": {
+  "dashNames": {
     "none": "Solid",
     "1cm": "1cm",
     "2cm": "2cm",
     "42vary": "4cm / 2cm"
   },
-  
+
   "presets": "Presets",
   "custom": "Custom",
   "simple": "Basic Penmanship",
