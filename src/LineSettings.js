@@ -6,10 +6,11 @@ import { Typography } from "material-ui";
 import Grid from "material-ui/Grid";
 
 import ColorDropDownField from "./ColorDropDownField";
+import DashDropDownField from "./DashDropDownField";
 import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
 
-let LineSetting = ({ label, line, dashes, t }) => {
+let LineSetting = ({ label, line, t }) => {
   return (
     <Grid container spacing={24} style={{ marginBottom: 24 }}>
       <Grid item xs={12} style={{ paddingBottom: 0 }}>
@@ -23,10 +24,9 @@ let LineSetting = ({ label, line, dashes, t }) => {
         />
       </Grid>
       <Grid item xs={6} md={4}>
-        <DropDownField
+        <DashDropDownField
           label={"dash"}
           value={line.dash}
-          choices={dashes}
           onChange={v => (line.dash = v)}
           disabled={line.color === "transparent"}
         />
@@ -51,25 +51,10 @@ const LineSettings = ({ store }) => {
   return (
     <div>
       {lineNames.map(ln => (
-        <LineSetting
-          label={ln}
-          line={store[ln]}
-          dashes={store.dashChoices}
-          key={ln}
-        />
+        <LineSetting label={ln} line={store[ln]} key={ln} />
       ))}
-      <LineSetting
-        label={"guideline"}
-        line={store.guideline}
-        dashes={store.dashChoices}
-        key="guide"
-      />
-      <LineSetting
-        label={"halfline"}
-        line={store.halfLine}
-        dashes={store.dashChoices}
-        key="halfline"
-      />
+      <LineSetting label={"guideline"} line={store.guideline} key="guide" />
+      <LineSetting label={"halfline"} line={store.halfLine} key="halfline" />
     </div>
   );
 };
