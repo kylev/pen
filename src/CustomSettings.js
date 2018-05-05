@@ -47,7 +47,6 @@ const CustomSettings = ({ store, t }) => {
           label="gapcolor"
           onChange={v => (store.gapColor = v)}
           value={store.gapColor}
-          choices={store.colors}
         />
       </Grid>
       <Grid item sm={6} md={3}>
@@ -56,7 +55,6 @@ const CustomSettings = ({ store, t }) => {
           label="xmarker"
           onChange={v => (store.xColor = v)}
           value={store.xColor}
-          choices={store.colors}
         />
       </Grid>
       <Grid item sm={6} md={3}>
@@ -65,7 +63,6 @@ const CustomSettings = ({ store, t }) => {
           label="watermark"
           onChange={v => (store.watermarkColor = v)}
           value={store.watermarkColor}
-          choices={store.colors}
         />
       </Grid>
       <Grid item sm={6} md={3}>

@@ -9,7 +9,7 @@ import ColorDropDownField from "./ColorDropDownField";
 import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
 
-let LineSetting = ({ label, line, colors, dashes, t }) => {
+let LineSetting = ({ label, line, dashes, t }) => {
   return (
     <Grid container spacing={24} style={{ marginBottom: 24 }}>
       <Grid item xs={12} style={{ paddingBottom: 0 }}>
@@ -19,7 +19,6 @@ let LineSetting = ({ label, line, colors, dashes, t }) => {
         <ColorDropDownField
           label={"color"}
           value={line.color}
-          choices={colors}
           onChange={v => (line.color = v)}
         />
       </Grid>
@@ -55,7 +54,6 @@ const LineSettings = ({ store }) => {
         <LineSetting
           label={ln}
           line={store[ln]}
-          colors={store.colors}
           dashes={store.dashChoices}
           key={ln}
         />
@@ -63,14 +61,12 @@ const LineSettings = ({ store }) => {
       <LineSetting
         label={"guideline"}
         line={store.guideline}
-        colors={store.colors}
         dashes={store.dashChoices}
         key="guide"
       />
       <LineSetting
         label={"halfline"}
         line={store.halfLine}
-        colors={store.colors}
         dashes={store.dashChoices}
         key="halfline"
       />

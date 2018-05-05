@@ -1,6 +1,5 @@
 import { reduce, range } from "lodash";
 import { action, computed, decorate, observable } from "mobx";
-import Color from "color";
 
 import { composeLine, defaultLineSpec } from "./lines";
 
@@ -45,27 +44,6 @@ class PenStore {
     { key: "letter", width: 216, height: 279 }
   ];
   orientations = [{ key: "landscape" }, { key: "portrait" }];
-  colors = [
-    { key: "transparent" },
-    { key: "black" },
-    { key: "gray" },
-    ...range(1, 10).map(v => ({
-      key: Color.rgb(255, 255, 255)
-        .darken(v / 10.0)
-        .string(),
-      name: `Gray ${v * 10}%`
-    })),
-    { key: "blue" },
-    { key: "cyan" },
-    { key: "darkgray" },
-    { key: "green" },
-    { key: "lightgray" },
-    { key: Color.rgb(164, 221, 237).string(), name: "Non-Photo Blue" },
-    { key: "pink" },
-    { key: "red" },
-    { key: "white" },
-    { key: "yellow" }
-  ];
   ratioChoices = [
     { key: "custom" },
     { key: "simple", ratios: [1, 1, 1, 1], angle: 0 },
