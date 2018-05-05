@@ -1,6 +1,5 @@
 import React from "react";
 import { range } from "lodash";
-import { observer } from "mobx-react";
 import Color from "color";
 
 import DropDownField from "./DropDownField";
@@ -31,4 +30,4 @@ const ColorDropDownField = props => {
   return <DropDownField choices={colors} {...props} />;
 };
 
-export default observer(ColorDropDownField);
+export default ColorDropDownField;
