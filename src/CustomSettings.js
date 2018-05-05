@@ -68,7 +68,7 @@ const CustomSettings = ({ store, t }) => {
       <Grid item sm={6} md={3}>
         <MillimeterField
           id="print-gap-field"
-          label="Unprintable&nbsp;Margin"
+          label="globalmargin"
           onChange={v => (store.printGap = v)}
           value={store.printGap}
         />

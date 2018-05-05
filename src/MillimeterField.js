@@ -1,11 +1,22 @@
 import React from "react";
 import { translate } from "react-i18next";
 
+import { withStyles } from "material-ui/styles";
 import { InputAdornment } from "material-ui/Input";
 import TextField from "material-ui/TextField";
 
 const MillimeterField = props => {
-  const { onChange, label, max, min, step, t, tReady, ...other } = props;
+  const {
+    classes,
+    onChange,
+    label,
+    max,
+    min,
+    step,
+    t,
+    tReady,
+    ...other
+  } = props;
 
   return (
     <TextField
@@ -23,8 +34,15 @@ const MillimeterField = props => {
       InputProps={{
         endAdornment: <InputAdornment position="end">mm</InputAdornment>
       }}
+      InputLabelProps={{ className: classes.label }}
     />
   );
 };
 
-export default translate()(MillimeterField);
+const styles = theme => {
+  return {
+    label: { whiteSpace: "nowrap" }
+  };
+};
+
+export default translate()(withStyles(styles)(MillimeterField));
