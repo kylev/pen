@@ -11,10 +11,10 @@ import LanguageSelect from "./LanguageSelect";
 
 const Footer = ({ classes }) => {
   return (
-    <Grid container className={classes.root}>
-      <Grid item xs={2} />
-      <Grid item xs={8}>
-        <Typography paragraph align="center">
+    <Grid container spacing={16} className={classes.root}>
+      <Grid item xs={1} />
+      <Grid item xs={7}>
+        <Typography paragraph align="right">
           <a href="https://github.com/kylev/pen" padding={24}>
             <FontAwesomeIcon icon={githubIcon} className={classes.icon} />
           </a>
@@ -28,9 +28,10 @@ const Footer = ({ classes }) => {
           <a href="https://github.com/kylev/pen/issues">Bugs? Suggestions?</a>
         </Typography>
       </Grid>
-      <Grid item xs={2}>
+      <Grid item xs={3}>
         <LanguageSelect />
       </Grid>
+      <Grid item xs={1} />
     </Grid>
   );
 };
