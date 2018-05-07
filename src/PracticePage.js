@@ -3,6 +3,7 @@ import { times } from "lodash";
 import { observer } from "mobx-react";
 
 import LineSet from "./LineSet";
+import WatermarkSVG from "./WatermarkSVG";
 
 const shiftedLineSet = (lineSet, offset) =>
   lineSet.map(l => ({
@@ -65,9 +66,7 @@ const PracticePage = ({ store }) => {
         ))}
         <LineSet lineSet={store.guideLineSet} key="guidelines" />
 
-        <text x={1} y={height - 1} fontSize={3} fill={store.watermarkColor}>
-          {store.watermark}
-        </text>
+        <WatermarkSVG x={1} y={height - 1} store={store} />
       </svg>
     </div>
   );
