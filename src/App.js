@@ -6,6 +6,7 @@ import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";
 import "./App.css";
 
 import { gaWatchStore, gaErrorReport } from "./ga";
+import DocTitle from "./DocTitle";
 import Header from "./Header";
 import Footer from "./Footer";
 import PaperDisplay from "./PaperDisplay";
@@ -25,6 +26,7 @@ class App extends React.Component {
     return (
       <I18nextProvider i18n={i18n}>
         <MuiThemeProvider theme={theme}>
+          <DocTitle store={store} />
           <Header store={store} />
           <PaperDisplay store={store} />
           <Footer />
