@@ -13,16 +13,23 @@
   "colorNames" : {
     "black": "Negro",
     "blue": "Azul",
+    "cyan": "Cian",
+    "darkgray": "Gris Oscuro",
     "gray": "Gris",
     "graypct": "Gris {{pct}}%",
+    "green": "Verde",
+    "lightgray": "Gris Claro",
     "nonphotoblue": "Azul (no fotografiar)",
+    "pink": "Rosado",
     "red": "Rojo",
     "transparent": "Nada",
-    "white": "Blanco"
+    "white": "Blanco",
+    "yellow": "Amarillo"
   },
 
   "presets": "Programar",
   "custom": "Personalizado",
+  "simple": "Caligrafía Básica",
 
   "pageorientation": "Orientación",
   "landscape": "Horizontal",
