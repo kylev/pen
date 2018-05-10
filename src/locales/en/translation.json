@@ -13,13 +13,13 @@
   },
 
   "ascender": "Ascender",
-  "midline": "Midline",
   "baseline": "Baseline",
   "descender": "Descender",
-  "guideline": "Angle Guides",
   "halfline": "Half-Line",
-  "x": "X",
   "gap": "Gap",
+  "guideline": "Angle Guides",
+  "midline": "Midline",
+  "x": "X",
 
   "thickness": "Thickness",
   "xheight": "X Height",

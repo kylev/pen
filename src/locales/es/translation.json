@@ -1,11 +1,21 @@
 {
   "title": "Guía de Caligrafía",
+  "tabNames": {
+    "basic": "Básicos",
+    "custom": "Avanzado",
+    "lines": "Rayas"
+  },
   "buttonNames": {
     "download": "Descargar",
+    "popout": "Salirse",
     "print": "Imprimir"
   },
 
-  "pagesize": "Papel",
+  "baseline": "Línea de Base",
+  "gap": "Espacio",
+  "guideline": "Guías Angulares",
+  "midline": "Medio",
+
   "dash": "Guión",
   "xheight": "X Altura",
   "ratios": "Proporciónes",
@@ -27,11 +37,23 @@
     "yellow": "Amarillo"
   },
 
+  "pagesize": "Papel",
+  "ledger": "US Libro Mayor (11x17)",
+  "letter": "US Carta",
+  "legal": "US Legal",
+
   "presets": "Programar",
   "custom": "Personalizado",
   "simple": "Caligrafía Básica",
 
   "pageorientation": "Orientación",
   "landscape": "Horizontal",
-  "portrait": "Vertical"
+  "portrait": "Vertical",
+
+  "gapcolor": "Color de Espacio",
+  "globalmargin": "Margen",
+  "watermark": "Filigrana",
+  "xmarker": "Señal",
+
+  "selectlanguage": "Idioma"
 }
