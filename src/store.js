@@ -5,6 +5,8 @@ import { composeLine, defaultLineSpec } from "./lines";
 
 const RAD_RATIO = Math.PI / 180;
 
+// Reminder: entirely written in metric since SVG supports it and it
+// simplifies printing.
 class PenStore {
   pageSize = "letter";
   orientation = "portrait";
