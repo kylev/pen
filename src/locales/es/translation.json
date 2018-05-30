@@ -16,10 +16,11 @@
   "guideline": "Guías Angulares",
   "midline": "Medio",
 
-  "dash": "Guión",
+  "thickness": "Grosor",
   "xheight": "X Altura",
   "ratios": "Proporciónes",
 
+  "color": "Color",
   "colorNames" : {
     "black": "Negro",
     "blue": "Azul",
@@ -37,14 +38,19 @@
     "yellow": "Amarillo"
   },
 
-  "pagesize": "Papel",
-  "ledger": "US Libro Mayor (11x17)",
-  "letter": "US Carta",
-  "legal": "US Legal",
+  "dash": "Guión",
+  "dashNames": {
+    "none": "Sólida"
+  },
 
   "presets": "Programar",
   "custom": "Personalizado",
   "simple": "Caligrafía Básica",
+
+  "pagesize": "Papel",
+  "ledger": "US Libro Mayor (11x17)",
+  "letter": "US Carta",
+  "legal": "US Legal",
 
   "pageorientation": "Orientación",
   "landscape": "Horizontal",
