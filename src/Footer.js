@@ -3,9 +3,8 @@ import React from "react";
 import { Typography } from "material-ui";
 import { withStyles } from "material-ui/styles";
 import Grid from "material-ui/Grid";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import githubIcon from "@fortawesome/fontawesome-free-brands/faGithub";
-import twitterIcon from "@fortawesome/fontawesome-free-brands/faTwitter";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 import LanguageSelect from "./LanguageSelect";
 
@@ -16,10 +15,10 @@ const Footer = ({ classes }) => {
       <Grid item xs={7}>
         <Typography paragraph align="right">
           <a href="https://github.com/kylev/pen" padding={24}>
-            <FontAwesomeIcon icon={githubIcon} className={classes.icon} />
+            <FontAwesomeIcon icon={faGithub} className={classes.icon} />
           </a>
           <a href="https://twitter.com/kylev">
-            <FontAwesomeIcon icon={twitterIcon} className={classes.icon} />
+            <FontAwesomeIcon icon={faTwitter} className={classes.icon} />
           </a>
           Kyle V ©2018 Created with <a href="https://reactjs.org/">React</a>
           {" and "}
