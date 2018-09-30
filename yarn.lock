@@ -4120,14 +4120,14 @@ hyphenate-style-name@^1.0.2:
   integrity sha1-MRYKNpMK2vH8BMYHT360FGXU7Es=
 
 i18next-browser-languagedetector@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-2.2.0.tgz#5f41abe61964a56dce70102ab31c3ed5d5866edc"
-  integrity sha512-fKhsaJzXY2anqAPxn9bgxc5NrTcu1GnYiIwGfNFPkpfFneutHnuReb4x4suOVNMf9RTuiCxfR+UAF8aHhv89SQ==
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-2.2.3.tgz#4196a9964b6d51b76254706a267ba746c9ca19de"
+  integrity sha512-sJZ2n9Vgax0vGer23hJMwyO3FRO7P0dq2DXZPXWE329g3snfJUcw+S24Mp3lqJaxL/0McDu4BD75ds6pzIfhhw==
 
 i18next@^11.2.3:
-  version "11.2.3"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-11.2.3.tgz#cc29400460ede53ecc0a3a399e3497e82a1d830e"
-  integrity sha512-RixAuXma0Q5vXxyiYJs2Hm3/WiWfdeX+UorTDRaLVz/r7t89dDzmFNGdIM9j0PxJLQby/s3uQ9/oCUv5J9nLWw==
+  version "11.9.0"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-11.9.0.tgz#c30c0a5e0a857124923a8dd1ce8f1df603e30c70"
+  integrity sha512-NDuIoELzyJ+29kc29j9aKgzjZht4kEKh3PPdz0qCEC9ZUpgRVaWUdkMRES/NVTcpe1ei4MMwY8DNWBWCIUlAng==
 
 iconv-lite@0.4.19:
   version "0.4.19"
