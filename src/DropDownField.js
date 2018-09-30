@@ -1,11 +1,11 @@
 import React from "react";
 import { translate } from "react-i18next";
 
-import { withStyles } from "material-ui/styles";
-import { FormControl } from "material-ui/Form";
-import { InputLabel } from "material-ui/Input";
-import { MenuItem } from "material-ui/Menu";
-import Select from "material-ui/Select";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import Select from "@material-ui/core/Select";
+import { withStyles } from "@material-ui/core/styles";
 
 const tName = (t, p) => {
   if (!p.name) return t(p.key);

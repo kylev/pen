@@ -3,8 +3,10 @@ import { translate } from "react-i18next";
 import { clamp } from "lodash";
 import { observer } from "mobx-react";
 
-import { FormControl, FormHelperText } from "material-ui/Form";
-import Input, { InputLabel } from "material-ui/Input";
+import FormControl from "@material-ui/core/FormControl";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import Input from "@material-ui/core/Input";
+import InputLabel from "@material-ui/core/InputLabel";
 
 const labels = ["ascender", "x", "descender", "gap"];
 

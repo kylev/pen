@@ -2,8 +2,8 @@ import React from "react";
 import download from "downloadjs";
 import { translate } from "react-i18next";
 
-import Icon from "material-ui/Icon";
-import IconButton from "material-ui/IconButton";
+import Icon from "@material-ui/core/Icon";
+import IconButton from "@material-ui/core/IconButton";
 
 import { outputAttempt } from "./ga";
 

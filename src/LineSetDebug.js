@@ -1,9 +1,10 @@
 import React from "react";
 import { observer } from "mobx-react";
 
-import { Typography } from "material-ui";
-import Grid from "material-ui/Grid";
-import Card, { CardContent } from "material-ui/Card";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 
 const showFields = [
   "x1",

@@ -2,8 +2,8 @@ import React from "react";
 import { observer } from "mobx-react";
 import { translate } from "react-i18next";
 
-import { Typography } from "material-ui";
-import Grid from "material-ui/Grid";
+import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
 
 import ColorDropDownField from "./ColorDropDownField";
 import DashDropDownField from "./DashDropDownField";

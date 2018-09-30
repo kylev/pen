@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Typography } from "material-ui";
-import { withStyles } from "material-ui/styles";
-import Grid from "material-ui/Grid";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@material-ui/core/styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 

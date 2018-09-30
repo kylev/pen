@@ -3,9 +3,9 @@ import { translate } from "react-i18next";
 import { clamp } from "lodash";
 import { observer } from "mobx-react";
 
-import { InputAdornment } from "material-ui/Input";
-import Grid from "material-ui/Grid";
-import TextField from "material-ui/TextField";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import Grid from "@material-ui/core/Grid";
+import TextField from "@material-ui/core/TextField";
 
 import ColorDropDownField from "./ColorDropDownField";
 import RatiosInput from "./RatiosInput";

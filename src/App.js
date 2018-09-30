@@ -1,7 +1,7 @@
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 
-import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 import "./App.css";
 

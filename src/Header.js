@@ -1,9 +1,12 @@
 import React from "react";
 
 import { translate } from "react-i18next";
-import { AppBar, Toolbar, Typography } from "material-ui";
-import { withStyles } from "material-ui/styles";
-import Tabs, { Tab } from "material-ui/Tabs";
+import AppBar from "@material-ui/core/AppBar";
+import Tab from "@material-ui/core/Tab";
+import Tabs from "@material-ui/core/Tabs";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@material-ui/core/styles";
 
 import HeaderButtons from "./HeaderButtons";
 import SettingsForm from "./SettingsForm";

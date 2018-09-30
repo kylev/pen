@@ -1,9 +1,9 @@
 import React from "react";
 import { translate } from "react-i18next";
 
-import { withStyles } from "material-ui/styles";
-import { InputAdornment } from "material-ui/Input";
-import TextField from "material-ui/TextField";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import TextField from "@material-ui/core/TextField";
+import { withStyles } from "@material-ui/core/styles";
 
 const MillimeterField = props => {
   const {
