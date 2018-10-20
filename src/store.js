@@ -13,7 +13,7 @@ class PenStore {
   printGap = 22;
   ratio = "simple";
   ratios = [1, 1, 1, 1];
-  xHeight = 8.2;
+  xHeight = 8.0;
   xColor = "transparent";
   gapColor = "transparent";
   watermarkColor = "darkgray";
