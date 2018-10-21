@@ -20,7 +20,7 @@
     "react-dom": "^16.3.1",
     "react-i18next": "^7.6.1",
     "react-number-format": "^3.3.1",
-    "react-scripts": "1.1.5"
+    "react-scripts": "^2.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -36,5 +36,11 @@
     "gh-pages": "^2.0.0",
     "prettier": "^1.11.1"
   },
-  "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js"
+  "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
