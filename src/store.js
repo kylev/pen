@@ -108,7 +108,7 @@ class PenStore {
   }
 
   get heights() {
-    return this.ratios.map(r => r / this.ratios[1] * this.xHeight);
+    return this.ratios.map(r => (r / this.ratios[1]) * this.xHeight);
   }
 
   get lineSet() {
@@ -200,7 +200,10 @@ class PenStore {
   }
 
   get halfLineSet() {
-    const { dimensions: { width }, heights } = this;
+    const {
+      dimensions: { width },
+      heights
+    } = this;
 
     return [
       {
