@@ -3,4 +3,4 @@ cache: yarn
 branches:
   only:
     master
-after_success: yarn run deploy -r https://$GITHUB_TOKEN@github.com/kylev/pen.git/ -m "kylev/pen@${TRAVIS_COMMIT} Travis ${TRAVIS_BUILD_NUMBER}"
+after_success: yarn run deploy -r https://$GITHUB_TOKEN@github.com/kylev/pen.git/ -m "Travis ${TRAVIS_BUILD_NUMBER} kylev/pen@${TRAVIS_COMMIT}"
