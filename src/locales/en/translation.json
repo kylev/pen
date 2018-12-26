@@ -81,6 +81,7 @@
 
   "selectlanguage": "Language",
   "languages": {
+    "de": "German",
     "en": "English",
     "en-GB": "English (United Kingdom)",
     "en-US": "English (US)",
