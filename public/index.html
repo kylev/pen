@@ -12,6 +12,8 @@
      ga('create', 'UA-627907-4', 'auto');
      if ('%NODE_ENV%' !== 'production') {
          ga('set', 'sendHitTask', null);
+     } else {
+         ga('set', 'page', '/pen/');
      }
      ga('send', 'pageview');
     </script>
