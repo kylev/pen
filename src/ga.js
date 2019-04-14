@@ -2,9 +2,10 @@ import { debounce, join, partial } from "lodash";
 import { reaction } from "mobx";
 
 export const trackEvent = (action, label) => {
-  window.gtag("event", action, {
-    event_category: "Pen",
-    event_label: label
+  window.ga("send", "event", {
+    eventAction: action,
+    eventCategory: "Pen",
+    eventLabel: label
   });
 };
 
@@ -37,5 +38,5 @@ export const gaWatchStore = store => {
 
 export const gaErrorReport = e => {
   console.error(e);
-  window.gtag && window.gtag("event", "exception", { description: e.message });
+  window.gtag && window.ga("send", "exception", { exDescription: e.message });
 };
