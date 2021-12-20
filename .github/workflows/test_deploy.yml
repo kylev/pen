@@ -18,4 +18,6 @@ jobs:
       - name: Deploy
         run: |
           git config --global user.name "Deploy Bot"
-          yarn run deploy -m "GH Action ${GITHUB_RUN_NUMBER} kylev/pen@${GITHUB_SHA}"
+          yarn run deploy \
+            -r ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY} \
+            -m "GH Action ${GITHUB_RUN_NUMBER} kylev/pen@${GITHUB_SHA}"
