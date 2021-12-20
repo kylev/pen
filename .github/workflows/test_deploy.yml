@@ -15,8 +15,7 @@ jobs:
           cache: yarn
       - run: yarn install
       - run: yarn test
-      - run: yarn build
       - name: Deploy
         run: |
           git config --global user.name "Deploy Bot"
-          yarn run deploy -r https://$GITHUB_TOKEN@github.com/kylev/pen.git/ -m "GH Action ${GITHUB_ACTION} kylev/pen@${GITHUB_SHA}"
+          yarn run deploy -m "GH Action ${GITHUB_RUN_NUMBER} kylev/pen@${GITHUB_SHA}"
