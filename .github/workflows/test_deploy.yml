@@ -19,4 +19,4 @@ jobs:
       - name: Deploy
         run: |
           git config --global user.name "Deploy Bot"
-          yarn deploy
+          yarn run deploy -r https://$GITHUB_TOKEN@github.com/kylev/pen.git/ -m "GH Action ${GITHUB_ACTION} kylev/pen@${GITHUB_SHA}"
