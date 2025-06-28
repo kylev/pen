@@ -19,6 +19,10 @@ jobs:
         with:
           node-version-file: ".node-version"
           cache: npm
+      - name: Set up git
+        run: |
+          git config --global user.name "Deploy Bot"
+          git config --global user.email "kylev@users.noreply.github.com"
       - run: npm ci
       - run: npm run predeploy
       - run: npm run deploy
