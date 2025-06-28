@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -19,12 +19,23 @@ jobs:
         with:
           node-version-file: ".node-version"
           cache: npm
-      - name: Set up git
-        run: |
-          git config --global user.name "Deploy Bot"
-          git config --global user.email "kylev@users.noreply.github.com"
       - run: npm ci
-      - run: npm run predeploy
-      - run: npm run deploy \
-          -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY \
-          -m "GH Action ${GITHUB_RUN_NUMBER} kylev/pen@${GITHUB_SHA}"
+      - run: npm run build
+      - name: Upload artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
+        with:
+          path: build/
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
