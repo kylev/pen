@@ -15,9 +15,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: ".node-version"
-          cache: yarn
-      - run: yarn install --frozen-lockfile
-      - run: yarn test
+          cache: npm
+      - run: npm ci
+      - run: npm test
   deploy:
     needs: test
     runs-on: ubuntu-latest
@@ -26,12 +26,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: ".node-version"
-          cache: yarn
-      - run: yarn install --frozen-lockfile
+          cache: npm
+      - run: npm ci
       - name: Deploy
         run: |
           git config --global user.name "Deploy Bot"
           git config --global user.email "kylev@users.noreply.github.com"
-          yarn run deploy \
+          npm run deploy \
             -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY \
             -m "GH Action ${GITHUB_RUN_NUMBER} kylev/pen@${GITHUB_SHA}"
