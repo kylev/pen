@@ -16,7 +16,7 @@ jobs:
         with:
           node-version-file: ".node-version"
           cache: npm
-      - run: npm install --frozen-lockfile
+      - run: npm ci
       - run: npm test
   deploy:
     needs: test
@@ -27,7 +27,7 @@ jobs:
         with:
           node-version-file: ".node-version"
           cache: npm
-      - run: npm install --frozen-lockfile
+      - run: npm ci
       - name: Deploy
         run: |
           git config --global user.name "Deploy Bot"
