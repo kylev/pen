@@ -25,4 +25,6 @@ jobs:
           git config --global user.email "kylev@users.noreply.github.com"
       - run: npm ci
       - run: npm run predeploy
-      - run: npm run deploy
+      - run: npm run deploy \
+          -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY \
+          -m "GH Action ${GITHUB_RUN_NUMBER} kylev/pen@${GITHUB_SHA}"
