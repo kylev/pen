@@ -2,6 +2,7 @@ import React from "react";
 
 import { withTranslation } from "react-i18next";
 import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Toolbar from "@mui/material/Toolbar";
@@ -16,12 +17,13 @@ class Header extends React.Component {
   render() {
     const { store, t } = this.props;
     return (
-      <div>
+      <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" color="primary">
           <Toolbar>
             <Typography
               variant="title"
               color="inherit"
+              sx={{ flexGrow: 1 }}
             >
               {t("title")}
             </Typography>
@@ -38,17 +40,13 @@ class Header extends React.Component {
           </Tabs>
         </AppBar>
         <SettingsForm store={store} active={this.state.active} />
-      </div>
+      </Box>
     );
   }
 }
 
 const styles = theme => {
   return {
-    root: {
-      flexGrow: 1
-    },
-    flex: { flex: 1 },
     tabs: {
       paddingLeft: theme.spacing.unit * 3,
       paddingRight: theme.spacing.unit * 3
