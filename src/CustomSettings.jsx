@@ -1,11 +1,11 @@
 import React from "react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { clamp } from "lodash";
 import { observer } from "mobx-react";
 
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
 
 import ColorDropDownField from "./ColorDropDownField";
 import RatiosInput from "./RatiosInput";
@@ -77,4 +77,4 @@ const CustomSettings = ({ store, t }) => {
   );
 };
 
-export default translate()(observer(CustomSettings));
+export default withTranslation()(observer(CustomSettings));

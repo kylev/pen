@@ -1,8 +1,8 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
-import Grid from "@material-ui/core/Grid";
+import Grid from "@mui/material/Grid";
 
 import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
@@ -51,4 +51,4 @@ const PaperSettings = ({ store, t }) => {
   );
 };
 
-export default translate()(observer(PaperSettings));
+export default withTranslation()(observer(PaperSettings));

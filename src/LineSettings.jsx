@@ -1,9 +1,9 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 
 import ColorDropDownField from "./ColorDropDownField";
 import DashDropDownField from "./DashDropDownField";
@@ -43,7 +43,7 @@ let LineSetting = ({ label, line, t }) => {
     </Grid>
   );
 };
-LineSetting = translate()(observer(LineSetting));
+LineSetting = withTranslation()(observer(LineSetting));
 
 const LineSettings = ({ store }) => {
   const lineNames = ["ascender", "midline", "baseline", "descender"];

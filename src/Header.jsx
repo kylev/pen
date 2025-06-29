@@ -1,12 +1,12 @@
 import React from "react";
 
-import { translate } from "react-i18next";
-import AppBar from "@material-ui/core/AppBar";
-import Tab from "@material-ui/core/Tab";
-import Tabs from "@material-ui/core/Tabs";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
+import { withTranslation } from "react-i18next";
+import AppBar from "@mui/material/AppBar";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import { withStyles } from "@mui/material/styles";
 
 import HeaderButtons from "./HeaderButtons";
 import SettingsForm from "./SettingsForm";
@@ -59,4 +59,4 @@ const styles = theme => {
   };
 };
 
-export default withStyles(styles)(translate()(Header));
+export default withStyles(styles)(withTranslation()(Header));

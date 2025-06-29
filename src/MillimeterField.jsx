@@ -1,9 +1,9 @@
 import React from "react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
-import InputAdornment from "@material-ui/core/InputAdornment";
-import TextField from "@material-ui/core/TextField";
-import { withStyles } from "@material-ui/core/styles";
+import InputAdornment from "@mui/material/InputAdornment";
+import TextField from "@mui/material/TextField";
+import { withStyles } from "@mui/material/styles";
 
 const MillimeterField = props => {
   const {
@@ -45,4 +45,4 @@ const styles = theme => {
   };
 };
 
-export default translate()(withStyles(styles)(MillimeterField));
+export default withTranslation()(withStyles(styles)(MillimeterField));
