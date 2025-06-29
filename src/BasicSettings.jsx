@@ -1,8 +1,8 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
-import Grid from "@material-ui/core/Grid";
+import Grid from "@mui/material/Grid";
 
 import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
@@ -10,7 +10,7 @@ import MillimeterField from "./MillimeterField";
 const PaperSettings = ({ store, t }) => {
   return (
     <Grid container spacing={24}>
-      <Grid item xs={6} md={4}>
+      <Grid size={{xs: 6, md: 4}}>
         <DropDownField
           id="presets-field"
           label={"presets"}
@@ -19,7 +19,7 @@ const PaperSettings = ({ store, t }) => {
           choices={store.ratioChoices}
         />
       </Grid>
-      <Grid item sm={6} md={2}>
+      <Grid size={{sm: 6, md: 2}}>
         <MillimeterField
           id="x-height-field"
           label={"xheight"}
@@ -29,7 +29,7 @@ const PaperSettings = ({ store, t }) => {
           onChange={v => (store.xHeight = v)}
         />
       </Grid>
-      <Grid item sm={6} md={3}>
+      <Grid size={{sm: 6, md: 3}}>
         <DropDownField
           id="size-field"
           label={"pagesize"}
@@ -38,7 +38,7 @@ const PaperSettings = ({ store, t }) => {
           choices={store.pageSizes}
         />
       </Grid>
-      <Grid item sm={6} md={3}>
+      <Grid size={{sm: 6, md: 3}}>
         <DropDownField
           id="orientation-field"
           label={"pageorientation"}
@@ -51,4 +51,4 @@ const PaperSettings = ({ store, t }) => {
   );
 };
 
-export default translate()(observer(PaperSettings));
+export default withTranslation()(observer(PaperSettings));

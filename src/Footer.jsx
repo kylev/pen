@@ -1,24 +1,23 @@
 import React from "react";
 
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 import LanguageSelect from "./LanguageSelect";
 
-const Footer = ({ classes }) => {
+const Footer = ({ }) => {
   return (
-    <Grid container spacing={16} className={classes.root}>
-      <Grid item xs={1} />
-      <Grid item xs={7}>
+    <Grid container spacing={16}>
+      <Grid size={{xs: 1}} />
+      <Grid size={{xs: 7}}>
         <Typography paragraph align="right">
           <a href="https://github.com/kylev/pen" padding={24}>
-            <FontAwesomeIcon icon={faGithub} className={classes.icon} />
+            <FontAwesomeIcon icon={faGithub}  />
           </a>
           <a href="https://twitter.com/kylev">
-            <FontAwesomeIcon icon={faTwitter} className={classes.icon} />
+            <FontAwesomeIcon icon={faTwitter} />
           </a>
           Kyle V ©2018 Created with <a href="https://reactjs.org/">React</a>
           {" and "}
@@ -27,10 +26,10 @@ const Footer = ({ classes }) => {
           <a href="https://github.com/kylev/pen/issues">Bugs? Suggestions?</a>
         </Typography>
       </Grid>
-      <Grid item xs={3}>
+      <Grid size={{xs: 3}}>
         <LanguageSelect />
       </Grid>
-      <Grid item xs={1} />
+      <Grid size={{xs: 1}} />
     </Grid>
   );
 };
@@ -42,4 +41,4 @@ const styles = theme => {
   };
 };
 
-export default withStyles(styles)(Footer);
+export default Footer;

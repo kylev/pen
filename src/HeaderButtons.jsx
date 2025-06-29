@@ -1,9 +1,9 @@
 import React from "react";
 import download from "downloadjs";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
-import Icon from "@material-ui/core/Icon";
-import IconButton from "@material-ui/core/IconButton";
+import Icon from "@mui/material/Icon";
+import IconButton from "@mui/material/IconButton";
 
 import { outputAttempt } from "./ga";
 
@@ -59,4 +59,4 @@ const HeaderButtons = ({ t }) => {
   );
 };
 
-export default translate()(HeaderButtons);
+export default withTranslation()(HeaderButtons);

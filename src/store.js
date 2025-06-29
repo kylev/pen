@@ -1,5 +1,5 @@
 import { reduce, range } from "lodash";
-import { action, computed, decorate, observable } from "mobx";
+import { action, computed, observable, makeObservable } from "mobx";
 
 import { composeLine, defaultLineSpec } from "./lines";
 
@@ -75,6 +75,38 @@ class PenStore {
       angle: 0
     }
   ];
+
+  constructor() {
+    makeObservable(this, {
+      pageSize: observable,
+      orientation: observable,
+      printGap: observable,
+      ratio: observable,
+      ratios: observable,
+      xHeight: observable,
+      xColor: observable,
+      gapColor: observable,
+      watermarkColor: observable,
+
+      ascender: observable,
+      midline: observable,
+      baseline: observable,
+      descender: observable,
+      guideline: observable,
+      halfLine: observable,
+
+      gap: computed,
+      gapRect: computed,
+      dimensions: computed,
+      heights: computed,
+      lineSet: computed,
+      lineSetHeight: computed,
+      guideLineSet: computed,
+      halfLineSet: computed,
+
+      ratioPreset: action.bound
+    });
+  }
 
   get gap() {
     return this.heights[3];
@@ -235,36 +267,6 @@ class PenStore {
     if (preset.angle !== undefined) this.guideline.angle = preset.angle;
   }
 }
-
-decorate(PenStore, {
-  pageSize: observable,
-  orientation: observable,
-  printGap: observable,
-  ratio: observable,
-  ratios: observable,
-  xHeight: observable,
-  xColor: observable,
-  gapColor: observable,
-  watermarkColor: observable,
-
-  ascender: observable,
-  midline: observable,
-  baseline: observable,
-  descender: observable,
-  guideline: observable,
-  halfLine: observable,
-
-  gap: computed,
-  gapRect: computed,
-  dimensions: computed,
-  heights: computed,
-  lineSet: computed,
-  lineSetHeight: computed,
-  guideLineSet: computed,
-  halfLineSet: computed,
-
-  ratioPreset: action.bound
-});
 
 const store = new PenStore();
 

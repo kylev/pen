@@ -1,11 +1,11 @@
 import React from "react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { clamp } from "lodash";
 import { observer } from "mobx-react";
 
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
 
 import ColorDropDownField from "./ColorDropDownField";
 import RatiosInput from "./RatiosInput";
@@ -14,10 +14,10 @@ import MillimeterField from "./MillimeterField";
 const CustomSettings = ({ store, t }) => {
   return (
     <Grid container spacing={24}>
-      <Grid item xs={12} md={4}>
+      <Grid size={{xs: 12, md: 4}}>
         <RatiosInput store={store} />
       </Grid>
-      <Grid item sm={6} md={4}>
+      <Grid size={{sm: 6, md: 4}}>
         <TextField
           id="guide-angle-field"
           label={t("guideangle")}
@@ -32,7 +32,7 @@ const CustomSettings = ({ store, t }) => {
           }}
         />
       </Grid>
-      <Grid item sm={6} md={4}>
+      <Grid size={{sm: 6, md: 4}}>
         <MillimeterField
           id="guide-spacing-field"
           label="guidespacing"
@@ -41,7 +41,7 @@ const CustomSettings = ({ store, t }) => {
         />
       </Grid>
 
-      <Grid item sm={6} md={3}>
+      <Grid size={{sm: 6, md: 3}}>
         <ColorDropDownField
           id="gap-color-field"
           label="gapcolor"
@@ -49,7 +49,7 @@ const CustomSettings = ({ store, t }) => {
           value={store.gapColor}
         />
       </Grid>
-      <Grid item sm={6} md={3}>
+      <Grid size={{sm: 6, md: 3}}>
         <ColorDropDownField
           id="x-marker-field"
           label="xmarker"
@@ -57,7 +57,7 @@ const CustomSettings = ({ store, t }) => {
           value={store.xColor}
         />
       </Grid>
-      <Grid item sm={6} md={3}>
+      <Grid size={{sm: 6, md: 3}}>
         <ColorDropDownField
           id="watermark-color-field"
           label="watermark"
@@ -65,7 +65,7 @@ const CustomSettings = ({ store, t }) => {
           value={store.watermarkColor}
         />
       </Grid>
-      <Grid item sm={6} md={3}>
+      <Grid size={{sm: 6, md: 3}}>
         <MillimeterField
           id="print-gap-field"
           label="globalmargin"
@@ -77,4 +77,4 @@ const CustomSettings = ({ store, t }) => {
   );
 };
 
-export default translate()(observer(CustomSettings));
+export default withTranslation()(observer(CustomSettings));

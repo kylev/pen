@@ -1,6 +1,6 @@
 import React from "react";
 import i18next from "i18next";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
 import DropDownField from "./DropDownField";
 
@@ -23,4 +23,4 @@ const LanguageSelect = ({ t }) => {
   );
 };
 
-export default translate()(LanguageSelect);
+export default withTranslation()(LanguageSelect);

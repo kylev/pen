@@ -1,17 +1,16 @@
 import React from "react";
 
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import { withStyles } from "@material-ui/core/styles";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
 
 import PracticePage from "./PracticePage";
 
-const PaperDisplay = ({ classes, store }) => {
+const PaperDisplay = ({ store }) => {
   return (
-    <div className={classes.root}>
+    <div>
       <Grid container justify="center">
-        <Grid item>
-          <Paper className={classes.paper}>
+        <Grid>
+          <Paper>
             <PracticePage store={store} />
           </Paper>
         </Grid>
@@ -31,4 +30,4 @@ const styles = theme => {
   };
 };
 
-export default withStyles(styles)(PaperDisplay);
+export default PaperDisplay;

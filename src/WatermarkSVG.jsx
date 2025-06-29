@@ -1,5 +1,5 @@
 import React from "react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { observer } from "mobx-react";
 
 const WatermarkSVG = ({ store, t, x, y }) => {
@@ -18,4 +18,4 @@ const WatermarkSVG = ({ store, t, x, y }) => {
   );
 };
 
-export default translate()(observer(WatermarkSVG));
+export default withTranslation()(observer(WatermarkSVG));

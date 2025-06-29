@@ -1,12 +1,12 @@
 import React from "react";
 
-import { translate } from "react-i18next";
-import AppBar from "@material-ui/core/AppBar";
-import Tab from "@material-ui/core/Tab";
-import Tabs from "@material-ui/core/Tabs";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
+import { withTranslation } from "react-i18next";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 
 import HeaderButtons from "./HeaderButtons";
 import SettingsForm from "./SettingsForm";
@@ -15,22 +15,21 @@ class Header extends React.Component {
   state = { active: "basic" };
 
   render() {
-    const { classes, store, t } = this.props;
+    const { store, t } = this.props;
     return (
-      <div className={classes.root}>
+      <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" color="primary">
           <Toolbar>
             <Typography
               variant="title"
               color="inherit"
-              className={classes.flex}
+              sx={{ flexGrow: 1 }}
             >
               {t("title")}
             </Typography>
             <HeaderButtons />
           </Toolbar>
           <Tabs
-            className={classes.tabs}
             onChange={(e, active) => this.setState({ active })}
             value={this.state.active}
           >
@@ -41,17 +40,13 @@ class Header extends React.Component {
           </Tabs>
         </AppBar>
         <SettingsForm store={store} active={this.state.active} />
-      </div>
+      </Box>
     );
   }
 }
 
 const styles = theme => {
   return {
-    root: {
-      flexGrow: 1
-    },
-    flex: { flex: 1 },
     tabs: {
       paddingLeft: theme.spacing.unit * 3,
       paddingRight: theme.spacing.unit * 3
@@ -59,4 +54,4 @@ const styles = theme => {
   };
 };
 
-export default withStyles(styles)(translate()(Header));
+export default withTranslation()(Header);
