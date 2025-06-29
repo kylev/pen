@@ -2,23 +2,22 @@ import React from "react";
 
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { withStyles } from "@mui/material/styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 import LanguageSelect from "./LanguageSelect";
 
-const Footer = ({ classes }) => {
+const Footer = ({ }) => {
   return (
-    <Grid container spacing={16} className={classes.root}>
+    <Grid container spacing={16}>
       <Grid item xs={1} />
       <Grid item xs={7}>
         <Typography paragraph align="right">
           <a href="https://github.com/kylev/pen" padding={24}>
-            <FontAwesomeIcon icon={faGithub} className={classes.icon} />
+            <FontAwesomeIcon icon={faGithub}  />
           </a>
           <a href="https://twitter.com/kylev">
-            <FontAwesomeIcon icon={faTwitter} className={classes.icon} />
+            <FontAwesomeIcon icon={faTwitter} />
           </a>
           Kyle V ©2018 Created with <a href="https://reactjs.org/">React</a>
           {" and "}
@@ -42,4 +41,4 @@ const styles = theme => {
   };
 };
 
-export default withStyles(styles)(Footer);
+export default Footer;

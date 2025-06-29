@@ -1,16 +1,15 @@
 import React from "react";
 
 import Paper from "@mui/material/Paper";
-import { withStyles } from "@mui/material/styles";
 
 import BasicSettings from "./BasicSettings";
 import CustomSettings from "./CustomSettings";
 import LineSettings from "./LineSettings";
 import LineSetDebug from "./LineSetDebug";
 
-const SettingsForm = ({ active, classes, store }) => {
+const SettingsForm = ({ active, store }) => {
   return (
-    <div className={classes.root}>
+    <div>
       <Paper square style={{ padding: 24, marginBottom: 4 }}>
         {active === "basic" && <BasicSettings store={store} />}
         {active === "custom" && <CustomSettings store={store} />}
@@ -26,4 +25,4 @@ const styles = theme => ({
 });
 
 //export default observer(SettingsForm);
-export default withStyles(styles)(SettingsForm);
+export default SettingsForm;

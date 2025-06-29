@@ -3,11 +3,9 @@ import { withTranslation } from "react-i18next";
 
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
-import { withStyles } from "@mui/material/styles";
 
 const MillimeterField = props => {
   const {
-    classes,
     onChange,
     label,
     max,
@@ -34,7 +32,7 @@ const MillimeterField = props => {
       InputProps={{
         endAdornment: <InputAdornment position="end">mm</InputAdornment>
       }}
-      InputLabelProps={{ className: classes.label }}
+      InputLabelProps={{}}
     />
   );
 };
@@ -45,4 +43,4 @@ const styles = theme => {
   };
 };
 
-export default withTranslation()(withStyles(styles)(MillimeterField));
+export default withTranslation()(MillimeterField);

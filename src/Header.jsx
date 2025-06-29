@@ -6,7 +6,6 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { withStyles } from "@mui/material/styles";
 
 import HeaderButtons from "./HeaderButtons";
 import SettingsForm from "./SettingsForm";
@@ -15,22 +14,20 @@ class Header extends React.Component {
   state = { active: "basic" };
 
   render() {
-    const { classes, store, t } = this.props;
+    const { store, t } = this.props;
     return (
-      <div className={classes.root}>
+      <div>
         <AppBar position="static" color="primary">
           <Toolbar>
             <Typography
               variant="title"
               color="inherit"
-              className={classes.flex}
             >
               {t("title")}
             </Typography>
             <HeaderButtons />
           </Toolbar>
           <Tabs
-            className={classes.tabs}
             onChange={(e, active) => this.setState({ active })}
             value={this.state.active}
           >
@@ -59,4 +56,4 @@ const styles = theme => {
   };
 };
 
-export default withStyles(styles)(withTranslation()(Header));
+export default withTranslation()(Header);

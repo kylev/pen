@@ -5,7 +5,6 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import { withStyles } from "@mui/material/styles";
 
 const tName = (t, p) => {
   if (!p.name) return t(p.key);
@@ -14,7 +13,6 @@ const tName = (t, p) => {
 };
 
 const DropDownField = ({
-  classes,
   label,
   onChange,
   choices,
@@ -25,7 +23,7 @@ const DropDownField = ({
 }) => {
   return (
     <FormControl>
-      <InputLabel className={classes.label} htmlFor={id}>
+      <InputLabel htmlFor={id}>
         {t(label)}
       </InputLabel>
       <Select onChange={e => onChange(e.target.value)} id={id} {...rest}>
@@ -39,10 +37,10 @@ const DropDownField = ({
   );
 };
 
-const styles = theme => {
-  return {
-    label: { whiteSpace: "nowrap" }
-  };
-};
+// const styles = theme => {
+//   return {
+//     label: { whiteSpace: "nowrap" }
+//   };
+// };
 
-export default withTranslation()(withStyles(styles)(DropDownField));
+export default withTranslation()(DropDownField);
