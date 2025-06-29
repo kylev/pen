@@ -9,7 +9,7 @@ const PaperDisplay = ({ store }) => {
   return (
     <div>
       <Grid container justify="center">
-        <Grid item>
+        <Grid>
           <Paper>
             <PracticePage store={store} />
           </Paper>

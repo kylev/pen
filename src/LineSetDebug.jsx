@@ -18,7 +18,7 @@ const showFields = [
 
 const LineItem = ({ line }) => {
   return (
-    <Grid item xs={3}>
+    <Grid size={{xs: 3}}>
       <Card>
         <CardContent>
           <Typography variant="headline">{line.key}</Typography>

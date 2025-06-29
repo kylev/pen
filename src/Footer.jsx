@@ -10,8 +10,8 @@ import LanguageSelect from "./LanguageSelect";
 const Footer = ({ }) => {
   return (
     <Grid container spacing={16}>
-      <Grid item xs={1} />
-      <Grid item xs={7}>
+      <Grid size={{xs: 1}} />
+      <Grid size={{xs: 7}}>
         <Typography paragraph align="right">
           <a href="https://github.com/kylev/pen" padding={24}>
             <FontAwesomeIcon icon={faGithub}  />
@@ -26,10 +26,10 @@ const Footer = ({ }) => {
           <a href="https://github.com/kylev/pen/issues">Bugs? Suggestions?</a>
         </Typography>
       </Grid>
-      <Grid item xs={3}>
+      <Grid size={{xs: 3}}>
         <LanguageSelect />
       </Grid>
-      <Grid item xs={1} />
+      <Grid size={{xs: 1}} />
     </Grid>
   );
 };

@@ -23,7 +23,7 @@ const DropDownField = ({
 }) => {
   return (
     <FormControl>
-      <InputLabel htmlFor={id}>
+      <InputLabel htmlFor={id} sx={{ whiteSpace: "nowrap" }} >
         {t(label)}
       </InputLabel>
       <Select onChange={e => onChange(e.target.value)} id={id} {...rest}>
@@ -36,11 +36,5 @@ const DropDownField = ({
     </FormControl>
   );
 };
-
-// const styles = theme => {
-//   return {
-//     label: { whiteSpace: "nowrap" }
-//   };
-// };
 
 export default withTranslation()(DropDownField);

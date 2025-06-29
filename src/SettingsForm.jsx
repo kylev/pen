@@ -9,7 +9,7 @@ import LineSetDebug from "./LineSetDebug";
 
 const SettingsForm = ({ active, store }) => {
   return (
-    <div>
+    <div className={{ flexGrow: 1 }}>
       <Paper square style={{ padding: 24, marginBottom: 4 }}>
         {active === "basic" && <BasicSettings store={store} />}
         {active === "custom" && <CustomSettings store={store} />}

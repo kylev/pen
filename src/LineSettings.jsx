@@ -12,17 +12,17 @@ import MillimeterField from "./MillimeterField";
 let LineSetting = ({ label, line, t }) => {
   return (
     <Grid container spacing={24} style={{ marginBottom: 24 }}>
-      <Grid item xs={12} style={{ paddingBottom: 0 }}>
+      <Grid size={{xs: 12}} style={{ paddingBottom: 0 }}>
         <Typography variant="subheading">{t(label)}</Typography>
       </Grid>
-      <Grid item xs={6} md={4}>
+      <Grid size={{xs: 6, md: 4}}>
         <ColorDropDownField
           label={"color"}
           value={line.color}
           onChange={v => (line.color = v)}
         />
       </Grid>
-      <Grid item xs={6} md={4}>
+      <Grid size={{xs: 6, md: 4}}>
         <DashDropDownField
           label={"dash"}
           value={line.dash}
@@ -30,7 +30,7 @@ let LineSetting = ({ label, line, t }) => {
           disabled={line.color === "transparent"}
         />
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid size={{xs: 12, md: 4}}>
         <MillimeterField
           label={"thickness"}
           value={line.thickness}
