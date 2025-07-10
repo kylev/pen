@@ -3,6 +3,7 @@ import { withTranslation } from "react-i18next";
 import { clamp } from "lodash";
 import { observer } from "mobx-react";
 
+import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import Input from "@mui/material/Input";
@@ -33,10 +34,12 @@ RatioInput = observer(RatioInput);
 
 const RatiosInput = ({ store, t }) => {
   return (
-    <FormControl>
-      <InputLabel shrink>{t("ratios")}</InputLabel>
+    <Box sx={{ display: 'flex', flexWrap: 'nowrap'}}>
+      <FormControl>
+        <InputLabel shrink>{t("ratios")}</InputLabel>
+      </FormControl>
       <RatioInput store={store} t={t} />
-    </FormControl>
+    </Box>
   );
 };
 
