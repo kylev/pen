@@ -12,7 +12,7 @@ const Footer = ({ }) => {
     <Grid container spacing={16}>
       <Grid size={{xs: 1}} />
       <Grid size={{xs: 7}}>
-        <Typography paragraph align="right">
+        <Typography align="right">
           <a href="https://github.com/kylev/pen" padding={24}>
             <FontAwesomeIcon icon={faGithub}  />
           </a>
