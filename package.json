@@ -13,15 +13,15 @@
     "@mui/styled-engine-sc": "^7.1.1",
     "color": "^3.0.0",
     "downloadjs": "^1.4.7",
-    "i18next": "^25.2.1",
+    "i18next": "^25.3.2",
     "i18next-browser-languagedetector": "8.2.0",
     "lodash": "^4.17.5",
-    "mobx": "6.13.7",
-    "mobx-react": "7.6.0",
+    "mobx": "^6.13.0",
+    "mobx-react": "9.2.0",
     "prop-types": "^15.6.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-i18next": "15.5.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-i18next": "15.6.1",
     "react-number-format": "5.4.4"
   },
   "scripts": {
@@ -31,9 +31,9 @@
     "test": "vite test --env=jsdom"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.6.0",
+    "@vitejs/plugin-react": "^4.7.0",
     "prettier": "^1.11.1",
-    "vite": "^7.0.0"
+    "vite": "^7.0.6"
   },
   "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js",
   "browserslist": [
