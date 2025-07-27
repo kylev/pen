@@ -24,11 +24,7 @@ class Header extends React.Component {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" color="primary">
           <Toolbar>
-            <Typography
-              variant="title"
-              color="inherit"
-              sx={{ flexGrow: 1 }}
-            >
+            <Typography variant="h6" component="h1" sx={{ flexGrow: 1 }}>
               {t("title")}
             </Typography>
             <HeaderButtons />
