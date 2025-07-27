@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { use } from 'react';
 
-export default defineConfig(() => {
-  return {
+export default defineConfig({
     build: {
       outDir: 'build',
     },
@@ -10,5 +10,7 @@ export default defineConfig(() => {
     server: {
       host: true,
     },
-  };
+    watch: {
+      usePolling: true,
+    },
 });
