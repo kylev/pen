@@ -11,8 +11,9 @@ import ColorDropDownField from "./ColorDropDownField";
 import RatiosInput from "./RatiosInput";
 import MillimeterField from "./MillimeterField";
 
-const CustomSettings = ({ store, t }) => {
+const CustomSettings = ({ hidden, store, t }) => {
   return (
+    <div hidden={hidden}>
     <Grid container spacing={24}>
       <Grid size={{xs: 12, md: 4}}>
         <RatiosInput store={store} />
@@ -74,6 +75,7 @@ const CustomSettings = ({ store, t }) => {
         />
       </Grid>
     </Grid>
+    </div>
   );
 };
 

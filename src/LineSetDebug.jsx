@@ -36,9 +36,11 @@ const LineItem = ({ line }) => {
   );
 };
 
-const LineSetDebug = ({ lineSet }) => {
+const LineSetDebug = ({ hidden, lineSet }) => {
   return (
-    <Grid container>{lineSet.map(l => <LineItem key={l.key} line={l} />)}</Grid>
+    <div hidden={hidden}>
+      <Grid container>{lineSet.map(l => <LineItem key={l.key} line={l} />)}</Grid>
+    </div>
   );
 };
 

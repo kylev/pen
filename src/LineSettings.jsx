@@ -9,7 +9,7 @@ import ColorDropDownField from "./ColorDropDownField";
 import DashDropDownField from "./DashDropDownField";
 import MillimeterField from "./MillimeterField";
 
-let LineSetting = ({ label, line, t }) => {
+let LineSetting = ({ hidden, label, line, t }) => {
   return (
     <Grid container spacing={24} style={{ marginBottom: 24 }}>
       <Grid size={{xs: 12}} style={{ paddingBottom: 0 }}>
@@ -45,10 +45,10 @@ let LineSetting = ({ label, line, t }) => {
 };
 LineSetting = withTranslation()(observer(LineSetting));
 
-const LineSettings = ({ store }) => {
+const LineSettings = ({ hidden, store }) => {
   const lineNames = ["ascender", "midline", "baseline", "descender"];
   return (
-    <div>
+    <div hidden={hidden}>
       {lineNames.map(ln => (
         <LineSetting label={ln} line={store[ln]} key={ln} />
       ))}

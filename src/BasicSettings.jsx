@@ -7,8 +7,9 @@ import Grid from "@mui/material/Grid";
 import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
 
-const PaperSettings = ({ store, t }) => {
+const BasicSettings = ({ hidden, store, t }) => {
   return (
+    <div hidden={hidden}>
     <Grid container spacing={24}>
       <Grid size={{xs: 6, md: 4}}>
         <DropDownField
@@ -48,7 +49,8 @@ const PaperSettings = ({ store, t }) => {
         />
       </Grid>
     </Grid>
+    </div>
   );
 };
 
-export default withTranslation()(observer(PaperSettings));
+export default withTranslation()(observer(BasicSettings));
