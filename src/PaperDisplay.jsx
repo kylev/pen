@@ -7,7 +7,7 @@ import PracticePage from "./PracticePage";
 
 const PaperDisplay = ({ store }) => {
   return (
-    <div>
+    <div style={{ flexGrow: 1, overflow: "hidden" }}>
       <Grid container justify="center">
         <Grid>
           <Paper>
