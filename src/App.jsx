@@ -16,7 +16,27 @@ import i18n from "./i18n";
 import store from "./store";
 gaWatchStore(store);
 
-const theme = createTheme({});
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#3f51b5",
+    },
+  },
+  components: {
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          backgroundColor: "#f50057",
+        },
+        root: {
+          "& .Mui-selected": {
+            color: "#ffffff",
+          },
+        },
+      },
+    },
+  },
+});
 
 class App extends React.Component {
   componentDidCatch(error, info) {

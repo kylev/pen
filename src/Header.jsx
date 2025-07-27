@@ -50,8 +50,6 @@ class Header extends React.Component {
             <Tabs
               onChange={(e, active) => this.setState({ active })}
               value={this.state.active}
-              sx={{'& .MuiTabs-indicator': {'background-color': '#f50057'},
-                  '& .Mui-selected': {'color': '#ffffff'}}}
             >
               <Tab label={t("tabNames.basic")} {...tabProps("basic")} />
               <Tab label={t("tabNames.custom")} {...tabProps("custom")} />
