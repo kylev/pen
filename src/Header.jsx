@@ -15,6 +15,23 @@ import CustomSettings from "./CustomSettings";
 import LineSettings from "./LineSettings";
 import LineSetDebug from "./LineSetDebug";
 
+
+function tabProps(index) {
+  return {
+    id: `tab-${index}`,
+    value: index,
+    "aria-controls": `tabpanel-${index}`,
+    sx: {'& .Mui-selected': {'background-color': '#8f0ff0'}}
+  };
+}
+
+function tabPanelProps(index) {
+  return {
+    id: `tabpanel-${index}`,
+    "aria-labelledby": `tab-${index}`,
+  };
+}
+
 class Header extends React.Component {
   state = { active: "basic" };
 
@@ -22,29 +39,33 @@ class Header extends React.Component {
     const { store, t } = this.props;
     return (
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" color="primary">
+        <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" component="h1" sx={{ flexGrow: 1 }}>
               {t("title")}
             </Typography>
             <HeaderButtons />
           </Toolbar>
-          <Tabs
-            onChange={(e, active) => this.setState({ active })}
-            value={this.state.active}
-          >
-            <Tab label={t("tabNames.basic")} aria-controls="tab-basic" value="basic" />
-            <Tab label={t("tabNames.custom")} aria-controls="tab-custom" value="custom" />
-            <Tab label={t("tabNames.lines")} aria-controls="tab-lines" value="lines" />
-            {store.isDev && <Tab label={t("tabNames.debug")} aria-controls="tab-debug" value="debug" />}
-          </Tabs>
+          <Box sx={{ borderBottom: 1, borderColor: 'green' }}>
+            <Tabs
+              onChange={(e, active) => this.setState({ active })}
+              value={this.state.active}
+              sx={{'& .MuiTabs-indicator': {'background-color': '#f50057'},
+                  '& .Mui-selected': {'color': '#ffffff'}}}
+            >
+              <Tab label={t("tabNames.basic")} {...tabProps("basic")} />
+              <Tab label={t("tabNames.custom")} {...tabProps("custom")} />
+              <Tab label={t("tabNames.lines")} {...tabProps("lines")} />
+            {store.isDev && <Tab label={t("tabNames.debug")} {...tabProps("debug")} />}
+            </Tabs>
+          </Box>
         </AppBar>
         <div className={{ flexGrow: 1 }}>
           <Paper square style={{ padding: 24, marginBottom: 4 }}>
-            <BasicSettings id={"tab-basic"} store={store} hidden={this.state.active !== "basic"} />
-            <CustomSettings id={"tab-custom"} store={store} hidden={this.state.active !== "custom"} />
-            <LineSettings id={"tab-lines"} store={store} hidden={this.state.active !== "lines"} />
-            <LineSetDebug id={"tab-debug"} lineSet={store.lineSet} hidden={this.state.active !== "debug"} />
+            <BasicSettings store={store} hidden={this.state.active !== "basic"} {...tabPanelProps("basic")} />
+            <CustomSettings store={store} hidden={this.state.active !== "custom"} {...tabPanelProps("custom")} />
+            <LineSettings store={store} hidden={this.state.active !== "lines"} {...tabPanelProps("lines")} />
+            <LineSetDebug lineSet={store.lineSet} hidden={this.state.active !== "debug"} {...tabPanelProps("debug")} />
           </Paper>
         </div>
       </Box>
