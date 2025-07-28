@@ -1,8 +1,7 @@
 import React from "react";
+
 import { I18nextProvider } from "react-i18next";
-
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-
 
 import "./App.css";
 
@@ -27,11 +26,6 @@ const theme = createTheme({
       styleOverrides: {
         indicator: {
           backgroundColor: "#f50057",
-        },
-        root: {
-          "& .Mui-selected": {
-            color: "#ffffff",
-          },
         },
       },
     },
