@@ -1,56 +1,57 @@
 import React from "react";
-import { observer } from "mobx-react";
-import { withTranslation } from "react-i18next";
 
-import Grid from "@mui/material/Grid";
+import { Box, Grid } from "@mui/material";
+import { observer } from "mobx-react";
 
 import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
 
-const BasicSettings = ({ hidden, store, t }) => {
+const BasicSettings = ({ hidden, store }) => {
+  const gridSize = { xs: 12, sm: 6, md: 3 };
   return (
-    <div hidden={hidden}>
-    <Grid container spacing={24}>
-      <Grid size={{xs: 6, md: 4}}>
-        <DropDownField
-          id="presets-field"
-          label={"presets"}
-          value={store.ratio}
-          onChange={v => store.ratioPreset(v)}
-          choices={store.ratioChoices}
-        />
+    <Box hidden={hidden}>
+      <Grid container spacing={2}>
+        <Grid size={gridSize}>
+          <DropDownField
+            id="presets-field"
+            label={"presets"}
+            value={store.ratio}
+            onChange={v => store.ratioPreset(v)}
+            choices={store.ratioChoices}
+          />
+        </Grid>
+        <Grid size={gridSize}>
+          <MillimeterField
+            id="x-height-field"
+            label={"xheight"}
+            min={0.1}
+            step={0.1}
+            value={store.xHeight}
+            onChange={v => (store.xHeight = v)}
+          />
+        </Grid>
+        <Grid size={gridSize}>
+          <DropDownField
+            id="size-field"
+            label={"pagesize"}
+            value={store.pageSize}
+            onChange={v => (store.pageSize = v)}
+            choices={store.pageSizes}
+          />
+        </Grid>
+        <Grid size={gridSize}>
+          <DropDownField
+            id="orientation-field"
+            label={"pageorientation"}
+            value={store.orientation}
+            onChange={v => (store.orientation = v)}
+            choices={store.orientations}
+          />
+        </Grid>
       </Grid>
-      <Grid size={{sm: 6, md: 2}}>
-        <MillimeterField
-          id="x-height-field"
-          label={"xheight"}
-          min={0.1}
-          step={0.1}
-          value={store.xHeight}
-          onChange={v => (store.xHeight = v)}
-        />
-      </Grid>
-      <Grid size={{sm: 6, md: 3}}>
-        <DropDownField
-          id="size-field"
-          label={"pagesize"}
-          value={store.pageSize}
-          onChange={v => (store.pageSize = v)}
-          choices={store.pageSizes}
-        />
-      </Grid>
-      <Grid size={{sm: 6, md: 3}}>
-        <DropDownField
-          id="orientation-field"
-          label={"pageorientation"}
-          value={store.orientation}
-          onChange={v => (store.orientation = v)}
-          choices={store.orientations}
-        />
-      </Grid>
-    </Grid>
-    </div>
+    </Box>
   );
 };
 
-export default withTranslation()(observer(BasicSettings));
+const MobxBasicSettings = observer(BasicSettings);
+export default MobxBasicSettings;

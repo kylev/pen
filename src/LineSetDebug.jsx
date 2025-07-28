@@ -1,10 +1,7 @@
 import React from "react";
-import { observer } from "mobx-react";
 
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+import { observer } from "mobx-react";
 
 const showFields = [
   "x1",
@@ -18,13 +15,13 @@ const showFields = [
 
 const LineItem = ({ line }) => {
   return (
-    <Grid size={{xs: 3}}>
+    <Grid size={{ xs: 3 }}>
       <Card>
         <CardContent>
-          <Typography variant="headline">{line.key}</Typography>
+          <Typography variant="h6">{line.key}</Typography>
           <Typography>
             {showFields.map(key => (
-              <span key={key}>
+              <span key={`debugline-${line.key}-${key}`}>
                 {key}: {line[key]}
                 <br />
               </span>
@@ -38,10 +35,11 @@ const LineItem = ({ line }) => {
 
 const LineSetDebug = ({ hidden, lineSet }) => {
   return (
-    <div hidden={hidden}>
+    <Box hidden={hidden}>
       <Grid container>{lineSet.map(l => <LineItem key={l.key} line={l} />)}</Grid>
-    </div>
+    </Box>
   );
 };
 
-export default observer(LineSetDebug);
+const MobxLineSetDebug = observer(LineSetDebug);
+export default MobxLineSetDebug;
