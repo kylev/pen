@@ -29,6 +29,7 @@ function tabPanelProps(index) {
   return {
     id: `tabpanel-${index}`,
     "aria-labelledby": `tab-${index}`,
+    "aria-role": "tabpanel",
   };
 }
 
@@ -46,7 +47,7 @@ class Header extends React.Component {
             </Typography>
             <HeaderButtons />
           </Toolbar>
-          <Box sx={{ borderBottom: 1, borderColor: 'green' }}>
+          <Box sx={{ borderBottom: 1 }}>
             <Tabs
               onChange={(e, active) => this.setState({ active })}
               value={this.state.active}
@@ -58,26 +59,17 @@ class Header extends React.Component {
             </Tabs>
           </Box>
         </AppBar>
-        <div className={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1 }}>
           <Paper square style={{ padding: 24, marginBottom: 4 }}>
             <BasicSettings store={store} hidden={this.state.active !== "basic"} {...tabPanelProps("basic")} />
             <CustomSettings store={store} hidden={this.state.active !== "custom"} {...tabPanelProps("custom")} />
             <LineSettings store={store} hidden={this.state.active !== "lines"} {...tabPanelProps("lines")} />
             <LineSetDebug lineSet={store.lineSet} hidden={this.state.active !== "debug"} {...tabPanelProps("debug")} />
           </Paper>
-        </div>
+        </Box>
       </Box>
     );
   }
 }
-
-const styles = theme => {
-  return {
-    tabs: {
-      paddingLeft: theme.spacing.unit * 3,
-      paddingRight: theme.spacing.unit * 3
-    }
-  };
-};
 
 export default withTranslation()(Header);
