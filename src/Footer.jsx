@@ -2,8 +2,7 @@ import React from "react";
 
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { GitHub, Twitter } from "@mui/icons-material";
 
 import LanguageSelect from "./LanguageSelect";
 
@@ -14,12 +13,12 @@ const Footer = ({ }) => {
       <Grid size={{xs: 7}}>
         <Typography align="right">
           <a href="https://github.com/kylev/pen" padding={24}>
-            <FontAwesomeIcon icon={faGithub}  />
+            <GitHub />
           </a>
           <a href="https://twitter.com/kylev">
-            <FontAwesomeIcon icon={faTwitter} />
+            <Twitter />
           </a>
-          Kyle V ©2018 Created with <a href="https://reactjs.org/">React</a>
+          Kyle V ©2025 Created with <a href="https://reactjs.org/">React</a>
           {" and "}
           <a href="https://mobx.js.org">Mobx</a> while thinking about my mom, a
           teacher.<br />
