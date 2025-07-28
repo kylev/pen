@@ -29,8 +29,12 @@
     "test": "vite test --env=jsdom"
   },
   "devDependencies": {
+    "@eslint/js": "^9.30.1",
     "@vitejs/plugin-react": "^4.7.0",
-    "prettier": "^1.11.1",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "prettier": "^3.6.2",
     "vite": "^7.0.6"
   },
   "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js",
