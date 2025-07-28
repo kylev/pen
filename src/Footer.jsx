@@ -14,14 +14,14 @@ const Footer = () => {
           {" and "}
           <a href="https://mobx.js.org">Mobx</a> while thinking about my mom, a
           teacher.<br />
+          <a href="https://github.com/kylev/pen/issues">Bugs? Suggestions?</a>
+          <br />
           <a href="https://github.com/kylev/pen">
             <GitHub />
           </a>&nbsp;
           <a href="https://twitter.com/kylev">
             <Twitter />
           </a>
-          <br />
-          <a href="https://github.com/kylev/pen/issues">Bugs? Suggestions?</a>
       </Grid>
       <Grid size={3} style={{ textAlign: "right" }}>
         <LanguageSelect />
