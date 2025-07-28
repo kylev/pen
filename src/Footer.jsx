@@ -1,43 +1,34 @@
 import React from "react";
 
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+import {Grid, Typography} from "@mui/material";
 import { GitHub, Twitter } from "@mui/icons-material";
 
 import LanguageSelect from "./LanguageSelect";
 
-const Footer = ({ }) => {
+const Footer = () => {
   return (
-    <Grid container spacing={16}>
-      <Grid size={{xs: 1}} />
-      <Grid size={{xs: 7}}>
-        <Typography align="right">
-          <a href="https://github.com/kylev/pen" padding={24}>
-            <GitHub />
-          </a>
-          <a href="https://twitter.com/kylev">
-            <Twitter />
-          </a>
-          Kyle V ©2025 Created with <a href="https://reactjs.org/">React</a>
+    <Grid container marginY={2}>
+      <Grid size={1} />
+      <Grid size={7}>
+          Created with <a href="https://reactjs.org/">React</a>
           {" and "}
           <a href="https://mobx.js.org">Mobx</a> while thinking about my mom, a
           teacher.<br />
+          <a href="https://github.com/kylev/pen">
+            <GitHub />
+          </a>&nbsp;
+          <a href="https://twitter.com/kylev">
+            <Twitter />
+          </a>
+          <br />
           <a href="https://github.com/kylev/pen/issues">Bugs? Suggestions?</a>
-        </Typography>
       </Grid>
-      <Grid size={{xs: 3}}>
+      <Grid size={3} style={{ textAlign: "right" }}>
         <LanguageSelect />
       </Grid>
-      <Grid size={{xs: 1}} />
+      <Grid size={1} />
     </Grid>
   );
-};
-
-const styles = theme => {
-  return {
-    root: { backgroundColor: theme.palette.background.default },
-    icon: { paddingRight: theme.spacing.unit, paddingLeft: theme.spacing.unit }
-  };
 };
 
 export default Footer;
