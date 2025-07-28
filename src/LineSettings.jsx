@@ -1,9 +1,8 @@
 import React from "react";
-import { observer } from "mobx-react";
-import { translate } from "react-i18next";
 
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
+import { observer } from "mobx-react";
+import { withTranslation } from "react-i18next";
+import { Box, Grid, Typography } from "@mui/material";
 
 import ColorDropDownField from "./ColorDropDownField";
 import DashDropDownField from "./DashDropDownField";
@@ -11,18 +10,18 @@ import MillimeterField from "./MillimeterField";
 
 let LineSetting = ({ label, line, t }) => {
   return (
-    <Grid container spacing={24} style={{ marginBottom: 24 }}>
-      <Grid item xs={12} style={{ paddingBottom: 0 }}>
-        <Typography variant="subheading">{t(label)}</Typography>
+    <Grid container spacing={2} style={{ marginBottom: 24 }}>
+      <Grid size={12} style={{ paddingBottom: 0 }}>
+        <Typography variant="subtitle1">{t(label)}</Typography>
       </Grid>
-      <Grid item xs={6} md={4}>
+      <Grid size={{ xs: 6, sm: 4 }}>
         <ColorDropDownField
           label={"color"}
           value={line.color}
           onChange={v => (line.color = v)}
         />
       </Grid>
-      <Grid item xs={6} md={4}>
+      <Grid size={{ xs: 6, sm: 4 }}>
         <DashDropDownField
           label={"dash"}
           value={line.dash}
@@ -30,7 +29,7 @@ let LineSetting = ({ label, line, t }) => {
           disabled={line.color === "transparent"}
         />
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid size={{ xs: 6, sm: 4 }}>
         <MillimeterField
           label={"thickness"}
           value={line.thickness}
@@ -43,19 +42,21 @@ let LineSetting = ({ label, line, t }) => {
     </Grid>
   );
 };
-LineSetting = translate()(observer(LineSetting));
 
-const LineSettings = ({ store }) => {
+LineSetting = withTranslation()(observer(LineSetting));
+
+const LineSettings = ({ hidden, store }) => {
   const lineNames = ["ascender", "midline", "baseline", "descender"];
   return (
-    <div>
+    <Box hidden={hidden}>
       {lineNames.map(ln => (
         <LineSetting label={ln} line={store[ln]} key={ln} />
       ))}
       <LineSetting label={"guideline"} line={store.guideline} key="guide" />
       <LineSetting label={"halfline"} line={store.halfLine} key="halfline" />
-    </div>
+    </Box>
   );
 };
 
-export default observer(LineSettings);
+const MobxLineSettings = observer(LineSettings);
+export default MobxLineSettings;

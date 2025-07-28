@@ -1,12 +1,13 @@
 import React from "react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { clamp } from "lodash";
 import { observer } from "mobx-react";
 
-import FormControl from "@material-ui/core/FormControl";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
+import Box from "@mui/material/Box";
+import FormControl from "@mui/material/FormControl";
+import FormHelperText from "@mui/material/FormHelperText";
+import Input from "@mui/material/Input";
+import InputLabel from "@mui/material/InputLabel";
 
 const labels = ["ascender", "x", "descender", "gap"];
 
@@ -33,11 +34,13 @@ RatioInput = observer(RatioInput);
 
 const RatiosInput = ({ store, t }) => {
   return (
-    <FormControl>
-      <InputLabel shrink>{t("ratios")}</InputLabel>
+    <Box sx={{ display: 'flex', flexWrap: 'nowrap'}}>
+      <FormControl>
+        <InputLabel shrink>{t("ratios")}</InputLabel>
+      </FormControl>
       <RatioInput store={store} t={t} />
-    </FormControl>
+    </Box>
   );
 };
 
-export default translate()(RatiosInput);
+export default withTranslation()(RatiosInput);

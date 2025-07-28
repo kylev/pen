@@ -1,7 +1,7 @@
 import React from "react";
-import { I18nextProvider } from "react-i18next";
 
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { I18nextProvider } from "react-i18next";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import "./App.css";
 
@@ -15,7 +15,22 @@ import i18n from "./i18n";
 import store from "./store";
 gaWatchStore(store);
 
-const theme = createMuiTheme({});
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#3f51b5",
+    },
+  },
+  components: {
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          backgroundColor: "#f50057",
+        },
+      },
+    },
+  },
+});
 
 class App extends React.Component {
   componentDidCatch(error, info) {
@@ -25,12 +40,12 @@ class App extends React.Component {
   render() {
     return (
       <I18nextProvider i18n={i18n}>
-        <MuiThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
           <DocTitle store={store} />
           <Header store={store} />
           <PaperDisplay store={store} />
           <Footer />
-        </MuiThemeProvider>
+        </ThemeProvider>
       </I18nextProvider>
     );
   }
