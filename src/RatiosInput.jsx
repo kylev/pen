@@ -9,7 +9,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 import Input from "@mui/material/Input";
 import InputLabel from "@mui/material/InputLabel";
 
-const labels = ["ascender", "x", "descender", "gap"];
+const labels = ["ascender", "xheight", "descender", "gap"];
 
 let RatioInput = ({ store, t }) => (
   <span>
