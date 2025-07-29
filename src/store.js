@@ -51,12 +51,12 @@ class PenStore {
     { key: "simple", ratios: [1, 1, 1, 1], angle: 0 },
     {
       key: "italic",
-      ratios: [2, 4, 2, 2],
+      ratios: [2, 4, 2, 1],
       angle: 83
     },
     {
       key: "copperplate",
-      ratios: [3, 2, 3, 0],
+      ratios: [3, 2, 3, 1],
       angle: 55
     },
     {
@@ -66,13 +66,13 @@ class PenStore {
     },
     {
       key: "foundation",
-      ratios: [2, 2, 2, 0],
-      angle: 0
+      ratios: [2, 2, 2, 1],
+      angle: 90
     },
     {
       key: "german",
-      ratios: [2, 1, 2, 0],
-      angle: 0
+      ratios: [2, 1, 2, 1],
+      angle: 65
     }
   ];
 
