@@ -2,9 +2,9 @@ name: Test
 
 on:
   pull_request:
-    types: [opened, reopened]
+    # types: [opened, reopened]
   push:
-    branches: [ main ]
+    # branches: [ main ]
 
 jobs:
   test:
@@ -16,4 +16,4 @@ jobs:
           node-version-file: ".node-version"
           cache: npm
       - run: npm ci
-      - run: npm test
+      - run: npm run test
