@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import { defaultLineSpec, lineDash } from "./lines";
 
 it("has the necessary keys", () => {

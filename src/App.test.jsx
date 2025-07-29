@@ -1,9 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { render, screen } from '@testing-library/react';
+import { expect, it } from 'vitest';
+
 import App from "./App";
 
 it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  render(<App />);
+
+  expect(screen.getByRole("button", { name: "Print" })).not.toBeUndefined();
 });
