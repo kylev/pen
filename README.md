@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/kylev/pen.svg?branch=master)](https://travis-ci.org/kylev/pen)
+[![Deploy to GitHub Pages](https://github.com/kylev/pen/actions/workflows/deployment.yml/badge.svg)](https://github.com/kylev/pen/actions/workflows/deployment.yml)
 
 ## Penmanship Practice Sheets
 
