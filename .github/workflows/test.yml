@@ -3,8 +3,8 @@ name: Test
 on:
   pull_request:
     # types: [opened, reopened]
-  # push:
-  #   branches: [ main ]
+  push:
+    branches: [ kv_* ]
 
 jobs:
   test:
