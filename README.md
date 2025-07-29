@@ -3,6 +3,8 @@
 
 ## Penmanship Practice Sheets
 
-[Hosted at kylev.github.io/pen](https://kylev.github.io/pen/). This
-project was bootstrapped with [Create React
-App](https://github.com/facebookincubator/create-react-app).
+[Hosted at kylev.github.io/pen](https://kylev.github.io/pen/).
+
+### Bugs
+
+Report bugs and ask questions with [here](https://github.com/kylev/pen/issues).
