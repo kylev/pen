@@ -1,14 +1,16 @@
 import React from "react";
 
 import { observer } from "mobx-react";
-import { withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { Box, Grid, Typography } from "@mui/material";
 
 import ColorDropDownField from "./ColorDropDownField";
 import DashDropDownField from "./DashDropDownField";
 import MillimeterField from "./MillimeterField";
 
-let LineSetting = ({ label, line, t }) => {
+const LineSetting = ({ label, line }) => {
+  const { t } = useTranslation();
+
   return (
     <Grid container spacing={2} style={{ marginBottom: 24 }}>
       <Grid size={12} style={{ paddingBottom: 0 }}>
@@ -42,8 +44,6 @@ let LineSetting = ({ label, line, t }) => {
     </Grid>
   );
 };
-
-LineSetting = withTranslation()(observer(LineSetting));
 
 const LineSettings = ({ hidden, store }) => {
   const lineNames = ["ascender", "midline", "baseline", "descender"];

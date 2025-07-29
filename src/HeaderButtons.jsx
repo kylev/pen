@@ -1,9 +1,9 @@
 import React from "react";
-import download from "downloadjs";
-import { withTranslation } from "react-i18next";
 
 import Icon from "@mui/material/Icon";
 import IconButton from "@mui/material/IconButton";
+import download from "downloadjs";
+import { useTranslation } from "react-i18next";
 
 import { outputAttempt } from "./ga";
 
@@ -31,7 +31,9 @@ const doPrint = e => {
   window.print();
 };
 
-const HeaderButtons = ({ t }) => {
+function HeaderButtons() {
+  const { t } = useTranslation();
+
   return (
     <div>
       <IconButton
@@ -59,4 +61,4 @@ const HeaderButtons = ({ t }) => {
   );
 };
 
-export default withTranslation()(HeaderButtons);
+export default HeaderButtons;

@@ -3,14 +3,15 @@ import React from "react";
 import { Box, Grid, InputAdornment, TextField } from "@mui/material";
 import { clamp } from "lodash";
 import { observer } from "mobx-react";
-import { withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
 import RatiosInput from "./RatiosInput";
 
-const BasicSettings = ({ hidden, store, t }) => {
+const BasicSettings = ({ hidden, store }) => {
   const gridSize = { xs: 12, sm: 4 };
+  const { t } = useTranslation();
 
   return (
     <Box hidden={hidden}>
@@ -79,5 +80,5 @@ const BasicSettings = ({ hidden, store, t }) => {
   );
 };
 
-const MobxBasicSettings = withTranslation()(observer(BasicSettings));
+const MobxBasicSettings = observer(BasicSettings);
 export default MobxBasicSettings;

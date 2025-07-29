@@ -1,17 +1,18 @@
 import React from "react";
-import { withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
 
-const MillimeterField = props => {
+function MillimeterField(props) {
+  const { t } = useTranslation();
+
   const {
     onChange,
     label,
     max,
     min,
     step,
-    t,
     tReady,
     ...other
   } = props;
@@ -37,10 +38,5 @@ const MillimeterField = props => {
   );
 };
 
-const styles = theme => {
-  return {
-    label: { whiteSpace: "nowrap" }
-  };
-};
 
-export default withTranslation()(MillimeterField);
+export default MillimeterField;
