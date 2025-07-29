@@ -1,6 +1,6 @@
 {
   "name": "penpage",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "private": true,
   "homepage": "https://kylev.github.io/pen/",
   "dependencies": {
@@ -8,7 +8,6 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
-    "@mui/styled-engine-sc": "^7.2.0",
     "color": "^5.0.0",
     "downloadjs": "^1.4.7",
     "i18next": "^25.3.2",
