@@ -1,17 +1,18 @@
 import React from "react";
-import i18next from "i18next";
-import { withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 import DropDownField from "./DropDownField";
 
-const LanguageSelect = ({ t }) => {
+const LanguageSelect = () => {
+  const { i18n } = useTranslation();
+
   return (
     <DropDownField
       id="lang-select"
       label={"selectlanguage"}
       margin="dense"
-      value={i18next.language}
-      onChange={v => i18next.changeLanguage(v)}
+      value={i18n.language}
+      onChange={v => i18n.changeLanguage(v)}
       choices={[
         { key: "de", name: "languages.de" },
         { key: "en", name: "languages.en" },
@@ -23,4 +24,4 @@ const LanguageSelect = ({ t }) => {
   );
 };
 
-export default withTranslation()(LanguageSelect);
+export default LanguageSelect;
