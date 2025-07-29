@@ -2,7 +2,6 @@ import React from "react";
 
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 
 import PracticePage from "./PracticePage";
@@ -22,17 +21,6 @@ const PaperDisplay = ({ store }) => {
       </Box>
     </Container>
   );
-};
-
-const styles = theme => {
-  return {
-    root: {
-      flexGrow: 1,
-      overflow: "hidden",
-      backgroundColor: theme.palette.background.default
-    },
-    paper: { padding: 20, margin: 20 }
-  };
 };
 
 export default PaperDisplay;
