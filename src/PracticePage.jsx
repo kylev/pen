@@ -1,6 +1,6 @@
 import React from "react";
 import { times } from "lodash";
-import { observer } from "mobx-react";
+import { observer } from "mobx-react-lite";
 
 import LineSet from "./LineSet";
 import WatermarkSVG from "./WatermarkSVG";

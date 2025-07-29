@@ -1,6 +1,7 @@
 import React from "react";
 
-import { withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
+import { observer } from "mobx-react-lite";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -14,7 +15,6 @@ import BasicSettings from "./BasicSettings";
 import CustomSettings from "./CustomSettings";
 import LineSettings from "./LineSettings";
 import LineSetDebug from "./LineSetDebug";
-import Color from "color";
 
 
 function tabProps(index) {
@@ -38,43 +38,38 @@ function tabPanelProps(index) {
   };
 }
 
-class Header extends React.Component {
-  state = { active: "basic" };
+function PlainHeader({ store }) {
+  const { t } = useTranslation();
+  const [active, setActive] = React.useState("basic");
 
-  render() {
-    const { store, t } = this.props;
-    return (
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6" component="h1" sx={{ flexGrow: 1 }}>
-              {t("title")}
-            </Typography>
-            <HeaderButtons />
-          </Toolbar>
-          {/* <Box sx={{ borderBottom: 1 }}> */}
-            <Tabs
-              onChange={(e, active) => this.setState({ active })}
-              value={this.state.active}
-            >
-              <Tab label={t("tabNames.basic")} {...tabProps("basic")} />
-              <Tab label={t("tabNames.custom")} {...tabProps("custom")} />
-              <Tab label={t("tabNames.lines")} {...tabProps("lines")} />
-              {store.isDev && <Tab label={t("tabNames.debug")} {...tabProps("debug")} />}
-            </Tabs>
-          {/* </Box> */}
-        </AppBar>
-        {/* <Box sx={{ flexGrow: 1 }}> */}
-        <Paper square style={{ padding: 20, marginBottom: 4 }}>
-          <BasicSettings store={store} hidden={this.state.active !== "basic"} {...tabPanelProps("basic")} />
-          <CustomSettings store={store} hidden={this.state.active !== "custom"} {...tabPanelProps("custom")} />
-          <LineSettings store={store} hidden={this.state.active !== "lines"} {...tabPanelProps("lines")} />
-          <LineSetDebug lineSet={store.lineSet} hidden={this.state.active !== "debug"} {...tabPanelProps("debug")} />
-        </Paper>
-        {/* </Box> */}
-      </Box>
-    );
-  }
-}
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="h1" sx={{ flexGrow: 1 }}>
+            {t("title")}
+          </Typography>
+          <HeaderButtons />
+        </Toolbar>
+        <Tabs
+          onChange={(e, v) => setActive(v)}
+          value={active}
+        >
+          <Tab label={t("tabNames.basic")} {...tabProps("basic")} />
+          <Tab label={t("tabNames.custom")} {...tabProps("custom")} />
+          <Tab label={t("tabNames.lines")} {...tabProps("lines")} />
+          {store.isDev && <Tab label={t("tabNames.debug")} {...tabProps("debug")} />}
+        </Tabs>
+      </AppBar>
+      <Paper square style={{ padding: 20, marginBottom: 4 }}>
+        <BasicSettings store={store} hidden={active !== "basic"} {...tabPanelProps("basic")} />
+        <CustomSettings store={store} hidden={active !== "custom"} {...tabPanelProps("custom")} />
+        <LineSettings store={store} hidden={active !== "lines"} {...tabPanelProps("lines")} />
+        <LineSetDebug lineSet={store.lineSet} hidden={active !== "debug"} {...tabPanelProps("debug")} />
+      </Paper>
+    </Box>
+  );
+};
 
-export default withTranslation()(Header);
+const Header = observer(PlainHeader);
+export default Header;

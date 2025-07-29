@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
-import { observer } from "mobx-react";
+import { observer } from "mobx-react-lite";
 
 const showFields = [
   "x1",
