@@ -25,7 +25,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "test": "vite test --env=jsdom"
+    "test": "vitest"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
