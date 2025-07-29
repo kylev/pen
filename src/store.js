@@ -10,7 +10,7 @@ const RAD_RATIO = Math.PI / 180;
 class PenStore {
   pageSize = "letter";
   orientation = "portrait";
-  printGap = 22;
+  printGap = 26;
   ratio = "simple";
   ratios = [1, 1, 1, 1];
   xHeight = 8.0;
