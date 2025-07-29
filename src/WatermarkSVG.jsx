@@ -1,10 +1,13 @@
 import React from "react";
-import { withTranslation } from "react-i18next";
-import { observer } from "mobx-react";
+import { useTranslation } from "react-i18next";
+import { observer } from "mobx-react-lite";
 
-const WatermarkSVG = ({ store, t, x, y }) => {
+const WatermarkSVG = ({ store, x, y }) => {
+  const { t } = useTranslation();
   let ratioT = t(store.ratio);
-  if (store.ratio === "custom") ratioT = `${t("ratios")}(${store.ratios})`;
+
+  if (store.ratio === "custom")
+    ratioT = `${t("ratios")}(${store.ratios})`;
 
   let ratioDetail = `
     - ${t("xheight")} ${store.xHeight}mm
@@ -18,4 +21,5 @@ const WatermarkSVG = ({ store, t, x, y }) => {
   );
 };
 
-export default withTranslation()(observer(WatermarkSVG));
+const MobxWatermarkSVG = observer(WatermarkSVG);
+export default MobxWatermarkSVG;

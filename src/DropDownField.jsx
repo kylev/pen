@@ -1,6 +1,6 @@
 import React from "react";
-import { withTranslation } from "react-i18next";
 
+import { useTranslation } from "react-i18next";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -17,10 +17,11 @@ const DropDownField = ({
   onChange,
   choices,
   id,
-  t,
   tReady,
   ...rest
 }) => {
+  const { t } = useTranslation();
+
   return (
     <FormControl>
       <InputLabel id={`label-${id}`} sx={{ whiteSpace: "nowrap" }} >
@@ -37,4 +38,4 @@ const DropDownField = ({
   );
 };
 
-export default withTranslation()(DropDownField);
+export default DropDownField;
