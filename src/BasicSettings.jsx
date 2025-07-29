@@ -1,17 +1,21 @@
 import React from "react";
 
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, InputAdornment, TextField } from "@mui/material";
+import { clamp } from "lodash";
 import { observer } from "mobx-react";
+import { withTranslation } from "react-i18next";
 
 import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
+import RatiosInput from "./RatiosInput";
 
-const BasicSettings = ({ hidden, store }) => {
-  const gridSize = { xs: 12, sm: 6, md: 3 };
+const BasicSettings = ({ hidden, store, t }) => {
+  const gridSize = { xs: 12, sm: 4 };
+
   return (
     <Box hidden={hidden}>
       <Grid container spacing={2}>
-        <Grid size={gridSize}>
+        <Grid size={{ xs: 12, sm: 5, md: 5 }}>
           <DropDownField
             id="presets-field"
             label={"presets"}
@@ -20,6 +24,28 @@ const BasicSettings = ({ hidden, store }) => {
             choices={store.ratioChoices}
           />
         </Grid>
+        <Grid size={{ xs: 12, sm: 5, md: 5 }}>
+          <RatiosInput store={store} />
+        </Grid>
+        <Grid size={{ xs: 12, sm: 2, md: 2 }}>
+          <TextField
+            id="guide-angle-field"
+            label={t("guideangle")}
+            type="number"
+            value={store.guideline.angle}
+            disabled={store.ratio !== "custom"}
+            onChange={e => {
+              store.ratioPreset("custom");
+              store.guideline.angle = clamp(e.target.value, 0, 90);
+            }}
+            slotProps={{
+              input: {
+                endAdornment: <InputAdornment position="end">°</InputAdornment>
+              }
+            }}
+          />
+        </Grid>
+
         <Grid size={gridSize}>
           <MillimeterField
             id="x-height-field"
@@ -53,5 +79,5 @@ const BasicSettings = ({ hidden, store }) => {
   );
 };
 
-const MobxBasicSettings = observer(BasicSettings);
+const MobxBasicSettings = withTranslation()(observer(BasicSettings));
 export default MobxBasicSettings;

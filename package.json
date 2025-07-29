@@ -22,7 +22,7 @@
     "react-number-format": "5.4.4"
   },
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
     "test": "vite test --env=jsdom"

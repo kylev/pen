@@ -10,7 +10,7 @@ const RAD_RATIO = Math.PI / 180;
 class PenStore {
   pageSize = "letter";
   orientation = "portrait";
-  printGap = 26;
+  printGap = 28;
   ratio = "simple";
   ratios = [1, 1, 1, 1];
   xHeight = 8.0;
@@ -31,7 +31,7 @@ class PenStore {
     name: "Guide Lines",
     strokeWidth: 0.1,
     color: "pink",
-    angle: 0,
+    angle: 90,
     spacing: 30
   });
 
@@ -202,7 +202,7 @@ class PenStore {
       guideline: { angle, spacing }
     } = this;
 
-    if (angle < 1) return [];
+    if (angle < 1 || angle > 89) return [];
 
     const slopeRatio = Math.tan(angle * RAD_RATIO);
     const yOffset = width * slopeRatio;
