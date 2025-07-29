@@ -37,7 +37,6 @@ const PracticePage = ({ store }) => {
         viewBox={`0 0 ${width} ${height}`}
         style={{ backgroundColor: "white" }}
       >
-        {false && <circle cx={40} cy={40} r={20} fill={"lightblue"} />}
         <g key="X">
           {times(count, i => (
             <text
@@ -72,4 +71,5 @@ const PracticePage = ({ store }) => {
   );
 };
 
-export default observer(PracticePage);
+const MobxPracticePage = observer(PracticePage);
+export default MobxPracticePage;
