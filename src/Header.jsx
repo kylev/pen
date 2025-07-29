@@ -14,6 +14,7 @@ import BasicSettings from "./BasicSettings";
 import CustomSettings from "./CustomSettings";
 import LineSettings from "./LineSettings";
 import LineSetDebug from "./LineSetDebug";
+import Color from "color";
 
 
 function tabProps(index) {
@@ -21,7 +22,11 @@ function tabProps(index) {
     id: `tab-${index}`,
     value: index,
     "aria-controls": `tabpanel-${index}`,
-    sx: {'& .Mui-selected': {'background-color': '#8f0ff0'}}
+    sx: {
+      '&.Mui-selected': {
+        color: '#ffffff',
+      }
+    },
   };
 }
 
@@ -47,27 +52,26 @@ class Header extends React.Component {
             </Typography>
             <HeaderButtons />
           </Toolbar>
-          <Box sx={{ borderBottom: 1 }}>
+          {/* <Box sx={{ borderBottom: 1 }}> */}
             <Tabs
               onChange={(e, active) => this.setState({ active })}
               value={this.state.active}
-              sx={{ "& .Mui-selected": { color: "#ffffff" } }}
             >
               <Tab label={t("tabNames.basic")} {...tabProps("basic")} />
               <Tab label={t("tabNames.custom")} {...tabProps("custom")} />
               <Tab label={t("tabNames.lines")} {...tabProps("lines")} />
-            {store.isDev && <Tab label={t("tabNames.debug")} {...tabProps("debug")} />}
+              {store.isDev && <Tab label={t("tabNames.debug")} {...tabProps("debug")} />}
             </Tabs>
-          </Box>
+          {/* </Box> */}
         </AppBar>
-        <Box sx={{ flexGrow: 1 }}>
-          <Paper square style={{ padding: 24, marginBottom: 4 }}>
-            <BasicSettings store={store} hidden={this.state.active !== "basic"} {...tabPanelProps("basic")} />
-            <CustomSettings store={store} hidden={this.state.active !== "custom"} {...tabPanelProps("custom")} />
-            <LineSettings store={store} hidden={this.state.active !== "lines"} {...tabPanelProps("lines")} />
-            <LineSetDebug lineSet={store.lineSet} hidden={this.state.active !== "debug"} {...tabPanelProps("debug")} />
-          </Paper>
-        </Box>
+        {/* <Box sx={{ flexGrow: 1 }}> */}
+        <Paper square style={{ padding: 20, marginBottom: 4 }}>
+          <BasicSettings store={store} hidden={this.state.active !== "basic"} {...tabPanelProps("basic")} />
+          <CustomSettings store={store} hidden={this.state.active !== "custom"} {...tabPanelProps("custom")} />
+          <LineSettings store={store} hidden={this.state.active !== "lines"} {...tabPanelProps("lines")} />
+          <LineSetDebug lineSet={store.lineSet} hidden={this.state.active !== "debug"} {...tabPanelProps("debug")} />
+        </Paper>
+        {/* </Box> */}
       </Box>
     );
   }
