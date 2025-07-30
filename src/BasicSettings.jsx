@@ -19,7 +19,7 @@ function BasicSettings({ hidden, store }) {
             id="presets-field"
             label={"presets"}
             value={store.ratio}
-            onChange={v => store.ratioPreset(v)}
+            onChange={v => store.setRatioPreset(v)}
             choices={store.ratioChoices}
           />
         </Grid>
