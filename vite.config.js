@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import observerPlugin from "mobx-react-observer/babel-plugin";
 
 export default defineConfig({
   base: "./",
@@ -12,7 +13,7 @@ export default defineConfig({
             "react",
             "react-dom",
             "mobx",
-            "mobx-react-lite",
+            "mobx-react-observer",
             "i18next",
             "react-i18next",
             "lodash",
@@ -21,7 +22,13 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react()],
+  plugins: [
+    react({
+      babel: {
+        plugins: [observerPlugin()],
+      },
+    }),
+  ],
   server: {
     host: true,
   },
