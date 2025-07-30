@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
-import { observer } from "mobx-react-lite";
 
 const showFields = [
   "x1",
@@ -41,5 +40,4 @@ const LineSetDebug = ({ hidden, lineSet }) => {
   );
 };
 
-const MobxLineSetDebug = observer(LineSetDebug);
-export default MobxLineSetDebug;
+export default LineSetDebug;
