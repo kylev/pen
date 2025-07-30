@@ -7,9 +7,16 @@ export default defineConfig({
     outDir: "build",
     rollupOptions: {
       output: {
-          manualChunks: {
-          lodash: ['lodash'],
-          react: ['react', 'react-dom', 'mobx', 'mobx-react-lite', 'i18next', 'react-i18next'],
+        manualChunks: {
+          uicore: [
+            "react",
+            "react-dom",
+            "mobx",
+            "mobx-react-lite",
+            "i18next",
+            "react-i18next",
+            "lodash",
+          ],
         },
       },
     },
