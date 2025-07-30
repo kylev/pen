@@ -5,6 +5,14 @@ export default defineConfig({
   base: "./",
   build: {
     outDir: "build",
+    rollupOptions: {
+      output: {
+          manualChunks: {
+          lodash: ['lodash'],
+          react: ['react', 'react-dom', 'mobx', 'mobx-react-lite', 'i18next', 'react-i18next'],
+        },
+      },
+    },
   },
   plugins: [react()],
   server: {
