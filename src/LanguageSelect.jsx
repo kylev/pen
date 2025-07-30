@@ -17,8 +17,8 @@ const LanguageSelect = () => {
         { key: "de", name: "languages.de" },
         { key: "en", name: "languages.en" },
         { key: "en-GB", name: "languages.en-GB" },
-        { key: "en-US", name: "languages.en-US" },
-        { key: "es", name: "languages.es" }
+        { key: "es", name: "languages.es" },
+        { key: "tr", name: "languages.tr" },
       ]}
     />
   );

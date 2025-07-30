@@ -1,0 +1,77 @@
+{
+  "title": "Kaligrafi Kılavuz Çizgileri",
+  "tabNames": {
+    "basic": "Temeller",
+    "custom": "Özel",
+    "lines": "Çizgiler",
+    "debug": "Debug"
+  },
+  "buttonNames": {
+    "download": "İndir",
+    "popout": "Ayrı Pencere",
+    "print": "Basmak"
+  },
+
+  "ascender": "Ascender",
+  "baseline": "Baseline",
+  "descender": "Descender",
+  "halfline": "Half-Line",
+  "gap": "Gap",
+  "guideline": "Angle Guides",
+  "midline": "Midline",
+
+  "thickness": "Kalınlık",
+  "xheight": "X Yükseklik",
+  "ratios": "Oran",
+
+  "color": "Ton",
+  "colorNames": {
+    "black": "Siyah",
+    "blue": "Mavi",
+    "cyan": "Camgöbeği",
+    "darkgray": "Koyu Gri",
+    "gray": "Gri",
+    "graypct": "Gri {{pct}}%",
+    "green": "Yeşil",
+    "lightgray": "Açık Gri",
+    "nonphotoblue": "Mavi (non-photo)",
+    "pink": "Pembe",
+    "red": "Kırmızı",
+    "transparent": "Şeffaf",
+    "white": "Beyaz",
+    "yellow": "Sarı"
+  },
+
+  "dash": "Dash",
+  "dashNames": {
+    "none": "Solid",
+    "1cm": "1cm",
+    "2cm": "2cm",
+    "42vary": "4cm / 2cm"
+  },
+
+  "presets": "Presets",
+  "custom": "Özel",
+  "simple": "Basic Penmanship",
+
+  "pagesize": "Kağıt Boyutu",
+  "a3": "A3",
+  "a4": "A4",
+  "a5": "A5",
+  "ledger": "US Ledger (11x17)",
+  "letter": "US Letter",
+  "legal": "US Legal",
+
+  "pageorientation": "Oryantasyon",
+  "landscape": "Yatay",
+  "portrait": "Dikey",
+
+  "gapcolor": "Boşluk Rengi",
+  "globalmargin": "Yazıcı Kenar Boşluğu",
+  "guideangle": "Kılavuz Açısı",
+  "guidespacing": "Kılavuz Aralığı",
+  "watermark": "Filigran",
+  "xmarker": "X İşareti",
+
+  "selectlanguage": "Dil Seç"
+}

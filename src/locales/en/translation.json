@@ -73,7 +73,7 @@
   "portrait": "Portrait",
 
   "gapcolor": "Gap Color",
-  "globalmargin": "Unprintable Margin",
+  "globalmargin": "Printer Margin",
   "guideangle": "Guide Angle",
   "guidespacing": "Guide Spacing",
   "watermark": "Watermark",
@@ -84,7 +84,7 @@
     "de": "German",
     "en": "English",
     "en-GB": "English (United Kingdom)",
-    "en-US": "English (US)",
-    "es": "Español"
+    "es": "Español",
+    "tr": "Türkçe"
   }
 }
