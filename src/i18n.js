@@ -15,10 +15,21 @@ i18n.use(LanguageDetector).init({
   resources: {
     de: { translation: deDefault },
     en: { translation: enDefault },
-    "en-GB": { translation: { color: "Colour", gapcolor: "Gap Colour" } },
+    "en-GB": {
+      translation: {
+        color: "Colour",
+        colorNames: {
+          darkgray: "Dark Grey",
+          gray: "Grey",
+          graypct: "Grey {{pct}}%",
+          lightgray: "Light Grey",
+        },
+        gapcolor: "Gap Colour",
+      },
+    },
     es: { translation: esDefault },
     tr: { translation: trDefault },
-  }
+  },
 });
 
 export default i18n;
