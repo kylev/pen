@@ -1,15 +1,15 @@
 {
-  "title": "Calligraphy Guidelines",
+  "title": "Kaligrafi Kılavuz Çizgileri",
   "tabNames": {
-    "basic": "Basic",
-    "custom": "Custom",
-    "lines": "Lines",
+    "basic": "Temeller",
+    "custom": "Özel",
+    "lines": "Çizgiler",
     "debug": "Debug"
   },
   "buttonNames": {
-    "download": "Download",
-    "popout": "Pop Out",
-    "print": "Print"
+    "download": "İndir",
+    "popout": "Ayrı Pencere",
+    "print": "Basmak"
   },
 
   "ascender": "Ascender",
@@ -21,11 +21,11 @@
   "midline": "Midline",
   "x": "X",
 
-  "thickness": "Thickness",
-  "xheight": "X Height",
-  "ratios": "Ratios",
+  "thickness": "Kalınlık",
+  "xheight": "X Yükseklik",
+  "ratios": "Oran",
 
-  "color": "Color",
+  "color": "Ton",
   "colorNames": {
     "black": "Black",
     "blue": "Blue",
@@ -52,15 +52,10 @@
   },
 
   "presets": "Presets",
-  "custom": "Custom",
+  "custom": "Özel",
   "simple": "Basic Penmanship",
-  "italic": "Italic 2:4:2 83°",
-  "copperplate": "Copperplate (Winters) 3:2:3 55°",
-  "spencerian": "Spencerian 2:1:2 52°",
-  "foundation": "Foundation 2:2:2",
-  "german": "German Kurrent 2:1:2",
 
-  "pagesize": "Paper",
+  "pagesize": "Kağıt Boyutu",
   "a3": "A3",
   "a4": "A4",
   "a5": "A5",
@@ -68,9 +63,9 @@
   "letter": "US Letter",
   "legal": "US Legal",
 
-  "pageorientation": "Orientation",
-  "landscape": "Landscape",
-  "portrait": "Portrait",
+  "pageorientation": "Oryantasyon",
+  "landscape": "Yatay",
+  "portrait": "Dikey",
 
   "gapcolor": "Gap Color",
   "globalmargin": "Unprintable Margin",
@@ -85,7 +80,6 @@
     "en": "English",
     "en-GB": "English (United Kingdom)",
     "en-US": "English (US)",
-    "es": "Español",
-    "tr": "Türkçe"
+    "es": "Español"
   }
 }
