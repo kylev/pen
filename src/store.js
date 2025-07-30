@@ -104,7 +104,9 @@ class PenStore {
       guideLineSet: computed,
       halfLineSet: computed,
 
-      ratioPreset: action.bound
+      ratioPreset: action,
+      setGuidelineAngle: action,
+      setRatio: action,
     });
   }
 
@@ -265,6 +267,16 @@ class PenStore {
     this.ratio = key;
     if (preset.ratios) this.ratios = preset.ratios;
     if (preset.angle !== undefined) this.guideline.angle = preset.angle;
+  }
+
+  setGuidelineAngle(angle) {
+    this.guideline.angle = Math.min(Math.max(angle, 15), 90);
+    if (this.ratio !== "custom") this.ratioPreset("custom");
+  }
+
+  setRatio(index, value) {
+    this.ratios[index] = Math.min(Math.max(value, 0), 20);;
+    if (this.ratio !== "custom") this.ratioPreset("custom");
   }
 }
 

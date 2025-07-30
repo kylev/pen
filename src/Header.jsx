@@ -1,7 +1,6 @@
 import React from "react";
 
 import { useTranslation } from "react-i18next";
-import { observer } from "mobx-react-lite";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -38,7 +37,7 @@ function tabPanelProps(index) {
   };
 }
 
-function PlainHeader({ store }) {
+function Header({ store }) {
   const { t } = useTranslation();
   const [active, setActive] = React.useState("basic");
 
@@ -71,5 +70,4 @@ function PlainHeader({ store }) {
   );
 };
 
-const Header = observer(PlainHeader);
 export default Header;

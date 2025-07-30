@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { observer } from "mobx-react-lite";
 
 const WatermarkSVG = ({ store, x, y }) => {
   const { t } = useTranslation();
@@ -21,5 +20,4 @@ const WatermarkSVG = ({ store, x, y }) => {
   );
 };
 
-const MobxWatermarkSVG = observer(WatermarkSVG);
-export default MobxWatermarkSVG;
+export default WatermarkSVG;

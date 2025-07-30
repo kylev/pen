@@ -1,6 +1,5 @@
 import React from "react";
 
-import { observer } from "mobx-react-lite";
 import { useTranslation } from "react-i18next";
 import { Box, Grid, Typography } from "@mui/material";
 
@@ -58,5 +57,4 @@ const LineSettings = ({ hidden, store }) => {
   );
 };
 
-const MobxLineSettings = observer(LineSettings);
-export default MobxLineSettings;
+export default LineSettings;

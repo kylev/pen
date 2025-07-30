@@ -1,7 +1,6 @@
 import React from "react";
 
 import { clamp } from "lodash";
-import { observer } from "mobx-react-lite";
 import { useTranslation } from "react-i18next";
 
 import Box from "@mui/material/Box";
@@ -27,10 +26,7 @@ function RatiosInput({ store }) {
               type="number"
               value={r}
               disabled={store.ratio !== "custom"}
-              onChange={e => {
-                store.ratioPreset("custom");
-                store.ratios[i] = clamp(e.target.value, 0, 10);
-              }}
+              onChange={e => store.setRatio(i, e.target.value)}
               style={{ marginTop: 16, width: 60 }}
             />
             <br />
@@ -42,5 +38,4 @@ function RatiosInput({ store }) {
   );
 };
 
-const MobxRatiosInput = observer(RatiosInput);
-export default MobxRatiosInput;
+export default RatiosInput;

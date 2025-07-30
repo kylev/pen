@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Box, Grid } from "@mui/material";
-import { observer } from "mobx-react-lite";
 
 import ColorDropDownField from "./ColorDropDownField";
 import MillimeterField from "./MillimeterField";
@@ -56,5 +55,4 @@ const CustomSettings = ({ hidden, store }) => {
   );
 };
 
-const MobxCustomSettings = observer(CustomSettings);
-export default MobxCustomSettings;
+export default CustomSettings;
