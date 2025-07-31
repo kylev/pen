@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Box, Grid, InputAdornment, TextField } from "@mui/material";
 import { useTranslation } from "react-i18next";
 

@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useTranslation } from "react-i18next";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
