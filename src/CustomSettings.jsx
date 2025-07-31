@@ -5,9 +5,9 @@ import { Box, Grid } from "@mui/material";
 import ColorDropDownField from "./ColorDropDownField";
 import MillimeterField from "./MillimeterField";
 
-const CustomSettings = ({ hidden, store }) => {
+const CustomSettings = ({ hidden, role, store }) => {
   return (
-    <Box hidden={hidden}>
+    <Box hidden={hidden} role={role}>
       <Grid container spacing={4}>
         <Grid size={{ xs: 6, sm: 4 }}>
           <MillimeterField

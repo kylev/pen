@@ -32,9 +32,9 @@ const LineItem = ({ line }) => {
   );
 };
 
-const LineSetDebug = ({ hidden, lineSet }) => {
+const LineSetDebug = ({ hidden, role, lineSet }) => {
   return (
-    <Box hidden={hidden}>
+    <Box hidden={hidden} role={role}>
       <Grid container>{lineSet.map(({ key, ...l }) => <LineItem key={key} line={l} />)}</Grid>
     </Box>
   );

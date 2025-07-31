@@ -44,10 +44,10 @@ const LineSetting = ({ label, line }) => {
   );
 };
 
-const LineSettings = ({ hidden, store }) => {
+const LineSettings = ({ hidden, role, store }) => {
   const lineNames = ["ascender", "midline", "baseline", "descender"];
   return (
-    <Box hidden={hidden}>
+    <Box hidden={hidden} role={role}>
       {lineNames.map(ln => (
         <LineSetting label={ln} line={store[ln]} key={ln} />
       ))}
