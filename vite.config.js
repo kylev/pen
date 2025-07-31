@@ -5,7 +5,6 @@ import observerPlugin from "mobx-react-observer/babel-plugin";
 export default defineConfig({
   base: "./",
   build: {
-    outDir: "build",
     rollupOptions: {
       output: {
         manualChunks: {
