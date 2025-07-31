@@ -11,7 +11,7 @@ const LanguageSelect = () => {
       id="lang-select"
       label={"selectlanguage"}
       margin="dense"
-      value={i18n.language}
+      value={i18n.resolvedLanguage}
       onChange={v => i18n.changeLanguage(v)}
       choices={[
         { key: "de", name: "languages.de" },
