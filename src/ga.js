@@ -1,9 +1,8 @@
-import { debounce, join, partial } from "lodash";
+import { debounce, partial } from "lodash";
 import { reaction } from "mobx";
 
 export const trackEvent = (action, label) => {
   window.gtag("event", action, {
-    eventCategory: "Pen",
     eventLabel: label
   });
 };
@@ -22,7 +21,7 @@ const reactRatio = ratio => {
 
 const reactRatios = args => {
   const [ratio, ...ratios] = args;
-  if (ratio === "custom") ratiosChange(join(ratios, ":"));
+  if (ratio === "custom") ratiosChange(ratios.join(":"));
 };
 
 const reactXHeight = height => {
