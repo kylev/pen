@@ -6,12 +6,11 @@ import enDefault from "./locales/en/translation";
 import esDefault from "./locales/es/translation";
 import trDefault from "./locales/tr/translation";
 
-let fallbackLng = "en";
-if (process.env.NODE_ENV === "test") fallbackLng = "cimode";
+const fallbackLng = (process.env.NODE_ENV === "test") ? "cimode" : "en";
 
 i18n.use(LanguageDetector).init({
   fallbackLng,
-  debug: process.env.NODE_ENV === "development",
+  debug: import.meta.env.DEV,
   resources: {
     de: { translation: deDefault },
     en: { translation: enDefault },
