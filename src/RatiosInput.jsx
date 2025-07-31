@@ -1,6 +1,5 @@
 import React from "react";
 
-import { clamp } from "lodash";
 import { useTranslation } from "react-i18next";
 
 import Box from "@mui/material/Box";

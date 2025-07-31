@@ -7,12 +7,12 @@ import DropDownField from "./DropDownField";
 import MillimeterField from "./MillimeterField";
 import RatiosInput from "./RatiosInput";
 
-function BasicSettings({ hidden, store }) {
+function BasicSettings({ hidden, role, store }) {
   const gridSize = { xs: 12, sm: 4 };
   const { t } = useTranslation();
 
   return (
-    <Box hidden={hidden}>
+    <Box hidden={hidden} role={role}>
       <Grid container spacing={2}>
         <Grid size={{ xs: 12, sm: 5, md: 5 }}>
           <DropDownField

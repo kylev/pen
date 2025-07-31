@@ -32,8 +32,8 @@ function tabProps(index) {
 function tabPanelProps(index) {
   return {
     id: `tabpanel-${index}`,
+    role: "tabpanel",
     "aria-labelledby": `tab-${index}`,
-    "aria-role": "tabpanel",
   };
 }
 
