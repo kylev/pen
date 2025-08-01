@@ -5,7 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import "./App.css";
 
-import { gaWatchStore, gaErrorReport } from "./ga";
+import { gaWatchStore, gaErrorReport, gaLangChange } from "./ga";
 import DocTitle from "./DocTitle";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -14,6 +14,11 @@ import PaperDisplay from "./PaperDisplay";
 import i18n from "./i18n";
 import store from "./store";
 gaWatchStore(store);
+
+i18n.on("languageChanged", (lng) => {
+  gaLangChange(lng);
+  window.document.documentElement.setAttribute('lang', lng);
+});
 
 const theme = createTheme({
   palette: {
