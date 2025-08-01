@@ -1,7 +1,6 @@
-import { useTranslation } from "react-i18next";
-
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
+import { useTranslation } from "react-i18next";
 
 function MillimeterField(props) {
   const { t } = useTranslation();
@@ -21,17 +20,17 @@ function MillimeterField(props) {
       label={t(label)}
       onChange={e => onChange(e.target.value)}
       type="number"
-      inputProps={{
-        max,
-        min,
-        step,
-        style: { width: 80 }
+      slotProps={{
+        htmlInput: {
+          max,
+          min,
+          step,
+          style: { width: 80 }
+        },
+        input: {
+          endAdornment: <InputAdornment position="end">mm</InputAdornment>,
+        },
       }}
-      // eslint-disable-next-line react/jsx-no-duplicate-props
-      InputProps={{
-        endAdornment: <InputAdornment position="end">mm</InputAdornment>
-      }}
-      InputLabelProps={{}}
     />
   );
 };
