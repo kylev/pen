@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import observerPlugin from "mobx-react-observer/babel-plugin";
 
 export default defineConfig({
-  base: "./",
+  base: "/pen/",
   build: {
     rollupOptions: {
       output: {
