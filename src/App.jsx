@@ -1,6 +1,10 @@
 import React from "react";
 
 import { I18nextProvider } from "react-i18next";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import "./App.css";
@@ -32,7 +36,7 @@ const theme = createTheme({
   },
 });
 
-class App extends React.Component {
+class BaseApp extends React.Component {
   componentDidCatch(error, info) {
     gaErrorReport(error);
     console.error("Error caught in App component:", error, info);
@@ -51,5 +55,18 @@ class App extends React.Component {
     );
   }
 }
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <BaseApp />,
+  },
+]);
+
+const App = () => {
+  return (
+    <RouterProvider router={router} />
+  );
+};
 
 export default App;
