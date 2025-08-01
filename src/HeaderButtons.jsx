@@ -1,5 +1,3 @@
-import React from "react";
-
 import Icon from "@mui/material/Icon";
 import IconButton from "@mui/material/IconButton";
 import download from "downloadjs";
@@ -7,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import { outputAttempt } from "./ga";
 
-const doPrintWindow = e => {
+const doPrintWindow = () => {
   outputAttempt("popout");
   const svg = document.getElementById("theSVG");
 
@@ -19,19 +17,19 @@ const doPrintWindow = e => {
   `);
 };
 
-const doSaving = e => {
+const doSaving = () => {
   outputAttempt("save");
   const svg = document.getElementById("theSVG");
 
   download(svg.outerHTML, `pen-output.svg`, "image/svg");
 };
 
-const doPrint = e => {
+const doPrint = () => {
   outputAttempt("print");
   window.print();
 };
 
-function HeaderButtons() {
+const HeaderButtons = () => {
   const { t } = useTranslation();
 
   return (

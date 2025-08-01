@@ -1,5 +1,3 @@
-import React from "react";
-
 import DropDownField from "./DropDownField";
 
 const dashes = [

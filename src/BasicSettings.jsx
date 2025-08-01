@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Box, Grid, InputAdornment, TextField } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
@@ -46,7 +44,7 @@ function BasicSettings({ hidden, role, store }) {
           <MillimeterField
             id="x-height-field"
             label={"xheight"}
-            min={0.1}
+            min={2}
             step={0.1}
             value={store.xHeight}
             onChange={v => (store.xHeight = v)}

@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 
 const showFields = [

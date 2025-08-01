@@ -1,6 +1,3 @@
-import React from "react";
-
-import { useTranslation } from "react-i18next";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -8,12 +5,14 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
-import HeaderButtons from "./HeaderButtons";
 import BasicSettings from "./BasicSettings";
 import CustomSettings from "./CustomSettings";
-import LineSettings from "./LineSettings";
+import HeaderButtons from "./HeaderButtons";
 import LineSetDebug from "./LineSetDebug";
+import LineSettings from "./LineSettings";
 
 
 function tabProps(index) {
@@ -39,7 +38,7 @@ function tabPanelProps(index) {
 
 function Header({ store }) {
   const { t } = useTranslation();
-  const [active, setActive] = React.useState("basic");
+  const [active, setActive] = useState("basic");
 
   return (
     <Box sx={{ flexGrow: 1 }}>

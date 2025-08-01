@@ -35,6 +35,7 @@ const theme = createTheme({
 class App extends React.Component {
   componentDidCatch(error, info) {
     gaErrorReport(error);
+    console.error("Error caught in App component:", error, info);
   }
 
   render() {
