@@ -12,10 +12,9 @@ export const gtagEvent = (action, params) => {
   }
 };
 
+// Legacy style naming?
 export const trackEvent = (action, label) => {
-  gtagEvent("event", action, {
-    event_label: label,
-  });
+  gtagEvent(action, { eventLabel: label });
 };
 
 export const presetChange = partial(trackEvent, "select_preset");
