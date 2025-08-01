@@ -15,7 +15,6 @@ const DropDownField = ({
   onChange,
   choices,
   id,
-  tReady,
   ...rest
 }) => {
   const { t } = useTranslation();

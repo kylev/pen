@@ -12,7 +12,6 @@ function MillimeterField(props) {
     max,
     min,
     step,
-    tReady,
     ...other
   } = props;
 
