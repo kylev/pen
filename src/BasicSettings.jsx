@@ -44,7 +44,7 @@ function BasicSettings({ hidden, role, store }) {
           <MillimeterField
             id="x-height-field"
             label={"xheight"}
-            min={0.1}
+            min={2}
             step={0.1}
             value={store.xHeight}
             onChange={v => (store.xHeight = v)}
