@@ -4,7 +4,6 @@ import { reaction } from "mobx";
 export const gtagEvent = (action, params) => {
   if (window.gtag) {
     window.gtag("event", action, {
-      app_name: "pen",
       ...params,
     });
   } else {
