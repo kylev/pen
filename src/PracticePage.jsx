@@ -4,10 +4,10 @@ import LineSet from "./LineSet";
 import WatermarkSVG from "./WatermarkSVG";
 
 const shiftedLineSet = (lineSet, offset) =>
-  lineSet.map(l => ({
+  lineSet.map((l) => ({
     ...l,
     y1: l.y1 + offset,
-    y2: l.y2 + offset
+    y2: l.y2 + offset,
   }));
 
 const PracticePage = ({ store }) => {
@@ -18,7 +18,7 @@ const PracticePage = ({ store }) => {
     lineSet,
     lineSetHeight,
     halfLineSet,
-    dimensions: { width, height }
+    dimensions: { width, height },
   } = store;
 
   const workHeight = lineSetHeight - gap;
@@ -36,7 +36,7 @@ const PracticePage = ({ store }) => {
         style={{ backgroundColor: "white" }}
       >
         <g key="X">
-          {times(count, i => (
+          {times(count, (i) => (
             <text
               key={`x-${i}`}
               x={1}
@@ -48,7 +48,7 @@ const PracticePage = ({ store }) => {
             </text>
           ))}
         </g>
-        {times(count, i => (
+        {times(count, (i) => (
           <g key={`lineset-${i}`}>
             <rect {...gapRect} y={1 + lineSetHeight * i + workHeight} />
             <LineSet

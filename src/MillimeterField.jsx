@@ -5,27 +5,20 @@ import { useTranslation } from "react-i18next";
 function MillimeterField(props) {
   const { t } = useTranslation();
 
-  const {
-    onChange,
-    label,
-    max,
-    min,
-    step,
-    ...other
-  } = props;
+  const { onChange, label, max, min, step, ...other } = props;
 
   return (
     <TextField
       {...other}
       label={t(label)}
-      onChange={e => onChange(e.target.value)}
+      onChange={(e) => onChange(e.target.value)}
       type="number"
       slotProps={{
         htmlInput: {
           max,
           min,
           step,
-          style: { width: 80 }
+          style: { width: 80 },
         },
         input: {
           endAdornment: <InputAdornment position="end">mm</InputAdornment>,
@@ -33,7 +26,6 @@ function MillimeterField(props) {
       }}
     />
   );
-};
-
+}
 
 export default MillimeterField;

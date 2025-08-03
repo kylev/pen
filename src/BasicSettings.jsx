@@ -17,7 +17,7 @@ function BasicSettings({ hidden, role, store }) {
             id="presets-field"
             label={"presets"}
             value={store.ratio}
-            onChange={v => store.setRatioPreset(v)}
+            onChange={(v) => store.setRatioPreset(v)}
             choices={store.ratioChoices}
           />
         </Grid>
@@ -31,11 +31,11 @@ function BasicSettings({ hidden, role, store }) {
             type="number"
             value={store.guideline.angle}
             disabled={store.ratio !== "custom"}
-            onChange={e => store.setGuidelineAngle(e.target.value)}
+            onChange={(e) => store.setGuidelineAngle(e.target.value)}
             slotProps={{
               input: {
-                endAdornment: <InputAdornment position="end">°</InputAdornment>
-              }
+                endAdornment: <InputAdornment position="end">°</InputAdornment>,
+              },
             }}
           />
         </Grid>
@@ -47,7 +47,7 @@ function BasicSettings({ hidden, role, store }) {
             min={2}
             step={0.1}
             value={store.xHeight}
-            onChange={v => (store.xHeight = v)}
+            onChange={(v) => (store.xHeight = v)}
           />
         </Grid>
         <Grid size={gridSize}>
@@ -55,7 +55,7 @@ function BasicSettings({ hidden, role, store }) {
             id="size-field"
             label={"pagesize"}
             value={store.pageSize}
-            onChange={v => (store.pageSize = v)}
+            onChange={(v) => (store.pageSize = v)}
             choices={store.pageSizes}
           />
         </Grid>
@@ -64,13 +64,13 @@ function BasicSettings({ hidden, role, store }) {
             id="orientation-field"
             label={"pageorientation"}
             value={store.orientation}
-            onChange={v => (store.orientation = v)}
+            onChange={(v) => (store.orientation = v)}
             choices={store.orientations}
           />
         </Grid>
       </Grid>
     </Box>
   );
-};
+}
 
 export default BasicSettings;

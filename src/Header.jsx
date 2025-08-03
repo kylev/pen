@@ -14,16 +14,15 @@ import HeaderButtons from "./HeaderButtons";
 import LineSetDebug from "./LineSetDebug";
 import LineSettings from "./LineSettings";
 
-
 function tabProps(index) {
   return {
     id: `tab-${index}`,
     value: index,
     "aria-controls": `tabpanel-${index}`,
     sx: {
-      '&.Mui-selected': {
-        color: '#ffffff',
-      }
+      "&.Mui-selected": {
+        color: "#ffffff",
+      },
     },
   };
 }
@@ -49,10 +48,7 @@ function Header({ store }) {
           </Typography>
           <HeaderButtons />
         </Toolbar>
-        <Tabs
-          onChange={(e, v) => setActive(v)}
-          value={active}
-        >
+        <Tabs onChange={(e, v) => setActive(v)} value={active}>
           <Tab label={t("tabNames.basic")} {...tabProps("basic")} />
           <Tab label={t("tabNames.custom")} {...tabProps("custom")} />
           <Tab label={t("tabNames.lines")} {...tabProps("lines")} />
@@ -63,10 +59,14 @@ function Header({ store }) {
         <BasicSettings store={store} hidden={active !== "basic"} {...tabPanelProps("basic")} />
         <CustomSettings store={store} hidden={active !== "custom"} {...tabPanelProps("custom")} />
         <LineSettings store={store} hidden={active !== "lines"} {...tabPanelProps("lines")} />
-        <LineSetDebug lineSet={store.lineSet} hidden={active !== "debug"} {...tabPanelProps("debug")} />
+        <LineSetDebug
+          lineSet={store.lineSet}
+          hidden={active !== "debug"}
+          {...tabPanelProps("debug")}
+        />
       </Paper>
     </Box>
   );
-};
+}
 
 export default Header;

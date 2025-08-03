@@ -8,12 +8,14 @@ const PaperDisplay = ({ store }) => {
   return (
     <Container sx={{ marginY: 2 }}>
       <Box justifyContent={"center"} display="flex">
-        <Paper sx={{
-          padding: 2,
-          overflow: "hidden",
-          width: store.dimensions.width + "mm",
-          display: 'inline-block'
-        }}>
+        <Paper
+          sx={{
+            padding: 2,
+            overflow: "hidden",
+            width: store.dimensions.width + "mm",
+            display: "inline-block",
+          }}
+        >
           <PracticePage store={store} />
         </Paper>
       </Box>

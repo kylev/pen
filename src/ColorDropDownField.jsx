@@ -7,11 +7,11 @@ const colors = [
   { key: "transparent" },
   { key: "black" },
   { key: "gray" },
-  ...range(1, 10).map(v => ({
+  ...range(1, 10).map((v) => ({
     key: Color.rgb(255, 255, 255)
       .darken(v / 10.0)
       .string(),
-    name: ["colorNames.graypct", { pct: v * 10 }]
+    name: ["colorNames.graypct", { pct: v * 10 }],
   })),
   { key: "blue" },
   { key: Color.rgb(164, 221, 237).string(), name: "colorNames.nonphotoblue" },
@@ -22,10 +22,10 @@ const colors = [
   { key: "pink" },
   { key: "red" },
   { key: "white" },
-  { key: "yellow" }
-].map(c => (c.name ? c : { ...c, name: `colorNames.${c.key}` }));
+  { key: "yellow" },
+].map((c) => (c.name ? c : { ...c, name: `colorNames.${c.key}` }));
 
-const ColorDropDownField = props => {
+const ColorDropDownField = (props) => {
   return <DropDownField choices={colors} {...props} />;
 };
 

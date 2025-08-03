@@ -25,14 +25,14 @@ class PenStore {
   halfLine = defaultLineSpec({
     name: "Half-Lines",
     color: "transparent",
-    dash: "2, 2"
+    dash: "2, 2",
   });
   guideline = defaultLineSpec({
     name: "Guide Lines",
     strokeWidth: 0.1,
     color: "pink",
     angle: 90,
-    spacing: 30
+    spacing: 30,
   });
 
   // Read-only
@@ -43,7 +43,7 @@ class PenStore {
     { key: "a5", width: 148, height: 210 },
     { key: "ledger", width: 279, height: 432 },
     { key: "legal", width: 216, height: 356 },
-    { key: "letter", width: 216, height: 279 }
+    { key: "letter", width: 216, height: 279 },
   ];
   orientations = [{ key: "landscape" }, { key: "portrait" }];
   ratioChoices = [
@@ -52,28 +52,28 @@ class PenStore {
     {
       key: "italic",
       ratios: [2, 4, 2, 1],
-      angle: 83
+      angle: 83,
     },
     {
       key: "copperplate",
       ratios: [3, 2, 3, 1],
-      angle: 55
+      angle: 55,
     },
     {
       key: "spencerian",
       ratios: [2, 1, 2, 1],
-      angle: 52
+      angle: 52,
     },
     {
       key: "foundation",
       ratios: [2, 2, 2, 1],
-      angle: 90
+      angle: 90,
     },
     {
       key: "german",
       ratios: [2, 1, 2, 1],
-      angle: 65
-    }
+      angle: 65,
+    },
   ];
 
   constructor() {
@@ -120,29 +120,29 @@ class PenStore {
       y: 0,
       width: this.dimensions.width,
       height: this.gap,
-      fill: this.gapColor
+      fill: this.gapColor,
     };
   }
 
   get dimensions() {
-    const dims = this.pageSizes.find(s => s.key === this.pageSize);
+    const dims = this.pageSizes.find((s) => s.key === this.pageSize);
 
     if (this.orientation === "landscape")
       return {
         ...dims,
         width: dims.height - this.printGap,
-        height: dims.width - this.printGap
+        height: dims.width - this.printGap,
       };
     else
       return {
         ...dims,
         width: dims.width - this.printGap,
-        height: dims.height - this.printGap
+        height: dims.height - this.printGap,
       };
   }
 
   get heights() {
-    return this.ratios.map(r => (r / this.ratios[1]) * this.xHeight);
+    return this.ratios.map((r) => (r / this.ratios[1]) * this.xHeight);
   }
 
   get lineSet() {
@@ -152,7 +152,7 @@ class PenStore {
       ascender,
       midline,
       baseline,
-      descender
+      descender,
     } = this;
 
     const midlineOffset = heights[0],
@@ -164,33 +164,33 @@ class PenStore {
         key: "Ascender",
         ...composeLine({
           ...ascender,
-          width
-        })
+          width,
+        }),
       },
       {
         key: "Midline",
         ...composeLine({
           ...midline,
           offset: midlineOffset,
-          width
-        })
+          width,
+        }),
       },
       {
         key: "Baseline",
         ...composeLine({
           ...baseline,
           offset: baselineOffset,
-          width
-        })
+          width,
+        }),
       },
       {
         key: "Descender",
         ...composeLine({
           ...descender,
           offset: descenderOffset,
-          width
-        })
-      }
+          width,
+        }),
+      },
     ];
   }
 
@@ -201,7 +201,7 @@ class PenStore {
   get guideLineSet() {
     const {
       dimensions: { height, width },
-      guideline: { angle, spacing }
+      guideline: { angle, spacing },
     } = this;
 
     if (angle < 1 || angle > 89) return [];
@@ -214,44 +214,44 @@ class PenStore {
     const baseOffset = (count * yStep - height) / slopeRatio;
 
     return [
-      ...range(1, count + 1).map(i => ({
+      ...range(1, count + 1).map((i) => ({
         key: `guideline-${i}`,
         ...composeLine({ ...this.guideline }),
         x1: 0,
         y1: i * yStep,
         x2: width,
-        y2: i * yStep - yOffset
+        y2: i * yStep - yOffset,
       })),
-      ...range(1, baseCount + 1).map(i => ({
+      ...range(1, baseCount + 1).map((i) => ({
         key: `guidelinebase-${i}`,
         ...composeLine({ ...this.guideline }),
         x1: i * spacing + baseOffset,
         y1: height,
         x2: width,
-        y2: height - slopeRatio * (width - baseOffset - i * spacing)
-      }))
+        y2: height - slopeRatio * (width - baseOffset - i * spacing),
+      })),
     ];
   }
 
   get halfLineSet() {
     const {
       dimensions: { width },
-      heights
+      heights,
     } = this;
 
     return [
       {
         key: "top-half-line",
-        ...composeLine({ ...this.halfLine, width, offset: heights[0] / 2 })
+        ...composeLine({ ...this.halfLine, width, offset: heights[0] / 2 }),
       },
       {
         key: "bottom-half-line",
         ...composeLine({
           ...this.halfLine,
           width,
-          offset: heights[0] + heights[1] + heights[2] / 2
-        })
-      }
+          offset: heights[0] + heights[1] + heights[2] / 2,
+        }),
+      },
     ];
   }
 
@@ -262,7 +262,7 @@ class PenStore {
   }
 
   setRatioPreset(key) {
-    const preset = this.ratioChoices.find(c => key === c.key);
+    const preset = this.ratioChoices.find((c) => key === c.key);
 
     this.ratio = key;
     if (preset.ratios) this.ratios = preset.ratios;
