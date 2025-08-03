@@ -1,5 +1,3 @@
-import { merge } from "lodash-es";
-
 export const basicLine = (width, offset) => {
   return {
     x1: 0,
@@ -25,12 +23,12 @@ export const lineDash = (name) => {
 };
 
 export const composeLine = (spec) => {
-  return merge(
-    basicLine(spec.width, spec.offset),
-    color(spec.color),
-    thickness(spec.thickness),
-    lineDash(spec.dash),
-  );
+  return {
+    ...basicLine(spec.width, spec.offset),
+    ...color(spec.color),
+    ...thickness(spec.thickness),
+    ...lineDash(spec.dash),
+  };
 };
 
 export const defaultLineSpec = (overrides = {}) => {
