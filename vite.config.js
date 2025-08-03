@@ -8,15 +8,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          uicore: [
-            "react",
-            "react-dom",
-            "mobx",
-            "mobx-react-observer",
-            "i18next",
-            "react-i18next",
-            "lodash",
-          ],
+          react: ["react", "react-dom", "react-i18next", "mobx", "mobx-react-observer"],
         },
       },
     },
