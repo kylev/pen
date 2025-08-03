@@ -1,4 +1,3 @@
-import { range } from "lodash";
 import Color from "color";
 
 import DropDownField from "./DropDownField";
@@ -7,7 +6,7 @@ const colors = [
   { key: "transparent" },
   { key: "black" },
   { key: "gray" },
-  ...range(1, 10).map((v) => ({
+  ...Array.from({ length: 9 }, (_, i) => i + 1).map((v) => ({
     key: Color.rgb(255, 255, 255)
       .darken(v / 10.0)
       .string(),

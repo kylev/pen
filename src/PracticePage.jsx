@@ -1,5 +1,3 @@
-import { times } from "lodash";
-
 import LineSet from "./LineSet";
 import WatermarkSVG from "./WatermarkSVG";
 
@@ -36,7 +34,7 @@ const PracticePage = ({ store }) => {
         style={{ backgroundColor: "white" }}
       >
         <g key="X">
-          {times(count, (i) => (
+          {[...Array(count)].map((_, i) => (
             <text
               key={`x-${i}`}
               x={1}
@@ -48,7 +46,7 @@ const PracticePage = ({ store }) => {
             </text>
           ))}
         </g>
-        {times(count, (i) => (
+        {[...Array(count)].map((_, i) => (
           <g key={`lineset-${i}`}>
             <rect {...gapRect} y={1 + lineSetHeight * i + workHeight} />
             <LineSet

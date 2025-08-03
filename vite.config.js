@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+
 import react from "@vitejs/plugin-react";
 import observerPlugin from "mobx-react-observer/babel-plugin";
 
@@ -8,15 +9,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          uicore: [
-            "react",
-            "react-dom",
-            "mobx",
-            "mobx-react-observer",
-            "i18next",
-            "react-i18next",
-            "lodash",
-          ],
+          react: ["react", "react-dom", "react-i18next", "i18next", "mobx", "mobx-react-observer"],
         },
       },
     },
@@ -28,9 +21,6 @@ export default defineConfig({
       },
     }),
   ],
-  server: {
-    host: true,
-  },
   test: {
     environment: "jsdom",
   },

@@ -1,4 +1,4 @@
-import { debounce, partial } from "lodash";
+import debounce from "lodash-es/debounce";
 import { reaction } from "mobx";
 
 export const gtagEvent = (action, params) => {
@@ -16,13 +16,13 @@ export const trackEvent = (action, label) => {
   gtagEvent(action, { eventLabel: label });
 };
 
-export const presetChange = partial(trackEvent, "select_preset");
+export const presetChange = (label) => trackEvent("select_preset", label);
 
-export const ratiosChange = partial(trackEvent, "change_ratios");
+export const ratiosChange = (label) => trackEvent("change_ratios", label);
 
-export const xHeightChange = partial(trackEvent, "change_x_height");
+export const xHeightChange = (label) => trackEvent("change_x_height", label);
 
-export const outputAttempt = partial(trackEvent, "output_attempt");
+export const outputAttempt = (label) => trackEvent("output_attempt", label);
 
 export const gaLangChange = (lng) => {
   gtagEvent("language_change", { language: lng });

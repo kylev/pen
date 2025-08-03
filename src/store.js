@@ -1,5 +1,5 @@
-import { reduce, range } from "lodash";
-import { action, computed, observable, makeObservable } from "mobx";
+import range from "lodash-es/range";
+import { action, computed, makeObservable, observable } from "mobx";
 
 import { composeLine, defaultLineSpec } from "./lines";
 
@@ -195,7 +195,7 @@ class PenStore {
   }
 
   get lineSetHeight() {
-    return reduce(this.heights, (sum, h) => sum + h, 0);
+    return this.heights.reduce((sum, h) => sum + h, 0);
   }
 
   get guideLineSet() {
