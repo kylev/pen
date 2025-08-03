@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 
 import react from "@vitejs/plugin-react";
 import observerPlugin from "mobx-react-observer/babel-plugin";
-import { analyzer } from "vite-bundle-analyzer";
 
 export default defineConfig({
   base: "/pen/",
@@ -21,7 +20,6 @@ export default defineConfig({
         plugins: [observerPlugin()],
       },
     }),
-    analyzer(),
   ],
   test: {
     environment: "jsdom",
