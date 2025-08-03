@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
+
 import react from "@vitejs/plugin-react";
 import observerPlugin from "mobx-react-observer/babel-plugin";
+import { analyzer } from "vite-bundle-analyzer";
 
 export default defineConfig({
   base: "/pen/",
@@ -8,7 +10,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          react: ["react", "react-dom", "react-i18next", "mobx", "mobx-react-observer"],
+          react: ["react", "react-dom", "react-i18next", "i18next", "mobx", "mobx-react-observer"],
         },
       },
     },
@@ -19,6 +21,7 @@ export default defineConfig({
         plugins: [observerPlugin()],
       },
     }),
+    analyzer(),
   ],
   test: {
     environment: "jsdom",
