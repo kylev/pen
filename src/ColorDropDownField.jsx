@@ -1,4 +1,4 @@
-import { range } from "lodash";
+import { range } from "lodash-es";
 import Color from "color";
 
 import DropDownField from "./DropDownField";

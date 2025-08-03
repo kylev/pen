@@ -1,4 +1,4 @@
-import { times } from "lodash";
+import { times } from "lodash-es";
 
 import LineSet from "./LineSet";
 import WatermarkSVG from "./WatermarkSVG";

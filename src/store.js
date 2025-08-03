@@ -1,4 +1,4 @@
-import { reduce, range } from "lodash";
+import { reduce, range } from "lodash-es";
 import { action, computed, observable, makeObservable } from "mobx";
 
 import { composeLine, defaultLineSpec } from "./lines";

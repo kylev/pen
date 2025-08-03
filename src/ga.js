@@ -1,4 +1,4 @@
-import { debounce, partial } from "lodash";
+import { debounce, partial } from "lodash-es";
 import { reaction } from "mobx";
 
 export const gtagEvent = (action, params) => {
