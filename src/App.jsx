@@ -1,7 +1,7 @@
 import React from "react";
 
 import { I18nextProvider } from "react-i18next";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import "./App.css";
 
@@ -17,7 +17,7 @@ gaWatchStore(store);
 
 i18n.on("languageChanged", (lng) => {
   gaLangChange(lng);
-  window.document.documentElement.setAttribute('lang', lng);
+  window.document.documentElement.setAttribute("lang", lng);
 });
 
 const theme = createTheme({

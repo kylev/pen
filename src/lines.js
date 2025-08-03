@@ -7,29 +7,29 @@ export const basicLine = (width, offset) => {
     x2: width,
     y2: offset,
     stroke: "black",
-    strokeWidth: 0.2
+    strokeWidth: 0.2,
   };
 };
 
-export const color = color => {
+export const color = (color) => {
   return { stroke: color };
 };
 
-export const thickness = x => {
+export const thickness = (x) => {
   return { strokeWidth: x };
 };
 
-export const lineDash = name => {
+export const lineDash = (name) => {
   if (!name) return {};
   return { strokeDasharray: name };
 };
 
-export const composeLine = spec => {
+export const composeLine = (spec) => {
   return merge(
     basicLine(spec.width, spec.offset),
     color(spec.color),
     thickness(spec.thickness),
-    lineDash(spec.dash)
+    lineDash(spec.dash),
   );
 };
 
@@ -39,6 +39,6 @@ export const defaultLineSpec = (overrides = {}) => {
     color: "black",
     thickness: 0.2,
     dash: "none",
-    ...overrides
+    ...overrides,
   };
 };

@@ -1,5 +1,11 @@
 function LineSet({ lineSet }) {
-  return <g>{lineSet.map(({ key, ...l }) => <line key={key} {...l} />)}</g>;
+  return (
+    <g>
+      {lineSet.map(({ key, ...l }) => (
+        <line key={key} {...l} />
+      ))}
+    </g>
+  );
 }
 
 export default LineSet;

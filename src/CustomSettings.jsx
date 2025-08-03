@@ -12,7 +12,7 @@ const CustomSettings = ({ hidden, role, store }) => {
             id="guide-spacing-field"
             label="guidespacing"
             value={store.guideline.spacing}
-            onChange={v => (store.guideline.spacing = v)}
+            onChange={(v) => (store.guideline.spacing = v)}
           />
         </Grid>
 
@@ -20,7 +20,7 @@ const CustomSettings = ({ hidden, role, store }) => {
           <ColorDropDownField
             id="gap-color-field"
             label="gapcolor"
-            onChange={v => (store.gapColor = v)}
+            onChange={(v) => (store.gapColor = v)}
             value={store.gapColor}
           />
         </Grid>
@@ -28,7 +28,7 @@ const CustomSettings = ({ hidden, role, store }) => {
           <ColorDropDownField
             id="x-marker-field"
             label="xmarker"
-            onChange={v => (store.xColor = v)}
+            onChange={(v) => (store.xColor = v)}
             value={store.xColor}
           />
         </Grid>
@@ -36,7 +36,7 @@ const CustomSettings = ({ hidden, role, store }) => {
           <ColorDropDownField
             id="watermark-color-field"
             label="watermark"
-            onChange={v => (store.watermarkColor = v)}
+            onChange={(v) => (store.watermarkColor = v)}
             value={store.watermarkColor}
           />
         </Grid>
@@ -44,7 +44,7 @@ const CustomSettings = ({ hidden, role, store }) => {
           <MillimeterField
             id="print-gap-field"
             label="globalmargin"
-            onChange={v => (store.printGap = v)}
+            onChange={(v) => (store.printGap = v)}
             value={store.printGap}
           />
         </Grid>

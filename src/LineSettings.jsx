@@ -14,17 +14,13 @@ const LineSetting = ({ label, line }) => {
         <Typography variant="subtitle1">{t(label)}</Typography>
       </Grid>
       <Grid size={{ xs: 6, sm: 4 }}>
-        <ColorDropDownField
-          label={"color"}
-          value={line.color}
-          onChange={v => (line.color = v)}
-        />
+        <ColorDropDownField label={"color"} value={line.color} onChange={(v) => (line.color = v)} />
       </Grid>
       <Grid size={{ xs: 6, sm: 4 }}>
         <DashDropDownField
           label={"dash"}
           value={line.dash}
-          onChange={v => (line.dash = v)}
+          onChange={(v) => (line.dash = v)}
           disabled={line.color === "transparent"}
         />
       </Grid>
@@ -34,7 +30,7 @@ const LineSetting = ({ label, line }) => {
           value={line.thickness}
           min={0.1}
           step={0.1}
-          onChange={v => (line.thickness = v)}
+          onChange={(v) => (line.thickness = v)}
           disabled={line.color === "transparent"}
         />
       </Grid>
@@ -46,7 +42,7 @@ const LineSettings = ({ hidden, role, store }) => {
   const lineNames = ["ascender", "midline", "baseline", "descender"];
   return (
     <Box hidden={hidden} role={role}>
-      {lineNames.map(ln => (
+      {lineNames.map((ln) => (
         <LineSetting label={ln} line={store[ln]} key={ln} />
       ))}
       <LineSetting label={"guideline"} line={store.guideline} key="guide" />

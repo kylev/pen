@@ -12,7 +12,7 @@ function RatiosInput({ store }) {
   const { t } = useTranslation();
 
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'nowrap' }}>
+    <Box sx={{ display: "flex", flexWrap: "nowrap" }}>
       <FormControl onClick={() => console.log("flerp")}>
         <InputLabel shrink>{t("ratios")}</InputLabel>
       </FormControl>
@@ -23,7 +23,7 @@ function RatiosInput({ store }) {
               type="number"
               value={r}
               disabled={store.ratio !== "custom"}
-              onChange={e => store.setRatio(i, e.target.value)}
+              onChange={(e) => store.setRatio(i, e.target.value)}
               style={{ marginTop: 16, width: 60 }}
             />
             <br />
@@ -33,6 +33,6 @@ function RatiosInput({ store }) {
       </span>
     </Box>
   );
-};
+}
 
 export default RatiosInput;

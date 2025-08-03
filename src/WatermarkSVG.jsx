@@ -4,8 +4,7 @@ const WatermarkSVG = ({ store, x, y }) => {
   const { t } = useTranslation();
   let ratioT = t(store.ratio);
 
-  if (store.ratio === "custom")
-    ratioT = `${t("ratios")}(${store.ratios})`;
+  if (store.ratio === "custom") ratioT = `${t("ratios")}(${store.ratios})`;
 
   let ratioDetail = `
     - ${t("xheight")} ${store.xHeight}mm
