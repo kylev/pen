@@ -22,7 +22,6 @@ function RatiosInput({ store }) {
             <Input
               type="number"
               value={r}
-              disabled={store.ratio !== "custom"}
               onChange={(e) => store.setRatio(i, e.target.value)}
               style={{ marginTop: 16, width: 60 }}
             />
