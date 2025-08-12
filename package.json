@@ -42,6 +42,7 @@
     "jsdom": "^26.1.0",
     "prettier": "^3.6.2",
     "vite": "^7.1.2",
+    "vite-bundle-analyzer": "^1.2.1",
     "vitest": "^3.2.4"
   },
   "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js",
