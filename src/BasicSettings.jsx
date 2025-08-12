@@ -30,7 +30,6 @@ function BasicSettings({ hidden, role, store }) {
             label={t("guideangle")}
             type="number"
             value={store.guideline.angle}
-            disabled={store.ratio !== "custom"}
             onChange={(e) => store.setGuidelineAngle(e.target.value)}
             slotProps={{
               input: {
